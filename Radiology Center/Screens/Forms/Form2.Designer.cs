@@ -1,6 +1,6 @@
 ﻿namespace Radiology_Center.Screens.Forms
 {
-	partial class Form1
+	partial class Form2
 	{
 		/// <summary>
 		/// Required designer variable.
