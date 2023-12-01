@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
 {
-	public partial class Form2 : Form
+	public partial class Docter : Form
 	{
-		public Form2()
+		public Docter()
 		{
 			InitializeComponent();
 		}
