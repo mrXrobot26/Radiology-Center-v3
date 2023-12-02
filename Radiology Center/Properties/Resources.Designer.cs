@@ -63,6 +63,36 @@ namespace Radiology_Center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _147619ef75901e0cf46bb74efbaa5611 {
+            get {
+                object obj = ResourceManager.GetObject("147619ef75901e0cf46bb74efbaa5611", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg {
+            get {
+                object obj = ResourceManager.GetObject("360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg1 {
+            get {
+                object obj = ResourceManager.GetObject("360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap assistant {
             get {
                 object obj = ResourceManager.GetObject("assistant", resourceCulture);
@@ -173,9 +203,49 @@ namespace Radiology_Center.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo2 {
+            get {
+                object obj = ResourceManager.GetObject("logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo3 {
+            get {
+                object obj = ResourceManager.GetObject("logo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transparent_EXITS_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Transparent_EXITS(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transparent_EXITS_1_1 {
+            get {
+                object obj = ResourceManager.GetObject("Transparent_EXITS(1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

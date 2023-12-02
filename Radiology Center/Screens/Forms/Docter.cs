@@ -16,5 +16,15 @@ namespace Radiology_Center.Screens.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

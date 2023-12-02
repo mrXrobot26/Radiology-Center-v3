@@ -84,6 +84,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\Forms\Docter.resx">
+      <DependentUpon>Docter.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +133,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Transparent_EXITS%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\147619ef75901e0cf46bb74efbaa5611.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
