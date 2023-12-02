@@ -65,6 +65,12 @@
     <Compile Include="Screens\Forms\Docter.Designer.cs">
       <DependentUpon>Docter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,7 @@
     <EmbeddedResource Include="Screens\Forms\Docter.resx">
       <DependentUpon>Docter.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Screens\Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
