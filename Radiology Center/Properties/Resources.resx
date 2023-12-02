@@ -121,6 +121,9 @@
   <data name="assistant croped" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\assistant croped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-tax-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icons8-tax-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-medical-doctor-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icons8-medical-doctor-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,11 +163,20 @@
   <data name="360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\360_F_258464541_GP8tzclZhURDrz1bvX41PGYR50Siayfg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-accountant-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icons8-accountant-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-technical-support-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icons8-technical-support-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="department" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\department.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-male-user-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icons8-male-user-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="147619ef75901e0cf46bb74efbaa5611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\147619ef75901e0cf46bb74efbaa5611.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="assistant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\assistant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +184,10 @@
   <data name="icons8-dashboard-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icons8-dashboard-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="147619ef75901e0cf46bb74efbaa5611" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\147619ef75901e0cf46bb74efbaa5611.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-being-sick-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icons8-being-sick-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-admin-settings-male-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icons8-admin-settings-male-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

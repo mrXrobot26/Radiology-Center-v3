@@ -143,5 +143,20 @@
   <ItemGroup>
     <None Include="Resources\147619ef75901e0cf46bb74efbaa5611.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-being-sick-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-technical-support-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-accountant-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-tax-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-admin-settings-male-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
