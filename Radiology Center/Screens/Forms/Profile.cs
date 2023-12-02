@@ -16,5 +16,40 @@ namespace Radiology_Center.Screens.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void chatButtonLeft1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void foxBigLabel1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void foxLabel3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Profile_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void foxBigLabel5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void foxLabel8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void foxLabel1_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
