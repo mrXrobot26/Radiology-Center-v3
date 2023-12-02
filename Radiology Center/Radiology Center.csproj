@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     <Compile Include="Screens\Forms\try.Designer.cs">
       <DependentUpon>try.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +104,32 @@
   <ItemGroup>
     <None Include="Images\logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-dashboard-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-dashboard-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\assistant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\assistant croped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-male-user-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-male-user-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-medical-doctor-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\department.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
