@@ -17,7 +17,7 @@ namespace Radiology_Center
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Docter());
+            Application.Run(new Profile());
         }
     }
 }

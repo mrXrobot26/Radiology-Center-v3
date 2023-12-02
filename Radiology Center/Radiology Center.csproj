@@ -65,6 +65,12 @@
     <Compile Include="Screens\Forms\Docter.Designer.cs">
       <DependentUpon>Docter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\try.cs">
       <SubType>Form</SubType>
     </Compile>
