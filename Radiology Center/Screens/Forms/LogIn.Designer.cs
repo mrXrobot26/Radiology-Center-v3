@@ -155,10 +155,9 @@
             // Log_btn
             // 
             this.Log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.Log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Log_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Log_btn.ForeColor = System.Drawing.Color.White;
-            this.Log_btn.Location = new System.Drawing.Point(404, 278);
+            this.Log_btn.Location = new System.Drawing.Point(507, 282);
             this.Log_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Log_btn.Name = "Log_btn";
             this.Log_btn.Size = new System.Drawing.Size(92, 48);
@@ -169,10 +168,9 @@
             // Cancle_btn
             // 
             this.Cancle_btn.BackColor = System.Drawing.Color.White;
-            this.Cancle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancle_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancle_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.Cancle_btn.Location = new System.Drawing.Point(516, 278);
+            this.Cancle_btn.Location = new System.Drawing.Point(390, 282);
             this.Cancle_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cancle_btn.Name = "Cancle_btn";
             this.Cancle_btn.Size = new System.Drawing.Size(92, 48);
@@ -183,10 +181,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(356, 110);
+            this.pictureBox2.Location = new System.Drawing.Point(356, 104);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 43);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -194,7 +192,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(356, 206);
+            this.pictureBox3.Location = new System.Drawing.Point(356, 202);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 37);

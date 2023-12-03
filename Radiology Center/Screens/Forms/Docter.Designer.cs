@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Docter));
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_lname = new System.Windows.Forms.Label();
             this.Phone_lbl = new System.Windows.Forms.Label();
@@ -52,10 +53,9 @@
             this.poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
             this.comb_department = new ReaLTaiizor.Controls.AloneComboBox();
             this.picBx_add = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBx_add)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_add)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,10 +66,10 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Size = new System.Drawing.Size(567, 57);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Size = new System.Drawing.Size(756, 70);
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
@@ -89,7 +89,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(463, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(571, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -98,16 +98,25 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-15, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.lbl_name.Location = new System.Drawing.Point(313, 131);
-            this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_name.Location = new System.Drawing.Point(417, 161);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(89, 21);
+            this.lbl_name.Size = new System.Drawing.Size(111, 28);
             this.lbl_name.TabIndex = 2;
             this.lbl_name.Text = "First name";
             // 
@@ -117,10 +126,9 @@
             this.lbl_lname.BackColor = System.Drawing.Color.Transparent;
             this.lbl_lname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_lname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.lbl_lname.Location = new System.Drawing.Point(313, 202);
-            this.lbl_lname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_lname.Location = new System.Drawing.Point(417, 249);
             this.lbl_lname.Name = "lbl_lname";
-            this.lbl_lname.Size = new System.Drawing.Size(87, 21);
+            this.lbl_lname.Size = new System.Drawing.Size(108, 28);
             this.lbl_lname.TabIndex = 8;
             this.lbl_lname.Text = "Last name";
             // 
@@ -130,10 +138,9 @@
             this.Phone_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Phone_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phone_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Phone_lbl.Location = new System.Drawing.Point(61, 276);
-            this.Phone_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Phone_lbl.Location = new System.Drawing.Point(81, 340);
             this.Phone_lbl.Name = "Phone_lbl";
-            this.Phone_lbl.Size = new System.Drawing.Size(82, 21);
+            this.Phone_lbl.Size = new System.Drawing.Size(99, 28);
             this.Phone_lbl.TabIndex = 10;
             this.Phone_lbl.Text = "PhoneNo";
             // 
@@ -143,10 +150,9 @@
             this.Bdate_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Bdate_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bdate_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Bdate_lbl.Location = new System.Drawing.Point(316, 346);
-            this.Bdate_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Bdate_lbl.Location = new System.Drawing.Point(421, 426);
             this.Bdate_lbl.Name = "Bdate_lbl";
-            this.Bdate_lbl.Size = new System.Drawing.Size(87, 21);
+            this.Bdate_lbl.Size = new System.Drawing.Size(111, 28);
             this.Bdate_lbl.TabIndex = 13;
             this.Bdate_lbl.Text = "Birth Date";
             // 
@@ -156,10 +162,9 @@
             this.lbl_role.BackColor = System.Drawing.Color.Transparent;
             this.lbl_role.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.lbl_role.Location = new System.Drawing.Point(61, 346);
-            this.lbl_role.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_role.Location = new System.Drawing.Point(81, 426);
             this.lbl_role.Name = "lbl_role";
-            this.lbl_role.Size = new System.Drawing.Size(44, 21);
+            this.lbl_role.Size = new System.Drawing.Size(54, 28);
             this.lbl_role.TabIndex = 23;
             this.lbl_role.Text = "Role";
             // 
@@ -169,10 +174,9 @@
             this.Dep_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Dep_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dep_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Dep_lbl.Location = new System.Drawing.Point(316, 414);
-            this.Dep_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Dep_lbl.Location = new System.Drawing.Point(421, 510);
             this.Dep_lbl.Name = "Dep_lbl";
-            this.Dep_lbl.Size = new System.Drawing.Size(102, 21);
+            this.Dep_lbl.Size = new System.Drawing.Size(127, 28);
             this.Dep_lbl.TabIndex = 25;
             this.Dep_lbl.Text = "Department";
             // 
@@ -182,10 +186,9 @@
             this.Id_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Id_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Id_lbl.Location = new System.Drawing.Point(61, 213);
-            this.Id_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Id_lbl.Location = new System.Drawing.Point(81, 262);
             this.Id_lbl.Name = "Id_lbl";
-            this.Id_lbl.Size = new System.Drawing.Size(27, 21);
+            this.Id_lbl.Size = new System.Drawing.Size(33, 28);
             this.Id_lbl.TabIndex = 26;
             this.Id_lbl.Text = "ID";
             // 
@@ -195,10 +198,9 @@
             this.Email_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Email_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Email_lbl.Location = new System.Drawing.Point(314, 276);
-            this.Email_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Email_lbl.Location = new System.Drawing.Point(419, 340);
             this.Email_lbl.Name = "Email_lbl";
-            this.Email_lbl.Size = new System.Drawing.Size(53, 21);
+            this.Email_lbl.Size = new System.Drawing.Size(64, 28);
             this.Email_lbl.TabIndex = 28;
             this.Email_lbl.Text = "Email";
             // 
@@ -226,13 +228,13 @@
             this.Male_CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
             this.Male_CheckBox.LinearGradient_Background = false;
             this.Male_CheckBox.LinearGradientPen = false;
-            this.Male_CheckBox.Location = new System.Drawing.Point(57, 401);
-            this.Male_CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Male_CheckBox.Location = new System.Drawing.Point(76, 494);
+            this.Male_CheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Male_CheckBox.Name = "Male_CheckBox";
             this.Male_CheckBox.RGB = false;
             this.Male_CheckBox.Rounding = true;
             this.Male_CheckBox.RoundingInt = 100;
-            this.Male_CheckBox.Size = new System.Drawing.Size(128, 45);
+            this.Male_CheckBox.Size = new System.Drawing.Size(171, 45);
             this.Male_CheckBox.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.Male_CheckBox.TabIndex = 30;
             this.Male_CheckBox.Tag = "Cyber";
@@ -265,13 +267,13 @@
             this.Female_CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
             this.Female_CheckBox.LinearGradient_Background = false;
             this.Female_CheckBox.LinearGradientPen = false;
-            this.Female_CheckBox.Location = new System.Drawing.Point(55, 443);
-            this.Female_CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Female_CheckBox.Location = new System.Drawing.Point(73, 545);
+            this.Female_CheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Female_CheckBox.Name = "Female_CheckBox";
             this.Female_CheckBox.RGB = false;
             this.Female_CheckBox.Rounding = true;
             this.Female_CheckBox.RoundingInt = 100;
-            this.Female_CheckBox.Size = new System.Drawing.Size(100, 45);
+            this.Female_CheckBox.Size = new System.Drawing.Size(133, 45);
             this.Female_CheckBox.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.Female_CheckBox.TabIndex = 31;
             this.Female_CheckBox.Tag = "Cyber";
@@ -286,10 +288,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button3.Location = new System.Drawing.Point(290, 490);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(387, 603);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 29);
+            this.button3.Size = new System.Drawing.Size(108, 36);
             this.button3.TabIndex = 36;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = false;
@@ -300,10 +302,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.button4.Location = new System.Drawing.Point(154, 490);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(205, 603);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 29);
+            this.button4.Size = new System.Drawing.Size(100, 36);
             this.button4.TabIndex = 35;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
@@ -315,13 +317,13 @@
             this.txt_id.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_id.ForeColor = System.Drawing.Color.DimGray;
             this.txt_id.Image = null;
-            this.txt_id.Location = new System.Drawing.Point(64, 232);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_id.Location = new System.Drawing.Point(85, 286);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_id.MaxLength = 32767;
             this.txt_id.Multiline = false;
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = false;
-            this.txt_id.Size = new System.Drawing.Size(185, 41);
+            this.txt_id.Size = new System.Drawing.Size(247, 46);
             this.txt_id.TabIndex = 37;
             this.txt_id.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_id.UseSystemPasswordChar = false;
@@ -332,13 +334,13 @@
             this.txt_phone.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_phone.ForeColor = System.Drawing.Color.DimGray;
             this.txt_phone.Image = null;
-            this.txt_phone.Location = new System.Drawing.Point(63, 301);
-            this.txt_phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_phone.Location = new System.Drawing.Point(84, 370);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_phone.MaxLength = 32767;
             this.txt_phone.Multiline = false;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.ReadOnly = false;
-            this.txt_phone.Size = new System.Drawing.Size(185, 41);
+            this.txt_phone.Size = new System.Drawing.Size(247, 46);
             this.txt_phone.TabIndex = 38;
             this.txt_phone.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_phone.UseSystemPasswordChar = false;
@@ -349,13 +351,13 @@
             this.txt_Lname.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_Lname.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Lname.Image = null;
-            this.txt_Lname.Location = new System.Drawing.Point(316, 232);
-            this.txt_Lname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Lname.Location = new System.Drawing.Point(421, 286);
+            this.txt_Lname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Lname.MaxLength = 32767;
             this.txt_Lname.Multiline = false;
             this.txt_Lname.Name = "txt_Lname";
             this.txt_Lname.ReadOnly = false;
-            this.txt_Lname.Size = new System.Drawing.Size(185, 41);
+            this.txt_Lname.Size = new System.Drawing.Size(247, 46);
             this.txt_Lname.TabIndex = 39;
             this.txt_Lname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Lname.UseSystemPasswordChar = false;
@@ -366,13 +368,13 @@
             this.txt_Fname.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_Fname.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Fname.Image = null;
-            this.txt_Fname.Location = new System.Drawing.Point(316, 158);
-            this.txt_Fname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Fname.Location = new System.Drawing.Point(421, 194);
+            this.txt_Fname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Fname.MaxLength = 32767;
             this.txt_Fname.Multiline = false;
             this.txt_Fname.Name = "txt_Fname";
             this.txt_Fname.ReadOnly = false;
-            this.txt_Fname.Size = new System.Drawing.Size(185, 41);
+            this.txt_Fname.Size = new System.Drawing.Size(247, 46);
             this.txt_Fname.TabIndex = 39;
             this.txt_Fname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Fname.UseSystemPasswordChar = false;
@@ -383,13 +385,13 @@
             this.txt_Email.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_Email.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Email.Image = null;
-            this.txt_Email.Location = new System.Drawing.Point(316, 301);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Email.Location = new System.Drawing.Point(421, 370);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Email.MaxLength = 32767;
             this.txt_Email.Multiline = false;
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.ReadOnly = false;
-            this.txt_Email.Size = new System.Drawing.Size(185, 41);
+            this.txt_Email.Size = new System.Drawing.Size(247, 46);
             this.txt_Email.TabIndex = 39;
             this.txt_Email.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Email.UseSystemPasswordChar = false;
@@ -408,19 +410,19 @@
             "",
             "",
             ""});
-            this.comb_role.Location = new System.Drawing.Point(63, 375);
-            this.comb_role.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comb_role.Location = new System.Drawing.Point(84, 462);
+            this.comb_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comb_role.Name = "comb_role";
-            this.comb_role.Size = new System.Drawing.Size(187, 26);
+            this.comb_role.Size = new System.Drawing.Size(248, 26);
             this.comb_role.TabIndex = 40;
             // 
             // poisonDateTime1
             // 
-            this.poisonDateTime1.Location = new System.Drawing.Point(317, 375);
-            this.poisonDateTime1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.poisonDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.poisonDateTime1.Location = new System.Drawing.Point(423, 462);
+            this.poisonDateTime1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.poisonDateTime1.MinimumSize = new System.Drawing.Size(0, 30);
             this.poisonDateTime1.Name = "poisonDateTime1";
-            this.poisonDateTime1.Size = new System.Drawing.Size(183, 29);
+            this.poisonDateTime1.Size = new System.Drawing.Size(243, 30);
             this.poisonDateTime1.TabIndex = 42;
             // 
             // comb_department
@@ -437,41 +439,30 @@
             "",
             "",
             ""});
-            this.comb_department.Location = new System.Drawing.Point(317, 443);
-            this.comb_department.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comb_department.Location = new System.Drawing.Point(423, 545);
+            this.comb_department.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comb_department.Name = "comb_department";
-            this.comb_department.Size = new System.Drawing.Size(187, 26);
+            this.comb_department.Size = new System.Drawing.Size(248, 26);
             this.comb_department.TabIndex = 43;
             // 
             // picBx_add
             // 
             this.picBx_add.BackColor = System.Drawing.Color.Transparent;
             this.picBx_add.Image = ((System.Drawing.Image)(resources.GetObject("picBx_add.Image")));
-            this.picBx_add.Location = new System.Drawing.Point(64, 119);
-            this.picBx_add.Margin = new System.Windows.Forms.Padding(2);
+            this.picBx_add.Location = new System.Drawing.Point(85, 146);
+            this.picBx_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBx_add.Name = "picBx_add";
-            this.picBx_add.Size = new System.Drawing.Size(90, 91);
+            this.picBx_add.Size = new System.Drawing.Size(120, 112);
             this.picBx_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBx_add.TabIndex = 1;
             this.picBx_add.TabStop = false;
             // 
-            // pictureBox1
-            // 
-//            this.pictureBox1.Image = global::Radiology_Center.Properties.Resources.logo3;
-            this.pictureBox1.Location = new System.Drawing.Point(-11, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Docter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(567, 583);
+            this.ClientSize = new System.Drawing.Size(756, 718);
             this.Controls.Add(this.comb_department);
             this.Controls.Add(this.poisonDateTime1);
             this.Controls.Add(this.comb_role);
@@ -495,12 +486,12 @@
             this.Controls.Add(this.picBx_add);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Docter";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBx_add)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_add)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

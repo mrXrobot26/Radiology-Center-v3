@@ -76,11 +76,17 @@
     <Compile Include="Screens\Forms\LogIn.designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Forms\Profile.cs">
+    <Compile Include="Screens\Forms\Profile_Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Forms\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="Screens\Forms\Profile_Patient.Designer.cs">
+      <DependentUpon>Profile_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Forms\Profile_W.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Profile_W.Designer.cs">
+      <DependentUpon>Profile_W.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -95,8 +101,11 @@
     <EmbeddedResource Include="Screens\Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Forms\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Forms\Profile_Patient.resx">
+      <DependentUpon>Profile_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Profile_W.resx">
+      <DependentUpon>Profile_W.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
