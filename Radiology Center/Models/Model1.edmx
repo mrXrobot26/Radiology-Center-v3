@@ -1,0 +1,1146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Radiology_centerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accountant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="money" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="patient_id" Type="int" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="branch_id" Type="int" />
+        </EntityType>
+        <EntityType Name="assisatant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="money" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+          <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="branch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="money" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="dep_id" Type="int" />
+        </EntityType>
+        <EntityType Name="patient_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pay_status" Type="nvarchar" MaxLength="10" />
+          <Property Name="daydate" Type="date" />
+          <Property Name="deliverdate" Type="date" />
+          <Property Name="doctor_report" Type="varbinary(max)" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="ray_id" Type="int" />
+          <Property Name="patient_id" Type="int" />
+          <Property Name="assistant_id" Type="int" />
+          <Property Name="doctor_id" Type="int" />
+          <Property Name="dep_id" Type="int" />
+        </EntityType>
+        <EntityType Name="patient_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="Phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+        </EntityType>
+        <EntityType Name="ray">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="cost" Type="money" />
+          <Property Name="dep_id" Type="int" />
+        </EntityType>
+        <EntityType Name="reports">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+          <Property Name="note" Type="nvarchar(max)" />
+          <Property Name="accountant_id" Type="int" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role_name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="super_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="money" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
+          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="image" Type="image" />
+          <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="user_">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="pass" Type="nvarchar" MaxLength="100" />
+          <Property Name="role_id" Type="int" />
+        </EntityType>
+        <Association Name="FK__accountan__patie__4CA06362">
+          <End Role="patient_info" Type="Self.patient_info" Multiplicity="0..1" />
+          <End Role="accountant" Type="Self.accountant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accountant">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__accountan__user___4D94879B">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="accountant" Type="Self.accountant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accountant">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__admin__branch_id__4E88ABD4">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="admin" Type="Self.admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="admin">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__admin__user_id__4F7CD00D">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="admin" Type="Self.admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="admin">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__assisatan__user___5070F446">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="assisatant" Type="Self.assisatant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="assisatant">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__doctor__dep_id__5165187F">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doctor">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__doctor__user_id__52593CB8">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doctor">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__assis__75A278F5">
+          <End Role="assisatant" Type="Self.assisatant" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="assisatant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="assistant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__dep_i__778AC167">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__docto__76969D2E">
+          <End Role="doctor" Type="Self.doctor" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doctor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="doctor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__patie__74AE54BC">
+          <End Role="patient_info" Type="Self.patient_info" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__ray_i__73BA3083">
+          <End Role="ray" Type="Self.ray" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ray">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="ray_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__user___72C60C4A">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ray__dep_id__59063A47">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="ray" Type="Self.ray" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ray">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reports__account__6FE99F9F">
+          <End Role="accountant" Type="Self.accountant" Multiplicity="0..1" />
+          <End Role="reports" Type="Self.reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reports">
+              <PropertyRef Name="accountant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__super_adm__user___59FA5E80">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="super_admin" Type="Self.super_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="super_admin">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__user___role_id__5AEE82B9">
+          <End Role="role" Type="Self.role" Multiplicity="0..1" />
+          <End Role="user_" Type="Self.user_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Radiology_centerModelStoreContainer">
+          <EntitySet Name="accountant" EntityType="Self.accountant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="assisatant" EntityType="Self.assisatant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="branch" EntityType="Self.branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient_data" EntityType="Self.patient_data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient_info" EntityType="Self.patient_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ray" EntityType="Self.ray" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reports" EntityType="Self.reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="super_admin" EntityType="Self.super_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_" EntityType="Self.user_" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__accountan__patie__4CA06362" Association="Self.FK__accountan__patie__4CA06362">
+            <End Role="patient_info" EntitySet="patient_info" />
+            <End Role="accountant" EntitySet="accountant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__accountan__user___4D94879B" Association="Self.FK__accountan__user___4D94879B">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="accountant" EntitySet="accountant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__admin__branch_id__4E88ABD4" Association="Self.FK__admin__branch_id__4E88ABD4">
+            <End Role="branch" EntitySet="branch" />
+            <End Role="admin" EntitySet="admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__admin__user_id__4F7CD00D" Association="Self.FK__admin__user_id__4F7CD00D">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="admin" EntitySet="admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__assisatan__user___5070F446" Association="Self.FK__assisatan__user___5070F446">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="assisatant" EntitySet="assisatant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__doctor__dep_id__5165187F" Association="Self.FK__doctor__dep_id__5165187F">
+            <End Role="department" EntitySet="department" />
+            <End Role="doctor" EntitySet="doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__doctor__user_id__52593CB8" Association="Self.FK__doctor__user_id__52593CB8">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="doctor" EntitySet="doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__assis__75A278F5" Association="Self.FK__patient_d__assis__75A278F5">
+            <End Role="assisatant" EntitySet="assisatant" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__dep_i__778AC167" Association="Self.FK__patient_d__dep_i__778AC167">
+            <End Role="department" EntitySet="department" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__docto__76969D2E" Association="Self.FK__patient_d__docto__76969D2E">
+            <End Role="doctor" EntitySet="doctor" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__patie__74AE54BC" Association="Self.FK__patient_d__patie__74AE54BC">
+            <End Role="patient_info" EntitySet="patient_info" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__ray_i__73BA3083" Association="Self.FK__patient_d__ray_i__73BA3083">
+            <End Role="ray" EntitySet="ray" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__user___72C60C4A" Association="Self.FK__patient_d__user___72C60C4A">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ray__dep_id__59063A47" Association="Self.FK__ray__dep_id__59063A47">
+            <End Role="department" EntitySet="department" />
+            <End Role="ray" EntitySet="ray" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reports__account__6FE99F9F" Association="Self.FK__reports__account__6FE99F9F">
+            <End Role="accountant" EntitySet="accountant" />
+            <End Role="reports" EntitySet="reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__super_adm__user___59FA5E80" Association="Self.FK__super_adm__user___59FA5E80">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="super_admin" EntitySet="super_admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__user___role_id__5AEE82B9" Association="Self.FK__user___role_id__5AEE82B9">
+            <End Role="role" EntitySet="role" />
+            <End Role="user_" EntitySet="user_" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Radiology_centerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="accountant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="patient_id" Type="Int32" />
+          <NavigationProperty Name="patient_info" Relationship="Self.FK__accountan__patie__4CA06362" FromRole="accountant" ToRole="patient_info" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__accountan__user___4D94879B" FromRole="accountant" ToRole="user_" />
+          <NavigationProperty Name="reports" Relationship="Self.FK__reports__account__6FE99F9F" FromRole="accountant" ToRole="reports" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="branch_id" Type="Int32" />
+          <NavigationProperty Name="branch" Relationship="Self.FK__admin__branch_id__4E88ABD4" FromRole="admin" ToRole="branch" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__admin__user_id__4F7CD00D" FromRole="admin" ToRole="user_" />
+        </EntityType>
+        <EntityType Name="assisatant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__assisatan__user___5070F446" FromRole="assisatant" ToRole="user_" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__assis__75A278F5" FromRole="assisatant" ToRole="patient_data" />
+        </EntityType>
+        <EntityType Name="branch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="admins" Relationship="Self.FK__admin__branch_id__4E88ABD4" FromRole="branch" ToRole="admin" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="doctors" Relationship="Self.FK__doctor__dep_id__5165187F" FromRole="department" ToRole="doctor" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__dep_i__778AC167" FromRole="department" ToRole="patient_data" />
+          <NavigationProperty Name="rays" Relationship="Self.FK__ray__dep_id__59063A47" FromRole="department" ToRole="ray" />
+        </EntityType>
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="dep_id" Type="Int32" />
+          <NavigationProperty Name="department" Relationship="Self.FK__doctor__dep_id__5165187F" FromRole="doctor" ToRole="department" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__doctor__user_id__52593CB8" FromRole="doctor" ToRole="user_" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__docto__76969D2E" FromRole="doctor" ToRole="patient_data" />
+        </EntityType>
+        <EntityType Name="patient_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pay_status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="daydate" Type="DateTime" Precision="0" />
+          <Property Name="deliverdate" Type="DateTime" Precision="0" />
+          <Property Name="doctor_report" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="ray_id" Type="Int32" />
+          <Property Name="patient_id" Type="Int32" />
+          <Property Name="assistant_id" Type="Int32" />
+          <Property Name="doctor_id" Type="Int32" />
+          <Property Name="dep_id" Type="Int32" />
+          <NavigationProperty Name="assisatant" Relationship="Self.FK__patient_d__assis__75A278F5" FromRole="patient_data" ToRole="assisatant" />
+          <NavigationProperty Name="department" Relationship="Self.FK__patient_d__dep_i__778AC167" FromRole="patient_data" ToRole="department" />
+          <NavigationProperty Name="doctor" Relationship="Self.FK__patient_d__docto__76969D2E" FromRole="patient_data" ToRole="doctor" />
+          <NavigationProperty Name="patient_info" Relationship="Self.FK__patient_d__patie__74AE54BC" FromRole="patient_data" ToRole="patient_info" />
+          <NavigationProperty Name="ray" Relationship="Self.FK__patient_d__ray_i__73BA3083" FromRole="patient_data" ToRole="ray" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__patient_d__user___72C60C4A" FromRole="patient_data" ToRole="user_" />
+        </EntityType>
+        <EntityType Name="patient_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="Phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="accountants" Relationship="Self.FK__accountan__patie__4CA06362" FromRole="patient_info" ToRole="accountant" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__patie__74AE54BC" FromRole="patient_info" ToRole="patient_data" />
+        </EntityType>
+        <EntityType Name="ray">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="dep_id" Type="Int32" />
+          <NavigationProperty Name="department" Relationship="Self.FK__ray__dep_id__59063A47" FromRole="ray" ToRole="department" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__ray_i__73BA3083" FromRole="ray" ToRole="patient_data" />
+        </EntityType>
+        <EntityType Name="report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="accountant_id" Type="Int32" />
+          <NavigationProperty Name="accountant" Relationship="Self.FK__reports__account__6FE99F9F" FromRole="reports" ToRole="accountant" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__user___role_id__5AEE82B9" FromRole="role" ToRole="user_" />
+        </EntityType>
+        <EntityType Name="super_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__super_adm__user___59FA5E80" FromRole="super_admin" ToRole="user_" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="user_">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="role_id" Type="Int32" />
+          <NavigationProperty Name="accountants" Relationship="Self.FK__accountan__user___4D94879B" FromRole="user_" ToRole="accountant" />
+          <NavigationProperty Name="admins" Relationship="Self.FK__admin__user_id__4F7CD00D" FromRole="user_" ToRole="admin" />
+          <NavigationProperty Name="assisatants" Relationship="Self.FK__assisatan__user___5070F446" FromRole="user_" ToRole="assisatant" />
+          <NavigationProperty Name="doctors" Relationship="Self.FK__doctor__user_id__52593CB8" FromRole="user_" ToRole="doctor" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__user___72C60C4A" FromRole="user_" ToRole="patient_data" />
+          <NavigationProperty Name="role" Relationship="Self.FK__user___role_id__5AEE82B9" FromRole="user_" ToRole="role" />
+          <NavigationProperty Name="super_admin" Relationship="Self.FK__super_adm__user___59FA5E80" FromRole="user_" ToRole="super_admin" />
+        </EntityType>
+        <Association Name="FK__accountan__patie__4CA06362">
+          <End Role="patient_info" Type="Self.patient_info" Multiplicity="0..1" />
+          <End Role="accountant" Type="Self.accountant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accountant">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__accountan__user___4D94879B">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="accountant" Type="Self.accountant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accountant">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reports__account__6FE99F9F">
+          <End Role="accountant" Type="Self.accountant" Multiplicity="0..1" />
+          <End Role="reports" Type="Self.report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reports">
+              <PropertyRef Name="accountant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__admin__branch_id__4E88ABD4">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="admin" Type="Self.admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="admin">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__admin__user_id__4F7CD00D">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="admin" Type="Self.admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="admin">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__assisatan__user___5070F446">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="assisatant" Type="Self.assisatant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="assisatant">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__assis__75A278F5">
+          <End Role="assisatant" Type="Self.assisatant" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="assisatant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="assistant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__doctor__dep_id__5165187F">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doctor">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__dep_i__778AC167">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ray__dep_id__59063A47">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="ray" Type="Self.ray" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ray">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__doctor__user_id__52593CB8">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doctor">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__docto__76969D2E">
+          <End Role="doctor" Type="Self.doctor" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doctor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="doctor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__patie__74AE54BC">
+          <End Role="patient_info" Type="Self.patient_info" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="patient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__ray_i__73BA3083">
+          <End Role="ray" Type="Self.ray" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ray">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="ray_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__patient_d__user___72C60C4A">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__user___role_id__5AEE82B9">
+          <End Role="role" Type="Self.role" Multiplicity="0..1" />
+          <End Role="user_" Type="Self.user_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__super_adm__user___59FA5E80">
+          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
+          <End Role="super_admin" Type="Self.super_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="super_admin">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RadiologyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accountants" EntityType="Self.accountant" />
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="assisatants" EntityType="Self.assisatant" />
+          <EntitySet Name="branches" EntityType="Self.branch" />
+          <EntitySet Name="departments" EntityType="Self.department" />
+          <EntitySet Name="doctors" EntityType="Self.doctor" />
+          <EntitySet Name="patient_data" EntityType="Self.patient_data" />
+          <EntitySet Name="patient_info" EntityType="Self.patient_info" />
+          <EntitySet Name="rays" EntityType="Self.ray" />
+          <EntitySet Name="reports" EntityType="Self.report" />
+          <EntitySet Name="roles" EntityType="Self.role" />
+          <EntitySet Name="super_admin" EntityType="Self.super_admin" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="user_" EntityType="Self.user_" />
+          <AssociationSet Name="FK__accountan__patie__4CA06362" Association="Self.FK__accountan__patie__4CA06362">
+            <End Role="patient_info" EntitySet="patient_info" />
+            <End Role="accountant" EntitySet="accountants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__accountan__user___4D94879B" Association="Self.FK__accountan__user___4D94879B">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="accountant" EntitySet="accountants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reports__account__6FE99F9F" Association="Self.FK__reports__account__6FE99F9F">
+            <End Role="accountant" EntitySet="accountants" />
+            <End Role="reports" EntitySet="reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__admin__branch_id__4E88ABD4" Association="Self.FK__admin__branch_id__4E88ABD4">
+            <End Role="branch" EntitySet="branches" />
+            <End Role="admin" EntitySet="admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__admin__user_id__4F7CD00D" Association="Self.FK__admin__user_id__4F7CD00D">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="admin" EntitySet="admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__assisatan__user___5070F446" Association="Self.FK__assisatan__user___5070F446">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="assisatant" EntitySet="assisatants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__assis__75A278F5" Association="Self.FK__patient_d__assis__75A278F5">
+            <End Role="assisatant" EntitySet="assisatants" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__doctor__dep_id__5165187F" Association="Self.FK__doctor__dep_id__5165187F">
+            <End Role="department" EntitySet="departments" />
+            <End Role="doctor" EntitySet="doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__dep_i__778AC167" Association="Self.FK__patient_d__dep_i__778AC167">
+            <End Role="department" EntitySet="departments" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ray__dep_id__59063A47" Association="Self.FK__ray__dep_id__59063A47">
+            <End Role="department" EntitySet="departments" />
+            <End Role="ray" EntitySet="rays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__doctor__user_id__52593CB8" Association="Self.FK__doctor__user_id__52593CB8">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="doctor" EntitySet="doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__docto__76969D2E" Association="Self.FK__patient_d__docto__76969D2E">
+            <End Role="doctor" EntitySet="doctors" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__patie__74AE54BC" Association="Self.FK__patient_d__patie__74AE54BC">
+            <End Role="patient_info" EntitySet="patient_info" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__ray_i__73BA3083" Association="Self.FK__patient_d__ray_i__73BA3083">
+            <End Role="ray" EntitySet="rays" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__patient_d__user___72C60C4A" Association="Self.FK__patient_d__user___72C60C4A">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__user___role_id__5AEE82B9" Association="Self.FK__user___role_id__5AEE82B9">
+            <End Role="role" EntitySet="roles" />
+            <End Role="user_" EntitySet="user_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__super_adm__user___59FA5E80" Association="Self.FK__super_adm__user___59FA5E80">
+            <End Role="user_" EntitySet="user_" />
+            <End Role="super_admin" EntitySet="super_admin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Radiology_centerModelStoreContainer" CdmEntityContainer="RadiologyEntities">
+          <EntitySetMapping Name="accountants">
+            <EntityTypeMapping TypeName="Radiology_centerModel.accountant">
+              <MappingFragment StoreEntitySet="accountant">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="Radiology_centerModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="assisatants">
+            <EntityTypeMapping TypeName="Radiology_centerModel.assisatant">
+              <MappingFragment StoreEntitySet="assisatant">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="branches">
+            <EntityTypeMapping TypeName="Radiology_centerModel.branch">
+              <MappingFragment StoreEntitySet="branch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="Radiology_centerModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doctors">
+            <EntityTypeMapping TypeName="Radiology_centerModel.doctor">
+              <MappingFragment StoreEntitySet="doctor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patient_data">
+            <EntityTypeMapping TypeName="Radiology_centerModel.patient_data">
+              <MappingFragment StoreEntitySet="patient_data">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pay_status" ColumnName="pay_status" />
+                <ScalarProperty Name="daydate" ColumnName="daydate" />
+                <ScalarProperty Name="deliverdate" ColumnName="deliverdate" />
+                <ScalarProperty Name="doctor_report" ColumnName="doctor_report" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ray_id" ColumnName="ray_id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="assistant_id" ColumnName="assistant_id" />
+                <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+                <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patient_info">
+            <EntityTypeMapping TypeName="Radiology_centerModel.patient_info">
+              <MappingFragment StoreEntitySet="patient_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rays">
+            <EntityTypeMapping TypeName="Radiology_centerModel.ray">
+              <MappingFragment StoreEntitySet="ray">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reports">
+            <EntityTypeMapping TypeName="Radiology_centerModel.report">
+              <MappingFragment StoreEntitySet="reports">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="accountant_id" ColumnName="accountant_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="Radiology_centerModel.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="super_admin">
+            <EntityTypeMapping TypeName="Radiology_centerModel.super_admin">
+              <MappingFragment StoreEntitySet="super_admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Radiology_centerModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_">
+            <EntityTypeMapping TypeName="Radiology_centerModel.user_">
+              <MappingFragment StoreEntitySet="user_">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

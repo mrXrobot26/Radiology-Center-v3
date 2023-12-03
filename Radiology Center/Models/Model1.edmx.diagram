@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83db8813f3db43e8bf197f6f3ea09079" Name="Diagram1">
+        <EntityTypeShape EntityType="Radiology_centerModel.accountant" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.admin" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.assisatant" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.branch" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.department" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.doctor" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.patient_data" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.patient_info" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.ray" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.report" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.role" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.super_admin" Width="1.5" PointX="5.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.user_" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="Radiology_centerModel.FK__accountan__patie__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__accountan__user___4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__reports__account__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__admin__branch_id__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__admin__user_id__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__assisatan__user___5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__assis__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__doctor__dep_id__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__dep_i__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__ray__dep_id__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__doctor__user_id__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__docto__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__patie__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__ray_i__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__patient_d__user___72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__user___role_id__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="Radiology_centerModel.FK__super_adm__user___59FA5E80" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
