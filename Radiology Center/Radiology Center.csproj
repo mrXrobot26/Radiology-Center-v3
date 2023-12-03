@@ -68,7 +68,7 @@
     <Compile Include="Screens\Forms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Forms\LogIn.Designer.cs">
+    <Compile Include="Screens\Forms\LogIn.designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Forms\Profile.cs">
@@ -77,29 +77,15 @@
     <Compile Include="Screens\Forms\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Forms\try.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Forms\try.Designer.cs">
-      <DependentUpon>try.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Screens\Forms\Docter.resx">
       <DependentUpon>Docter.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="Screens\Forms\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\icons8-admin-settings-male-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-male-user-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\addEmp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
