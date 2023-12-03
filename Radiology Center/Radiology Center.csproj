@@ -59,6 +59,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\Docter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +84,10 @@
     </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Docter.resx">
       <DependentUpon>Docter.cs</DependentUpon>
@@ -164,7 +173,10 @@
     <None Include="Images\icons8-male-user-24 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\addEmp.png" />
+    <Folder Include="Images\Ahd\" />
+    <Folder Include="Images\Bessa\" />
+    <Folder Include="Images\Doaa\" />
+    <Folder Include="Images\Mayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

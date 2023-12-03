@@ -51,5 +51,10 @@ namespace Radiology_Center.Screens.Forms
 		{
 
 		}
-	}
+
+        private void foxLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
