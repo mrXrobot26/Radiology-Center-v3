@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor, Version=3.7.9.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReaLTaiizor.3.7.9.7\lib\net481\ReaLTaiizor.dll</HintPath>
@@ -40,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +68,30 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Acountant\Acountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Acountant\Acountant.Designer.cs">
+      <DependentUpon>Acountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Assistant\AssistantPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Assistant\AssistantPage.Designer.cs">
+      <DependentUpon>AssistantPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Doctor\DoctorPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Doctor\DoctorPage.Designer.cs">
+      <DependentUpon>DoctorPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Forms\Docter.cs">
       <SubType>Form</SubType>
@@ -88,12 +117,30 @@
     <Compile Include="Screens\Forms\Profile_W.Designer.cs">
       <DependentUpon>Profile_W.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\SuperAdmin\SuperAdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\SuperAdmin\SuperAdminPage.Designer.cs">
+      <DependentUpon>SuperAdminPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Acountant\Acountant.resx">
+      <DependentUpon>Acountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Assistant\AssistantPage.resx">
+      <DependentUpon>AssistantPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Doctor\DoctorPage.resx">
+      <DependentUpon>DoctorPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Docter.resx">
       <DependentUpon>Docter.cs</DependentUpon>
@@ -106,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile_W.resx">
       <DependentUpon>Profile_W.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\SuperAdmin\SuperAdminPage.resx">
+      <DependentUpon>SuperAdminPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
