@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a7f0f7493a704d5a8e3810a51ac77478" Name="Diagram1">
+      <Diagram DiagramId="a7f0f7493a704d5a8e3810a51ac77478" Name="Diagram1" ZoomLevel="125">
         <EntityTypeShape EntityType="Radiology_centerModel.accountant" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.admin" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.assisatant" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.branch" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.department" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Radiology_centerModel.doctor" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Radiology_centerModel.doctor" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.patient_data" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.patient_info" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.ray" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />

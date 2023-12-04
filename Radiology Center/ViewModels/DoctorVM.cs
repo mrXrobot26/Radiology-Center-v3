@@ -10,7 +10,6 @@ namespace Radiology_Center.ViewModels
     {
         public int Id { get; set; }
         public string DoctorFullName { get; set; }
-
         public decimal Salary { get; set; }
         public DateTime? BirthDate { get; set; }
         public string PhoneNumber { get; set; }

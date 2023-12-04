@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Radiology_centerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Radiology_centerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="accountant">
           <Key>
             <PropertyRef Name="id" />
@@ -76,6 +76,7 @@
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
           <Property Name="user_id" Type="int" />
           <Property Name="dep_id" Type="int" />
+          <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="patient_data">
@@ -453,8 +454,7 @@
             <End Role="user_" EntitySet="user_" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Radiology_centerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -544,6 +544,7 @@
           <NavigationProperty Name="department" Relationship="Self.FK__doctor__dep_id__5165187F" FromRole="doctor" ToRole="department" />
           <NavigationProperty Name="user_" Relationship="Self.FK__doctor__user_id__52593CB8" FromRole="doctor" ToRole="user_" />
           <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__docto__76969D2E" FromRole="doctor" ToRole="patient_data" />
+          <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="patient_data">
           <Key>
@@ -1012,6 +1013,7 @@
           <EntitySetMapping Name="doctors">
             <EntityTypeMapping TypeName="Radiology_centerModel.doctor">
               <MappingFragment StoreEntitySet="doctor">
+                <ScalarProperty Name="nationalID" ColumnName="nationalID" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fName" ColumnName="fName" />
                 <ScalarProperty Name="lName" ColumnName="lName" />

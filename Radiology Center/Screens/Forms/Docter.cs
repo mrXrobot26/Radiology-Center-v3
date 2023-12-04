@@ -59,5 +59,10 @@ namespace Radiology_Center.Screens.Forms
         {
 
         }
+
+        private void Phone_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

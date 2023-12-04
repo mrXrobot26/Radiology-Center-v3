@@ -314,6 +314,7 @@
     <Folder Include="Images\Bessa\" />
     <Folder Include="Images\Doaa\" />
     <Folder Include="Images\Mayer\" />
+    <Folder Include="Screens\AddDepartment\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

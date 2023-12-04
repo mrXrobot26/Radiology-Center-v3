@@ -47,7 +47,9 @@ namespace Radiology_Center
 
         private void btn_profile_Click(object sender, EventArgs e)
         {
-
+            ResetButtonColors();
+            btn_profile.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "My Profile";
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -90,5 +92,69 @@ namespace Radiology_Center
         {
 
         }
+
+        private void grd_doctors_sAdmin_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_departments_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_departments.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Department";
+
+        }
+
+        private void btn_doc_names_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Doctor";
+
+        }
+
+        private void btn_patient_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_patient.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Patient";
+
+        }
+
+        private void btn_assistant_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_assistant.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Assistant";
+
+        }
+
+        private void btn_accountant_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_accountant.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Accountant";
+
+        }
+
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_admin.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Admin";
+
+        }
+        private void ResetButtonColors()
+        {
+            btn_profile.BackColor = Color.FromArgb(20, 39, 55);
+            btn_departments.BackColor = Color.FromArgb(20, 39, 55);
+            btn_doc_names.BackColor = Color.FromArgb(20, 39, 55);
+            btn_patient.BackColor = Color.FromArgb(20, 39, 55);
+            btn_assistant.BackColor = Color.FromArgb(20, 39, 55);
+            btn_accountant.BackColor = Color.FromArgb(20, 39, 55);
+            btn_admin.BackColor = Color.FromArgb(20, 39, 55);
+        }
+
     }
 }
