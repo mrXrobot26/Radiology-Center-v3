@@ -17,7 +17,8 @@ namespace Radiology_Center
     public partial class SuperAdminPage : Form
     {
         RadiologyEntities _db = new RadiologyEntities();
-        private void DataGridViewForDoctor()
+
+        public void DataGridViewForDoctor()
         {
             var res = from Doc in _db.doctors
                       join Dep in _db.departments on Doc.dep_id equals Dep.id
@@ -156,5 +157,19 @@ namespace Radiology_Center
             btn_admin.BackColor = Color.FromArgb(20, 39, 55);
         }
 
+        private void brn_refresh_Click(object sender, EventArgs e)
+        {
+            DataGridViewForDoctor();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
