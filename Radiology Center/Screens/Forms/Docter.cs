@@ -18,6 +18,8 @@ namespace Radiology_Center.Screens.Forms
 		public Docter()
 		{
 			InitializeComponent();
+			comb_role.Items.AddRange(_db.roles.Select(x=>x.role_name).ToArray());
+			comb_role.SelectedIndex = 2;
 		}
 
 		private void pictureBox2_Click(object sender, EventArgs e)
@@ -51,6 +53,11 @@ namespace Radiology_Center.Screens.Forms
 			{ 
 
 			}
+        }
+
+        private void comb_role_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

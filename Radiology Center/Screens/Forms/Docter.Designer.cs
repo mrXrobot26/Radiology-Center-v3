@@ -68,9 +68,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(592, 57);
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(488, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(453, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -104,7 +104,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-11, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -240,7 +240,7 @@
             this.Male_CheckBox.LinearGradient_Background = false;
             this.Male_CheckBox.LinearGradientPen = false;
             this.Male_CheckBox.Location = new System.Drawing.Point(0, 11);
-            this.Male_CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Male_CheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.Male_CheckBox.Name = "Male_CheckBox";
             this.Male_CheckBox.RGB = false;
             this.Male_CheckBox.Rounding = true;
@@ -279,7 +279,7 @@
             this.Female_CheckBox.LinearGradient_Background = false;
             this.Female_CheckBox.LinearGradientPen = false;
             this.Female_CheckBox.Location = new System.Drawing.Point(0, 53);
-            this.Female_CheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Female_CheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.Female_CheckBox.Name = "Female_CheckBox";
             this.Female_CheckBox.RGB = false;
             this.Female_CheckBox.Rounding = true;
@@ -298,7 +298,7 @@
             this.picBx_add.BackColor = System.Drawing.Color.Transparent;
             this.picBx_add.Image = ((System.Drawing.Image)(resources.GetObject("picBx_add.Image")));
             this.picBx_add.Location = new System.Drawing.Point(64, 119);
-            this.picBx_add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBx_add.Margin = new System.Windows.Forms.Padding(2);
             this.picBx_add.Name = "picBx_add";
             this.picBx_add.Size = new System.Drawing.Size(90, 91);
             this.picBx_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -376,15 +376,17 @@
             this.comb_role.BorderThickness = 2;
             this.comb_role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comb_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comb_role.Enabled = false;
             this.comb_role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comb_role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comb_role.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comb_role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comb_role.ItemHeight = 30;
-            this.comb_role.Location = new System.Drawing.Point(63, 391);
+            this.comb_role.Location = new System.Drawing.Point(61, 382);
             this.comb_role.Name = "comb_role";
             this.comb_role.Size = new System.Drawing.Size(181, 36);
             this.comb_role.TabIndex = 46;
+            this.comb_role.SelectedIndexChanged += new System.EventHandler(this.comb_role_SelectedIndexChanged);
             // 
             // txt_Fname
             // 
@@ -548,7 +550,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Docter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
