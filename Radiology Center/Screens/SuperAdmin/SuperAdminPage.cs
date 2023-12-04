@@ -11,6 +11,8 @@ using System.Drawing.Drawing2D;
 using Radiology_Center.Models;
 using Radiology_Center.ViewModels;
 using Radiology_Center.Screens.Forms;
+using Radiology_Center.Screens.Forms.Department;
+using System.Runtime.Remoting.Contexts;
 
 namespace Radiology_Center
 {
@@ -36,15 +38,57 @@ namespace Radiology_Center
             grd_doctors_sAdmin.DataSource = DoctorDataList;
             grd_doctors_sAdmin.AutoGenerateColumns = true;
         }
+        public void DataGridViewForDepartment()
+        {
+            var res = _db.departments.Select(x => new { x.id, x.name });
+            var depDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = depDataList;
+            grd_doctors_sAdmin.AutoGenerateColumns = true;
+        }
+
+        public void DataGridViewForPatiant()
+        {
+            var res = from pd in _db.patient_data
+                        join pi in _db.patient_info on pd.id equals pi.id
+                        join d in _db.doctors on pd.doctor_id equals d.id
+                        join dep in _db.departments on d.dep_id equals dep.id
+                        join r in _db.rays on pd.ray_id equals r.id
+                        select new
+                        {
+                            Name = pi.fName + " " + pi.lName,
+                            Status = pd.pay_status,
+                            Date = pd.daydate,
+                            Report = pd.doctor_report,
+                            Doctor = d.fName + " " + d.lName,
+                            department = dep.name,
+                            Ray =r.name,
+                        };
+            var patiantDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = patiantDataList;
+            grd_doctors_sAdmin.AutoGenerateColumns = true;
+        }
+
+
+
+
+
+
+
         public SuperAdminPage()
         {
+
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+            lbl_generl.Text = "Doctor";
             DataGridViewForDoctor();
-
-
         }
+
+
+
+
+
+
 
         private void btn_profile_Click(object sender, EventArgs e)
         {
@@ -85,8 +129,17 @@ namespace Radiology_Center
 
         private void btn_addDoctor_Click(object sender, EventArgs e)
         {
-            Docter docter = new Docter();
-            docter.ShowDialog();
+            if (lbl_generl.Text == "Doctor")
+            {
+                Docter docter = new Docter();
+                docter.ShowDialog();
+            }
+            else if(lbl_generl.Text == "Department")
+            {
+                DepartmentForm dep = new DepartmentForm();
+                dep.Show();
+            }
+
         }
 
         private void grd_doctors_sAdmin_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -104,6 +157,7 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_departments.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Department";
+            DataGridViewForDepartment();
 
         }
 
@@ -112,6 +166,8 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Doctor";
+            DataGridViewForDoctor();
+
 
         }
 
@@ -120,6 +176,10 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_patient.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Patient";
+
+            DataGridViewForPatiant();
+
+
 
         }
 
@@ -168,6 +228,11 @@ namespace Radiology_Center
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

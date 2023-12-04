@@ -104,17 +104,12 @@ namespace Radiology_Center.Screens.Forms
                 guna2CirclePictureBox1.ImageLocation = openFileDialog.FileName;
 
             }
-        } 
+        }
 
-        //     private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        //     {
-        //OpenFileDialog openFileDialog = new OpenFileDialog();
-        //if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //{
-        //	oldPath = openFileDialog.FileName;
-        //             guna2CirclePictureBox1.ImageLocation = openFileDialog.FileName;
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        //         }
-        //     }
     }
 }
