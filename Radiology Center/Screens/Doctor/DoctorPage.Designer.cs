@@ -45,7 +45,6 @@
 			this.btn_patient = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.button1 = new System.Windows.Forms.Button();
 			this.panel7.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).BeginInit();
@@ -286,21 +285,11 @@
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(487, 945);
 			this.flowLayoutPanel1.TabIndex = 16;
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(1134, 358);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 18;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// DoctorPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1942, 945);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.panel7);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.flowLayoutPanel1);
@@ -340,6 +329,5 @@
         private System.Windows.Forms.Button btn_patient;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-		private System.Windows.Forms.Button button1;
 	}
 }
