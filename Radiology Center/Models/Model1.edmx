@@ -16,9 +16,9 @@
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
-          <Property Name="image" Type="image" />
           <Property Name="user_id" Type="int" />
           <Property Name="patient_id" Type="int" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="admin">
           <Key>
@@ -31,9 +31,9 @@
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
-          <Property Name="image" Type="image" />
           <Property Name="user_id" Type="int" />
           <Property Name="branch_id" Type="int" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="assisatant">
           <Key>
@@ -46,8 +46,8 @@
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
-          <Property Name="image" Type="image" />
           <Property Name="user_id" Type="int" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="branch">
           <Key>
@@ -74,9 +74,9 @@
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
-          <Property Name="image" Type="image" />
           <Property Name="user_id" Type="int" />
           <Property Name="dep_id" Type="int" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="patient_data">
           <Key>
@@ -143,8 +143,8 @@
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar" MaxLength="11" />
           <Property Name="gender" Type="nvarchar" MaxLength="6" />
-          <Property Name="image" Type="image" />
           <Property Name="user_id" Type="int" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -469,9 +469,9 @@
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="patient_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="patient_info" Relationship="Self.FK__accountan__patie__4CA06362" FromRole="accountant" ToRole="patient_info" />
           <NavigationProperty Name="user_" Relationship="Self.FK__accountan__user___4D94879B" FromRole="accountant" ToRole="user_" />
           <NavigationProperty Name="reports" Relationship="Self.FK__reports__account__6FE99F9F" FromRole="accountant" ToRole="reports" />
@@ -487,9 +487,9 @@
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="branch_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="branch" Relationship="Self.FK__admin__branch_id__4E88ABD4" FromRole="admin" ToRole="branch" />
           <NavigationProperty Name="user_" Relationship="Self.FK__admin__user_id__4F7CD00D" FromRole="admin" ToRole="user_" />
         </EntityType>
@@ -504,8 +504,8 @@
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="user_" Relationship="Self.FK__assisatan__user___5070F446" FromRole="assisatant" ToRole="user_" />
           <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__assis__75A278F5" FromRole="assisatant" ToRole="patient_data" />
         </EntityType>
@@ -538,9 +538,9 @@
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="dep_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="department" Relationship="Self.FK__doctor__dep_id__5165187F" FromRole="doctor" ToRole="department" />
           <NavigationProperty Name="user_" Relationship="Self.FK__doctor__user_id__52593CB8" FromRole="doctor" ToRole="user_" />
           <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__docto__76969D2E" FromRole="doctor" ToRole="patient_data" />
@@ -622,8 +622,8 @@
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_id" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="user_" Relationship="Self.FK__super_adm__user___59FA5E80" FromRole="super_admin" ToRole="user_" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -956,9 +956,9 @@
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -972,9 +972,9 @@
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -988,8 +988,8 @@
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1019,9 +1019,9 @@
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1094,8 +1094,8 @@
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

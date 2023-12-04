@@ -16,5 +16,10 @@ namespace Radiology_Center.Screens.Doctor
         {
             InitializeComponent();
         }
+
+        private void DoctorPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

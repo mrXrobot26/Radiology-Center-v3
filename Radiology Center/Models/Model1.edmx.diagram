@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="83db8813f3db43e8bf197f6f3ea09079" Name="Diagram1">
+      <Diagram DiagramId="a7f0f7493a704d5a8e3810a51ac77478" Name="Diagram1">
         <EntityTypeShape EntityType="Radiology_centerModel.accountant" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.admin" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Radiology_centerModel.assisatant" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />

@@ -63,7 +63,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(365, 51);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(435, 70);
+            this.panel7.Size = new System.Drawing.Size(1168, 70);
             this.panel7.TabIndex = 17;
             // 
             // guna2TextBox1
@@ -220,7 +220,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(296, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1029, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -237,7 +237,7 @@
             this.panel1.Location = new System.Drawing.Point(365, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 51);
+            this.panel1.Size = new System.Drawing.Size(1168, 51);
             this.panel1.TabIndex = 15;
             // 
             // btn_patient
@@ -278,20 +278,21 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 768);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
             // DoctorPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1533, 768);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoctorPage";
             this.Text = "DoctorPage";
+            this.Load += new System.EventHandler(this.DoctorPage_Load);
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
