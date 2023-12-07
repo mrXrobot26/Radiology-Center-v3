@@ -82,10 +82,13 @@ namespace Radiology_Center
         }
 
 
-
-
-
-
+        //public void DataGridViewForAssistant()
+        //{
+            
+        //    var patiantDataList = res.ToList();
+        //    grd_doctors_sAdmin.DataSource = patiantDataList;
+        //    grd_doctors_sAdmin.AutoGenerateColumns = true;
+        //}
 
 
 
@@ -186,7 +189,7 @@ namespace Radiology_Center
             btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Doctor";
             CheckLabelAndSetButtonVisibility();
-
+            
             DataGridViewForDoctor();
 
 
