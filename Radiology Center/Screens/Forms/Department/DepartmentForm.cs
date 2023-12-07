@@ -13,6 +13,7 @@ namespace Radiology_Center.Screens.Forms.Department
 {
     public partial class DepartmentForm : Form
     {
+        RadiologyEntities _db = new RadiologyEntities();
         public DepartmentForm()
         {
             InitializeComponent();
@@ -24,6 +25,10 @@ namespace Radiology_Center.Screens.Forms.Department
             {
                 name = txt_department.Text
             };
+            _db.departments.Add(department);
+            _db.SaveChanges();
+            MessageBox.Show($" {department.name} add Successfully");
+            this.Close();
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

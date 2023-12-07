@@ -27,10 +27,10 @@ namespace Radiology_Center.Models
         public Nullable<System.DateTime> birthdate { get; set; }
         public string phone_number { get; set; }
         public string gender { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public Nullable<int> dep_id { get; set; }
         public string nationalID { get; set; }
         public string image { get; set; }
+        public Nullable<int> user_id { get; set; }
+        public Nullable<int> dep_id { get; set; }
     
         public virtual department department { get; set; }
         public virtual user_ user_ { get; set; }

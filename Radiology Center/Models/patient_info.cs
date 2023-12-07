@@ -24,6 +24,7 @@ namespace Radiology_Center.Models
         public int id { get; set; }
         public string fName { get; set; }
         public string lName { get; set; }
+        public string nationalID { get; set; }
         public Nullable<System.DateTime> birthdate { get; set; }
         public string Phone_number { get; set; }
         public string gender { get; set; }

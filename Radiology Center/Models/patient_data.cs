@@ -18,6 +18,7 @@ namespace Radiology_Center.Models
         public string pay_status { get; set; }
         public Nullable<System.DateTime> daydate { get; set; }
         public Nullable<System.DateTime> deliverdate { get; set; }
+        public string history { get; set; }
         public string doctor_report { get; set; }
         public Nullable<int> user_id { get; set; }
         public Nullable<int> ray_id { get; set; }
