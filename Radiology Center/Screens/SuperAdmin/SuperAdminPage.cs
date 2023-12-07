@@ -13,6 +13,8 @@ using Radiology_Center.ViewModels;
 using Radiology_Center.Screens.Forms;
 using Radiology_Center.Screens.Forms.Department;
 using System.Runtime.Remoting.Contexts;
+using Radiology_Center.Screens.Forms.Assistant;
+using Radiology_Center.Screens.Forms.Acountant;
 
 namespace Radiology_Center
 {
@@ -82,16 +84,39 @@ namespace Radiology_Center
         }
 
 
-        //public void DataGridViewForAssistant()
-        //{
-            
-        //    var patiantDataList = res.ToList();
-        //    grd_doctors_sAdmin.DataSource = patiantDataList;
-        //    grd_doctors_sAdmin.AutoGenerateColumns = true;
-        //}
+        public void DataGridViewForAssistant()
+        {
+            var res = _db.assisatants.Select(x => new
+            {
+                Name = x.fName + " " + x.lName,
+                Salary = (decimal)x.salary,
+                Birthdate = x.birthdate,
+                PhoneNumber = x.phone_number,
+                Gender = x.gender,
+                NationalID = x.nationalID,
+            });
+            var assistantDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = assistantDataList;
+            grd_doctors_sAdmin.AutoGenerateColumns = true;
+        }
 
 
 
+        public void DataGridViewForAcountant()
+        {
+            var res = _db.accountants.Select(x => new
+            {
+                Name = x.fName + " " + x.lName,
+                Salary = (decimal)x.salary,
+                Birthdate = x.birthdate,
+                PhoneNumber = x.phone_number,
+                Gender = x.gender,
+                NationalID = x.nationalID,
+            });
+            var assistantDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = assistantDataList;
+            grd_doctors_sAdmin.AutoGenerateColumns = true;
+        }
 
 
 
@@ -104,9 +129,6 @@ namespace Radiology_Center
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'radiology_centerDataSet4.Doctor' table. You can move, or remove it, as needed.
-            // TODO: This line of code loads data into the 'radiology_centerDataSet2.Doctor' table. You can move, or remove it, as needed.
-            // TODO: This line of code loads data into the 'radiology_centerDataSet1.Doctor' table. You can move, or remove it, as needed.
 
             this.Bounds = Screen.PrimaryScreen.Bounds;
 
@@ -150,7 +172,30 @@ namespace Radiology_Center
 
                 dep.Show();
             }
+            else if (lbl_generl.Text == "Assistant")
+            {
+                Assistant assis = new Assistant();
 
+                assis.AssistantAdd += OnAssistantAdded;
+
+                assis.Show();
+            }
+            else if (lbl_generl.Text == "Accountant")
+            {
+                AcountantForm acc = new AcountantForm();
+
+                acc.AccountantAdd += OnAcountantAdded;
+
+                acc.Show();
+            }
+        }
+        private void OnAcountantAdded()
+        {
+            DataGridViewForAcountant();
+        }
+        private void OnAssistantAdded()
+        {
+            DataGridViewForAssistant();
         }
         private void OnDoctorAdded()
         {
@@ -229,7 +274,7 @@ namespace Radiology_Center
             btn_assistant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Assistant";
             CheckLabelAndSetButtonVisibility();
-
+            DataGridViewForAssistant();
         }
 
         private void btn_accountant_Click(object sender, EventArgs e)
@@ -238,6 +283,7 @@ namespace Radiology_Center
             btn_accountant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Accountant";
             CheckLabelAndSetButtonVisibility();
+            DataGridViewForAcountant();
 
 
         }
@@ -263,14 +309,7 @@ namespace Radiology_Center
 
         private void brn_refresh_Click(object sender, EventArgs e)
         {
-            if (lbl_generl.Text == "Doctor")
-            {
-                DataGridViewForDoctor();
-            }
-            else if (lbl_generl.Text == "Department")
-            {
-                DataGridViewForDepartment();
-            }
+
 
         }
 

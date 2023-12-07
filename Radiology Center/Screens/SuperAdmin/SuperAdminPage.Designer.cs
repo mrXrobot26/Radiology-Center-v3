@@ -56,12 +56,12 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.btn_admin = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.brn_refresh = new ReaLTaiizor.Controls.AloneButton();
+            this.txt_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_search = new Guna.UI2.WinForms.Guna2Button();
             this.btn_addDoctor = new Guna.UI2.WinForms.Guna2Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.grd_doctors_sAdmin = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.brn_refresh = new ReaLTaiizor.Controls.AloneButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -413,8 +413,8 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.brn_refresh);
-            this.panel10.Controls.Add(this.guna2TextBox1);
-            this.panel10.Controls.Add(this.guna2Button2);
+            this.panel10.Controls.Add(this.txt_search);
+            this.panel10.Controls.Add(this.btn_search);
             this.panel10.Controls.Add(this.btn_addDoctor);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(365, 43);
@@ -422,43 +422,56 @@
             this.panel10.Size = new System.Drawing.Size(1505, 70);
             this.panel10.TabIndex = 15;
             // 
-            // guna2TextBox1
+            // brn_refresh
             // 
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(36, 16);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(332, 39);
-            this.guna2TextBox1.TabIndex = 12;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.brn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brn_refresh.EnabledCalc = true;
+            this.brn_refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.brn_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.brn_refresh.Location = new System.Drawing.Point(1209, 16);
+            this.brn_refresh.Name = "brn_refresh";
+            this.brn_refresh.Size = new System.Drawing.Size(120, 39);
+            this.brn_refresh.TabIndex = 15;
+            this.brn_refresh.Text = "Refresh";
+            this.brn_refresh.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.brn_refresh_Click);
             // 
-            // guna2Button2
+            // txt_search
             // 
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(374, 16);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(61, 39);
-            this.guna2Button2.TabIndex = 13;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.txt_search.BorderRadius = 5;
+            this.txt_search.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search.DefaultText = "";
+            this.txt_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search.Location = new System.Drawing.Point(36, 16);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PasswordChar = '\0';
+            this.txt_search.PlaceholderText = "Search";
+            this.txt_search.SelectedText = "";
+            this.txt_search.Size = new System.Drawing.Size(332, 39);
+            this.txt_search.TabIndex = 12;
+            this.txt_search.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
+            // btn_search
+            // 
+            this.btn_search.BorderRadius = 5;
+            this.btn_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
+            this.btn_search.Location = new System.Drawing.Point(374, 16);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(61, 39);
+            this.btn_search.TabIndex = 13;
+            this.btn_search.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // btn_addDoctor
             // 
@@ -542,19 +555,6 @@
             this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.grd_doctors_sAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_doctors_sAdmin_CellContentClick_2);
             // 
-            // brn_refresh
-            // 
-            this.brn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.brn_refresh.EnabledCalc = true;
-            this.brn_refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.brn_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.brn_refresh.Location = new System.Drawing.Point(1209, 16);
-            this.brn_refresh.Name = "brn_refresh";
-            this.brn_refresh.Size = new System.Drawing.Size(120, 39);
-            this.brn_refresh.TabIndex = 15;
-            this.brn_refresh.Text = "Refresh";
-            this.brn_refresh.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.brn_refresh_Click);
-            // 
             // SuperAdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,8 +622,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox txt_search;
+        private Guna.UI2.WinForms.Guna2Button btn_search;
         private Guna.UI2.WinForms.Guna2Button btn_addDoctor;
         private ReaLTaiizor.Controls.BigLabel lbl_generl;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
