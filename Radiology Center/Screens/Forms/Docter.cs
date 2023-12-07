@@ -16,6 +16,10 @@ namespace Radiology_Center.Screens.Forms
 {
     public partial class Docter : Form
     {
+        public delegate void DoctorAddEventHandler();
+
+        public event DoctorAddEventHandler DoctorAdd;
+        
         RadiologyEntities _db = new RadiologyEntities();
         string oldPath = "";
 
@@ -75,6 +79,9 @@ namespace Radiology_Center.Screens.Forms
                 _db.user_.Add(user);
                 _db.SaveChanges();
                 MessageBox.Show($"{doctor.fName} {doctor.lName} add Successfully");
+
+                DoctorAdd?.Invoke();
+
                 this.Close();
 
             }

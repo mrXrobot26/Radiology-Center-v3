@@ -13,6 +13,10 @@ namespace Radiology_Center.Screens.Forms.Department
 {
     public partial class DepartmentForm : Form
     {
+        public delegate void DepartmentAddedEventHandler();
+
+        public event DepartmentAddedEventHandler DepartmentAdded;
+
         RadiologyEntities _db = new RadiologyEntities();
         public DepartmentForm()
         {
@@ -28,6 +32,9 @@ namespace Radiology_Center.Screens.Forms.Department
             _db.departments.Add(department);
             _db.SaveChanges();
             MessageBox.Show($" {department.name} add Successfully");
+
+            DepartmentAdded?.Invoke();
+
             this.Close();
         }
 

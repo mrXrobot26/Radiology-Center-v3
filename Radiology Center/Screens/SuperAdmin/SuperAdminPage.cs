@@ -20,6 +20,19 @@ namespace Radiology_Center
     {
         RadiologyEntities _db = new RadiologyEntities();
 
+
+        public SuperAdminPage()
+        {
+
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            lbl_generl.Text = "Doctor";
+            DataGridViewForDoctor();
+
+        }
+
+
         public void DataGridViewForDoctor()
         {
             var res = from Doc in _db.doctors
@@ -74,17 +87,6 @@ namespace Radiology_Center
 
 
 
-        public SuperAdminPage()
-        {
-
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
-            lbl_generl.Text = "Doctor";
-            DataGridViewForDoctor();
-        }
-
-
 
 
 
@@ -132,14 +134,28 @@ namespace Radiology_Center
             if (lbl_generl.Text == "Doctor")
             {
                 Docter docter = new Docter();
+
+                docter.DoctorAdd += OnDoctorAdded;
+
                 docter.ShowDialog();
             }
             else if(lbl_generl.Text == "Department")
             {
                 DepartmentForm dep = new DepartmentForm();
+
+                dep.DepartmentAdded += OnDepartmentAdded; 
+
                 dep.Show();
             }
 
+        }
+        private void OnDoctorAdded()
+        {
+            DataGridViewForDoctor();
+        }
+        private void OnDepartmentAdded()
+        {
+            DataGridViewForDepartment();
         }
 
         private void grd_doctors_sAdmin_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -157,7 +173,10 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_departments.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Department";
+            CheckLabelAndSetButtonVisibility();
+
             DataGridViewForDepartment();
+
 
         }
 
@@ -166,6 +185,8 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Doctor";
+            CheckLabelAndSetButtonVisibility();
+
             DataGridViewForDoctor();
 
 
@@ -173,21 +194,38 @@ namespace Radiology_Center
 
         private void btn_patient_Click(object sender, EventArgs e)
         {
+
             ResetButtonColors();
             btn_patient.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Patient";
+
+            CheckLabelAndSetButtonVisibility();
 
             DataGridViewForPatiant();
 
 
 
         }
+        private void CheckLabelAndSetButtonVisibility()
+        {
+            if (lbl_generl.Text != "Patient")
+            {
+                btn_addDoctor.Visible = true;
+                brn_refresh.Visible = true;
+            }
+            else
+            {
+                btn_addDoctor.Visible = false;
+                brn_refresh.Visible = false;
+            }
 
+        }
         private void btn_assistant_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
             btn_assistant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Assistant";
+            CheckLabelAndSetButtonVisibility();
 
         }
 
@@ -196,6 +234,8 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_accountant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Accountant";
+            CheckLabelAndSetButtonVisibility();
+
 
         }
 
@@ -204,6 +244,7 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_admin.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Admin";
+            CheckLabelAndSetButtonVisibility();
 
         }
         private void ResetButtonColors()
@@ -219,7 +260,15 @@ namespace Radiology_Center
 
         private void brn_refresh_Click(object sender, EventArgs e)
         {
-            DataGridViewForDoctor();
+            if (lbl_generl.Text == "Doctor")
+            {
+                DataGridViewForDoctor();
+            }
+            else if (lbl_generl.Text == "Department")
+            {
+                DataGridViewForDepartment();
+            }
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
