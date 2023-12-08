@@ -32,9 +32,9 @@
             this.panel_Side = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.User_TBox = new ReaLTaiizor.Controls.BigTextBox();
-            this.Pass_TBox = new ReaLTaiizor.Controls.BigTextBox();
-            this.User_label = new System.Windows.Forms.Label();
+            this.txt_email = new ReaLTaiizor.Controls.BigTextBox();
+            this.txt_password = new ReaLTaiizor.Controls.BigTextBox();
+            this.lbl_email = new System.Windows.Forms.Label();
             this.Pass_Label = new System.Windows.Forms.Label();
             this.Log_btn = new System.Windows.Forms.Button();
             this.Cancle_btn = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.panel_Side.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(50)))));
             this.panel_Side.Controls.Add(this.pictureBox1);
             this.panel_Side.Location = new System.Drawing.Point(-1, -1);
-            this.panel_Side.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_Side.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Side.Name = "panel_Side";
             this.panel_Side.Size = new System.Drawing.Size(320, 420);
             this.panel_Side.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(25)))), ((int)(((byte)(50)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(317, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +83,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(640, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(609, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -92,53 +92,53 @@
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 3;
             // 
-            // User_TBox
+            // txt_email
             // 
-            this.User_TBox.BackColor = System.Drawing.Color.Transparent;
-            this.User_TBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.User_TBox.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.User_TBox.ForeColor = System.Drawing.Color.DimGray;
-            this.User_TBox.Image = null;
-            this.User_TBox.Location = new System.Drawing.Point(390, 115);
-            this.User_TBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.User_TBox.MaxLength = 32767;
-            this.User_TBox.Multiline = false;
-            this.User_TBox.Name = "User_TBox";
-            this.User_TBox.ReadOnly = false;
-            this.User_TBox.Size = new System.Drawing.Size(269, 41);
-            this.User_TBox.TabIndex = 5;
-            this.User_TBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.User_TBox.UseSystemPasswordChar = false;
+            this.txt_email.BackColor = System.Drawing.Color.Transparent;
+            this.txt_email.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_email.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txt_email.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_email.Image = null;
+            this.txt_email.Location = new System.Drawing.Point(390, 115);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_email.MaxLength = 32767;
+            this.txt_email.Multiline = false;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.ReadOnly = false;
+            this.txt_email.Size = new System.Drawing.Size(269, 41);
+            this.txt_email.TabIndex = 5;
+            this.txt_email.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_email.UseSystemPasswordChar = false;
             // 
-            // Pass_TBox
+            // txt_password
             // 
-            this.Pass_TBox.BackColor = System.Drawing.Color.Transparent;
-            this.Pass_TBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Pass_TBox.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.Pass_TBox.ForeColor = System.Drawing.Color.DimGray;
-            this.Pass_TBox.Image = null;
-            this.Pass_TBox.Location = new System.Drawing.Point(390, 202);
-            this.Pass_TBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Pass_TBox.MaxLength = 32767;
-            this.Pass_TBox.Multiline = false;
-            this.Pass_TBox.Name = "Pass_TBox";
-            this.Pass_TBox.ReadOnly = false;
-            this.Pass_TBox.Size = new System.Drawing.Size(269, 41);
-            this.Pass_TBox.TabIndex = 6;
-            this.Pass_TBox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Pass_TBox.UseSystemPasswordChar = false;
+            this.txt_password.BackColor = System.Drawing.Color.Transparent;
+            this.txt_password.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_password.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txt_password.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_password.Image = null;
+            this.txt_password.Location = new System.Drawing.Point(390, 202);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_password.MaxLength = 32767;
+            this.txt_password.Multiline = false;
+            this.txt_password.Name = "txt_password";
+            this.txt_password.ReadOnly = false;
+            this.txt_password.Size = new System.Drawing.Size(269, 41);
+            this.txt_password.TabIndex = 6;
+            this.txt_password.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_password.UseSystemPasswordChar = false;
             // 
-            // User_label
+            // lbl_email
             // 
-            this.User_label.AutoSize = true;
-            this.User_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.User_label.Location = new System.Drawing.Point(387, 93);
-            this.User_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.User_label.Name = "User_label";
-            this.User_label.Size = new System.Drawing.Size(93, 18);
-            this.User_label.TabIndex = 7;
-            this.User_label.Text = "User Name";
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.lbl_email.Location = new System.Drawing.Point(387, 93);
+            this.lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(50, 18);
+            this.lbl_email.TabIndex = 7;
+            this.lbl_email.Text = "Email";
             // 
             // Pass_Label
             // 
@@ -157,32 +157,34 @@
             this.Log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
             this.Log_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Log_btn.ForeColor = System.Drawing.Color.White;
-            this.Log_btn.Location = new System.Drawing.Point(507, 282);
-            this.Log_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Log_btn.Location = new System.Drawing.Point(544, 282);
+            this.Log_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Log_btn.Name = "Log_btn";
             this.Log_btn.Size = new System.Drawing.Size(92, 48);
             this.Log_btn.TabIndex = 9;
             this.Log_btn.Text = "LOGIN";
             this.Log_btn.UseVisualStyleBackColor = false;
+            this.Log_btn.Click += new System.EventHandler(this.Log_btn_Click);
             // 
             // Cancle_btn
             // 
             this.Cancle_btn.BackColor = System.Drawing.Color.White;
             this.Cancle_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancle_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
-            this.Cancle_btn.Location = new System.Drawing.Point(390, 282);
-            this.Cancle_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cancle_btn.Location = new System.Drawing.Point(402, 282);
+            this.Cancle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Cancle_btn.Name = "Cancle_btn";
             this.Cancle_btn.Size = new System.Drawing.Size(92, 48);
             this.Cancle_btn.TabIndex = 10;
             this.Cancle_btn.Text = "CANCLE";
             this.Cancle_btn.UseVisualStyleBackColor = false;
+            this.Cancle_btn.Click += new System.EventHandler(this.Cancle_btn_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(356, 104);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(356, 107);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -193,7 +195,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(356, 202);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 37);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,14 +212,15 @@
             this.Controls.Add(this.Cancle_btn);
             this.Controls.Add(this.Log_btn);
             this.Controls.Add(this.Pass_Label);
-            this.Controls.Add(this.User_label);
-            this.Controls.Add(this.Pass_TBox);
-            this.Controls.Add(this.User_TBox);
+            this.Controls.Add(this.lbl_email);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.nightControlBox1);
             this.Controls.Add(this.panel_Side);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
             this.panel_Side.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -232,9 +235,9 @@
         private System.Windows.Forms.Panel panel_Side;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private ReaLTaiizor.Controls.BigTextBox User_TBox;
-        private ReaLTaiizor.Controls.BigTextBox Pass_TBox;
-        private System.Windows.Forms.Label User_label;
+        private ReaLTaiizor.Controls.BigTextBox txt_email;
+        private ReaLTaiizor.Controls.BigTextBox txt_password;
+        private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label Pass_Label;
         private System.Windows.Forms.Button Log_btn;
         private System.Windows.Forms.Button Cancle_btn;

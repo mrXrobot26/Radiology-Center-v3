@@ -23,13 +23,35 @@ namespace Radiology_Center
     {
         RadiologyEntities _db = new RadiologyEntities();
 
+        private string _fullName;
+        private string _email;
+        private string _imagePath;
+        private string _nationalId;
+        private string _gender;
+        private string _phone;
+        private string _salary;
+        private string _department;
+        private string _role;
+        private Image _profileImage;
 
-        public SuperAdminHomePage()
+        public SuperAdminHomePage(string fullName, string email, string imagePath)
         {
 
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+
+            _fullName = fullName;
+            _email = email;
+            _imagePath = imagePath;
+
+            lbl_name.Text = fullName;
+            lbl_email.Text = email; 
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                pic_user.ImageLocation = imagePath; 
+            }
+
             lbl_generl.Text = "Doctor";
             DataGridViewForDoctor();
 
@@ -142,6 +164,32 @@ namespace Radiology_Center
             ResetButtonColors();
             btn_profile.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "My Profile";
+            var userForProfile = _db.user_.FirstOrDefault(u => u.email == _email);
+
+            if (userForProfile != null)
+            {
+                var adminForProfile = _db.super_admin.FirstOrDefault(a => a.user_id == userForProfile.id);
+                var roleForProfile = _db.roles.FirstOrDefault(r => r.id == userForProfile.role_id);
+
+
+                Profile_W profile = new Profile_W();
+                profile.SetProfileData(
+                    adminForProfile.fName + " " + adminForProfile.lName,
+                    adminForProfile.nationalID,
+                    adminForProfile.gender,
+                    adminForProfile.phone_number,
+                    userForProfile.email,
+                    (decimal)adminForProfile.salary,
+                    roleForProfile.role_name,
+                    adminForProfile.image,
+                    (DateTime)adminForProfile.birthdate
+                );
+
+
+                profile.Show();
+
+            }
+
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -355,6 +403,11 @@ namespace Radiology_Center
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pic_user_Click(object sender, EventArgs e)
         {
 
         }

@@ -17,9 +17,25 @@ namespace Radiology_Center.Screens.Forms
         {
 
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
 
+
+
+        }
+
+        public void SetProfileData(
+        string name, string nationalId, string gender,
+        string phone, string email, decimal salary
+        ,string role, string profileImage,DateTime birthDate)
+        {
+            lbl_profileName.Text = name;
+            lbl_profileNationalId.Text = nationalId;
+            lbl_profileGender.Text = gender;
+            lbl_profilePhone.Text = phone;
+            lbl_profileEmail.Text = email;
+            lbl_profileSalary.Text = salary.ToString("C");
+            lbl_profileRole.Text = role;
+            pic_profileUser.ImageLocation = profileImage;
+            lbl_birthDate.Text = birthDate.ToShortDateString();
         }
 
         private void nightControlBox1_Click(object sender, EventArgs e)
@@ -32,9 +48,14 @@ namespace Radiology_Center.Screens.Forms
 
         }
 
-        /*  public Profile_W()
-          {
-              InitializeComponent();
-          }*/
+        private void Profile_W_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btrn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
