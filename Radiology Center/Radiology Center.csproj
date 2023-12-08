@@ -135,35 +135,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Acountant\Acountant.cs">
+    <Compile Include="Screens\Acountant\AcountantHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Acountant\Acountant.Designer.cs">
-      <DependentUpon>Acountant.cs</DependentUpon>
+    <Compile Include="Screens\Acountant\AcountantHomePage.Designer.cs">
+      <DependentUpon>AcountantHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Admin\AdminForm.cs">
+    <Compile Include="Screens\Admin\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Admin\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="Screens\Admin\AdminHomePage.Designer.cs">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Assistant\AssistantPage.cs">
+    <Compile Include="Screens\Assistant\AssistantHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Assistant\AssistantPage.Designer.cs">
-      <DependentUpon>AssistantPage.cs</DependentUpon>
+    <Compile Include="Screens\Assistant\AssistantHomePage.Designer.cs">
+      <DependentUpon>AssistantHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Doctor\DoctorPage.cs">
+    <Compile Include="Screens\Doctor\DoctorHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Doctor\DoctorPage.Designer.cs">
-      <DependentUpon>DoctorPage.cs</DependentUpon>
+    <Compile Include="Screens\Doctor\DoctorHomePage.Designer.cs">
+      <DependentUpon>DoctorHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Forms\Acountant\AcountantForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\Forms\Acountant\AcountantForm.Designer.cs">
       <DependentUpon>AcountantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Forms\Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Forms\Assistant\Assistant.cs">
       <SubType>Form</SubType>
@@ -216,20 +222,23 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Acountant\Acountant.resx">
-      <DependentUpon>Acountant.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Acountant\AcountantHomePage.resx">
+      <DependentUpon>AcountantHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Admin\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Admin\AdminHomePage.resx">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Assistant\AssistantPage.resx">
-      <DependentUpon>AssistantPage.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Assistant\AssistantHomePage.resx">
+      <DependentUpon>AssistantHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Doctor\DoctorPage.resx">
-      <DependentUpon>DoctorPage.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Doctor\DoctorHomePage.resx">
+      <DependentUpon>DoctorHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Acountant\AcountantForm.resx">
       <DependentUpon>AcountantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Assistant\Assistant.resx">
       <DependentUpon>Assistant.cs</DependentUpon>

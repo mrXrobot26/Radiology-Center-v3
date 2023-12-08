@@ -1,6 +1,6 @@
-﻿namespace Radiology_Center.Screens.Assistant
+﻿namespace Radiology_Center.Screens.Acountant
 {
-    partial class AssistantPage
+    partial class AcountantHomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssistantPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcountantHomePage));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.picBX_Profile = new System.Windows.Forms.PictureBox();
@@ -38,24 +38,18 @@
             this.btn_profile = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_doc_names = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_departments = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_patient = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
@@ -67,13 +61,11 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 51);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 782);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 672);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // panel2
@@ -177,65 +169,9 @@
             this.btn_doc_names.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btn_doc_names.Size = new System.Drawing.Size(360, 67);
             this.btn_doc_names.TabIndex = 2;
-            this.btn_doc_names.Text = "           Doctors";
+            this.btn_doc_names.Text = "           Reports";
             this.btn_doc_names.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_doc_names.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btn_departments);
-            this.panel5.Location = new System.Drawing.Point(1, 272);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(364, 67);
-            this.panel5.TabIndex = 7;
-            // 
-            // btn_departments
-            // 
-            this.btn_departments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
-            this.btn_departments.FlatAppearance.BorderSize = 0;
-            this.btn_departments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_departments.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_departments.ForeColor = System.Drawing.Color.White;
-            this.btn_departments.Image = ((System.Drawing.Image)(resources.GetObject("btn_departments.Image")));
-            this.btn_departments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_departments.Location = new System.Drawing.Point(4, 0);
-            this.btn_departments.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_departments.Name = "btn_departments";
-            this.btn_departments.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.btn_departments.Size = new System.Drawing.Size(360, 67);
-            this.btn_departments.TabIndex = 2;
-            this.btn_departments.Text = "           Departments";
-            this.btn_departments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_departments.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btn_patient);
-            this.panel6.Location = new System.Drawing.Point(1, 343);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(364, 67);
-            this.panel6.TabIndex = 8;
-            // 
-            // btn_patient
-            // 
-            this.btn_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
-            this.btn_patient.FlatAppearance.BorderSize = 0;
-            this.btn_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_patient.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_patient.ForeColor = System.Drawing.Color.White;
-            this.btn_patient.Image = ((System.Drawing.Image)(resources.GetObject("btn_patient.Image")));
-            this.btn_patient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_patient.Location = new System.Drawing.Point(4, 0);
-            this.btn_patient.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_patient.Name = "btn_patient";
-            this.btn_patient.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.btn_patient.Size = new System.Drawing.Size(360, 67);
-            this.btn_patient.TabIndex = 2;
-            this.btn_patient.Text = "           Patients";
-            this.btn_patient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_patient.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -245,7 +181,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1872, 51);
+            this.panel1.Size = new System.Drawing.Size(1251, 51);
             this.panel1.TabIndex = 9;
             // 
             // nightControlBox1
@@ -263,7 +199,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1733, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1112, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -283,20 +219,16 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2Button1
+            // panel7
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(1381, 19);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(139, 36);
-            this.guna2Button1.TabIndex = 11;
-            this.guna2Button1.Text = "Add";
+            this.panel7.Controls.Add(this.guna2TextBox1);
+            this.panel7.Controls.Add(this.guna2Button2);
+            this.panel7.Controls.Add(this.guna2Button1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(365, 51);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(886, 70);
+            this.panel7.TabIndex = 15;
             // 
             // guna2TextBox1
             // 
@@ -334,37 +266,38 @@
             this.guna2Button2.Size = new System.Drawing.Size(61, 39);
             this.guna2Button2.TabIndex = 13;
             // 
-            // panel7
+            // guna2Button1
             // 
-            this.panel7.Controls.Add(this.guna2TextBox1);
-            this.panel7.Controls.Add(this.guna2Button2);
-            this.panel7.Controls.Add(this.guna2Button1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(365, 51);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1507, 70);
-            this.panel7.TabIndex = 14;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(1381, 19);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(139, 36);
+            this.guna2Button1.TabIndex = 11;
+            this.guna2Button1.Text = "Add";
             // 
-            // AssistantPage
+            // Acountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1872, 833);
+            this.ClientSize = new System.Drawing.Size(1251, 723);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AssistantPage";
-            this.Text = "AssistantPage";
-            this.Load += new System.EventHandler(this.AssistantPage_Load);
+            this.Name = "Acountant";
+            this.Text = "Acountant";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -383,16 +316,12 @@
         private System.Windows.Forms.Button btn_profile;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_doc_names;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btn_departments;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btn_patient;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.Panel panel7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

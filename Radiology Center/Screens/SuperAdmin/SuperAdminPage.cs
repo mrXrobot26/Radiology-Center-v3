@@ -15,6 +15,7 @@ using Radiology_Center.Screens.Forms.Department;
 using System.Runtime.Remoting.Contexts;
 using Radiology_Center.Screens.Forms.Assistant;
 using Radiology_Center.Screens.Forms.Acountant;
+using Radiology_Center.Screens.Forms.Admin;
 
 namespace Radiology_Center
 {
@@ -113,8 +114,24 @@ namespace Radiology_Center
                 Gender = x.gender,
                 NationalID = x.nationalID,
             });
-            var assistantDataList = res.ToList();
-            grd_doctors_sAdmin.DataSource = assistantDataList;
+            var AccountantDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = AccountantDataList;
+            grd_doctors_sAdmin.AutoGenerateColumns = true;
+        }
+        
+        public void DataGridViewForAdmin()
+        {
+            var res = _db.admins.Select(x => new
+            {
+                Name = x.fName + " " + x.lName,
+                Salary = (decimal)x.Salary,
+                Birthdate = x.birthdate,
+                PhoneNumber = x.phone_number,
+                Gender = x.gender,
+                NationalID = x.nationalID,
+            });
+            var AdminDataList = res.ToList();
+            grd_doctors_sAdmin.DataSource = AdminDataList;
             grd_doctors_sAdmin.AutoGenerateColumns = true;
         }
 
@@ -188,6 +205,18 @@ namespace Radiology_Center
 
                 acc.Show();
             }
+            else if (lbl_generl.Text == "Admin")
+            {
+                AdminForm admin = new AdminForm();
+
+                admin.AdminAdd += OnAdminAdded;
+
+                admin.Show();
+            }
+        }
+        private void OnAdminAdded()
+        {
+            DataGridViewForAdmin();
         }
         private void OnAcountantAdded()
         {
@@ -294,6 +323,8 @@ namespace Radiology_Center
             btn_admin.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Admin";
             CheckLabelAndSetButtonVisibility();
+            DataGridViewForAdmin();
+
 
         }
         private void ResetButtonColors()

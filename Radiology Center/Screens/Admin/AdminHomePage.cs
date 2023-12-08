@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Admin
 {
-    public partial class AdminForm : Form
+    public partial class AdminHomePage : Form
     {
-        public AdminForm()
+        public AdminHomePage()
         {
             InitializeComponent();
         }

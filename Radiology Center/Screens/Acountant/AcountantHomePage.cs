@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Radiology_Center.Screens.Doctor
+namespace Radiology_Center.Screens.Acountant
 {
-    public partial class DoctorPage : Form
+    public partial class AcountantHomePage : Form
     {
-        public DoctorPage()
+        public AcountantHomePage()
         {
             InitializeComponent();
-        }
-
-        private void DoctorPage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Assistant
 {
-    public partial class AssistantPage : Form
+    public partial class AssistantHomePage : Form
     {
-        public AssistantPage()
+        public AssistantHomePage()
         {
             InitializeComponent();
             //

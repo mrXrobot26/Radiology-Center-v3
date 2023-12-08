@@ -1,6 +1,6 @@
 ﻿namespace Radiology_Center.Screens.Doctor
 {
-    partial class DoctorPage
+    partial class DoctorHomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorPage));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorHomePage));
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
 			this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
