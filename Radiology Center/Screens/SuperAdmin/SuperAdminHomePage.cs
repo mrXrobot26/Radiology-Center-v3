@@ -19,12 +19,12 @@ using Radiology_Center.Screens.Forms.Admin;
 
 namespace Radiology_Center
 {
-    public partial class SuperAdminPage : Form
+    public partial class SuperAdminHomePage : Form
     {
         RadiologyEntities _db = new RadiologyEntities();
 
 
-        public SuperAdminPage()
+        public SuperAdminHomePage()
         {
 
             InitializeComponent();

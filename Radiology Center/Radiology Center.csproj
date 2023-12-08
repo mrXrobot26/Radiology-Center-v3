@@ -207,11 +207,11 @@
     <Compile Include="Screens\Forms\Profile_W.Designer.cs">
       <DependentUpon>Profile_W.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\SuperAdmin\SuperAdminPage.cs">
+    <Compile Include="Screens\SuperAdmin\SuperAdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\SuperAdmin\SuperAdminPage.Designer.cs">
-      <DependentUpon>SuperAdminPage.cs</DependentUpon>
+    <Compile Include="Screens\SuperAdmin\SuperAdminHomePage.Designer.cs">
+      <DependentUpon>SuperAdminHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DoctorVM.cs" />
     <Compile Include="ViewModels\PatientVM.cs" />
@@ -258,8 +258,8 @@
     <EmbeddedResource Include="Screens\Forms\Profile_W.resx">
       <DependentUpon>Profile_W.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\SuperAdmin\SuperAdminPage.resx">
-      <DependentUpon>SuperAdminPage.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\SuperAdmin\SuperAdminHomePage.resx">
+      <DependentUpon>SuperAdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
