@@ -16,6 +16,7 @@ using System.Runtime.Remoting.Contexts;
 using Radiology_Center.Screens.Forms.Assistant;
 using Radiology_Center.Screens.Forms.Acountant;
 using Radiology_Center.Screens.Forms.Admin;
+using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 
 namespace Radiology_Center
 {
@@ -34,6 +35,7 @@ namespace Radiology_Center
         private string _role;
         private Image _profileImage;
 
+
         public SuperAdminHomePage(string fullName, string email, string imagePath)
         {
 
@@ -46,14 +48,16 @@ namespace Radiology_Center
             _imagePath = imagePath;
 
             lbl_name.Text = fullName;
-            lbl_email.Text = email; 
+            lbl_email.Text = email;
             if (!string.IsNullOrEmpty(imagePath))
             {
-                pic_user.ImageLocation = imagePath; 
+                pic_user.ImageLocation = imagePath;
             }
 
             lbl_generl.Text = "Doctor";
             DataGridViewForDoctor();
+            grd_doctors_sAdmin.CellClick += grd_doctors_sAdmin_CellClick;
+
 
         }
 
@@ -87,20 +91,20 @@ namespace Radiology_Center
         public void DataGridViewForPatiant()
         {
             var res = from pd in _db.patient_data
-                        join pi in _db.patient_info on pd.id equals pi.id
-                        join d in _db.doctors on pd.doctor_id equals d.id
-                        join dep in _db.departments on d.dep_id equals dep.id
-                        join r in _db.rays on pd.ray_id equals r.id
-                        select new
-                        {
-                            Name = pi.fName + " " + pi.lName,
-                            Status = pd.pay_status,
-                            Date = pd.daydate,
-                            Report = pd.doctor_report,
-                            Doctor = d.fName + " " + d.lName,
-                            department = dep.name,
-                            Ray =r.name,
-                        };
+                      join pi in _db.patient_info on pd.id equals pi.id
+                      join d in _db.doctors on pd.doctor_id equals d.id
+                      join dep in _db.departments on d.dep_id equals dep.id
+                      join r in _db.rays on pd.ray_id equals r.id
+                      select new
+                      {
+                          Name = pi.fName + " " + pi.lName,
+                          Status = pd.pay_status,
+                          Date = pd.daydate,
+                          Report = pd.doctor_report,
+                          Doctor = d.fName + " " + d.lName,
+                          department = dep.name,
+                          Ray = r.name,
+                      };
             var patiantDataList = res.ToList();
             grd_doctors_sAdmin.DataSource = patiantDataList;
             grd_doctors_sAdmin.AutoGenerateColumns = true;
@@ -140,7 +144,7 @@ namespace Radiology_Center
             grd_doctors_sAdmin.DataSource = AccountantDataList;
             grd_doctors_sAdmin.AutoGenerateColumns = true;
         }
-        
+
         public void DataGridViewForAdmin()
         {
             var res = _db.admins.Select(x => new
@@ -216,7 +220,7 @@ namespace Radiology_Center
 
         private void grd_doctors_sAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void btn_addDoctor_Click(object sender, EventArgs e)
@@ -229,11 +233,11 @@ namespace Radiology_Center
 
                 docter.ShowDialog();
             }
-            else if(lbl_generl.Text == "Department")
+            else if (lbl_generl.Text == "Department")
             {
                 DepartmentForm dep = new DepartmentForm();
 
-                dep.DepartmentAdded += OnDepartmentAdded; 
+                dep.DepartmentAdded += OnDepartmentAdded;
 
                 dep.Show();
             }
@@ -311,7 +315,7 @@ namespace Radiology_Center
             btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Doctor";
             CheckLabelAndSetButtonVisibility();
-            
+
             DataGridViewForDoctor();
 
 
@@ -406,6 +410,138 @@ namespace Radiology_Center
         {
 
         }
+
+        private void grd_doctors_sAdmin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (lbl_generl.Text == "Doctor")
+                {
+                    int doctorId = int.Parse(grd_doctors_sAdmin.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    var doctorForProfile = _db.doctors.FirstOrDefault(x => x.id == doctorId);
+                    if (doctorForProfile != null)
+                    {
+                        var userForDoctorProfile = _db.user_.FirstOrDefault(x => x.id == doctorForProfile.user_id);
+                        var depForDoctorProfile = _db.departments.FirstOrDefault(x => x.id == doctorForProfile.dep_id);
+
+                        DoctorProfile doctorProfile = new DoctorProfile();
+                        doctorProfile.SetDoctorProfileData(
+                                
+                                doctorId,
+                                doctorForProfile.fName + " " + doctorForProfile.lName,
+                                doctorForProfile.nationalID,
+                                doctorForProfile.gender,
+                                doctorForProfile.phone_number,
+                                userForDoctorProfile.email,
+                                (decimal)doctorForProfile.salary,
+                                doctorForProfile.image,
+                                (DateTime)doctorForProfile.birthdate,
+                                depForDoctorProfile.name
+
+                            );
+                        doctorProfile.Show();
+                    }
+                }
+                else if (lbl_generl.Text == "Department")
+                {
+                    int depId = int.Parse(grd_doctors_sAdmin.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    var depForProfile = _db.departments.FirstOrDefault(x => x.id == depId);
+                    if (depForProfile != null)
+                    {
+                        DepartmentProfile departmentProfile = new DepartmentProfile();
+
+                        departmentProfile.setDataForDepartment(depForProfile.id, depForProfile.name);
+
+                        departmentProfile.Show(); 
+                       
+                    }
+                }
+                //else if (lbl_generl.Text == "Assistant")
+                //{
+                //    int doctorId = int.Parse(grd_doctors_sAdmin.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                //    var doctorForProfile = _db.doctors.FirstOrDefault(x => x.id == doctorId);
+                //    if (doctorForProfile != null)
+                //    {
+                //        var userForDoctorProfile = _db.user_.FirstOrDefault(x => x.id == doctorForProfile.user_id);
+                //        var depForDoctorProfile = _db.departments.FirstOrDefault(x => x.id == doctorForProfile.dep_id);
+
+                //        DoctorProfile doctorProfile = new DoctorProfile();
+                //        doctorProfile.SetDoctorProfileData(
+
+                //                doctorForProfile.fName + " " + doctorForProfile.lName,
+                //                doctorForProfile.nationalID,
+                //                doctorForProfile.gender,
+                //                doctorForProfile.phone_number,
+                //                userForDoctorProfile.email,
+                //                (decimal)doctorForProfile.salary,
+                //                doctorForProfile.image,
+                //                (DateTime)doctorForProfile.birthdate,
+                //                depForDoctorProfile.name
+
+                //            );
+                //        doctorProfile.Show();
+                //    }
+                //}
+                //else if (lbl_generl.Text == "Accountant")
+                //{
+                //    int doctorId = int.Parse(grd_doctors_sAdmin.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                //    var doctorForProfile = _db.doctors.FirstOrDefault(x => x.id == doctorId);
+                //    if (doctorForProfile != null)
+                //    {
+                //        var userForDoctorProfile = _db.user_.FirstOrDefault(x => x.id == doctorForProfile.user_id);
+                //        var depForDoctorProfile = _db.departments.FirstOrDefault(x => x.id == doctorForProfile.dep_id);
+
+                //        DoctorProfile doctorProfile = new DoctorProfile();
+                //        doctorProfile.SetDoctorProfileData(
+
+                //                doctorForProfile.fName + " " + doctorForProfile.lName,
+                //                doctorForProfile.nationalID,
+                //                doctorForProfile.gender,
+                //                doctorForProfile.phone_number,
+                //                userForDoctorProfile.email,
+                //                (decimal)doctorForProfile.salary,
+                //                doctorForProfile.image,
+                //                (DateTime)doctorForProfile.birthdate,
+                //                depForDoctorProfile.name
+
+                //            );
+                //        doctorProfile.Show();
+                //    }
+                //}
+                //else if (lbl_generl.Text == "Admin")
+                //{
+                //    int doctorId = int.Parse(grd_doctors_sAdmin.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                //    var doctorForProfile = _db.doctors.FirstOrDefault(x => x.id == doctorId);
+                //    if (doctorForProfile != null)
+                //    {
+                //        var userForDoctorProfile = _db.user_.FirstOrDefault(x => x.id == doctorForProfile.user_id);
+                //        var depForDoctorProfile = _db.departments.FirstOrDefault(x => x.id == doctorForProfile.dep_id);
+
+                //        DoctorProfile doctorProfile = new DoctorProfile();
+                //        doctorProfile.SetDoctorProfileData(
+
+                //                doctorForProfile.fName + " " + doctorForProfile.lName,
+                //                doctorForProfile.nationalID,
+                //                doctorForProfile.gender,
+                //                doctorForProfile.phone_number,
+                //                userForDoctorProfile.email,
+                //                (decimal)doctorForProfile.salary,
+                //                doctorForProfile.image,
+                //                (DateTime)doctorForProfile.birthdate,
+                //                depForDoctorProfile.name
+
+                //            );
+                //        doctorProfile.Show();
+                //    }
+                //}
+
+
+
+
+            }
+        }
+
+
 
         private void pic_user_Click(object sender, EventArgs e)
         {

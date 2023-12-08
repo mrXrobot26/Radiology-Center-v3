@@ -183,6 +183,18 @@
     <Compile Include="Screens\Forms\Department\DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\Department\DepartmentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Department\DepartmentProfile.Designer.cs">
+      <DependentUpon>DepartmentProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Forms\Doctor Profile\DoctorProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Doctor Profile\DoctorProfile.Designer.cs">
+      <DependentUpon>DoctorProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\Docter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Department\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Department\DepartmentProfile.resx">
+      <DependentUpon>DepartmentProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Doctor Profile\DoctorProfile.resx">
+      <DependentUpon>DoctorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Docter.resx">
       <DependentUpon>Docter.cs</DependentUpon>
