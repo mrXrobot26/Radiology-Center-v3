@@ -44,20 +44,25 @@ namespace Radiology_Center.Screens.Forms
                         {
                             this.Close();
 
-                            var userDetail = _db.super_admin.FirstOrDefault(sa => sa.user_id == foundedUser.id);
-                            string fullName = userDetail?.fName + " " + userDetail?.lName;
-                            string email = foundedUser.email;
-                            string imagePath = userDetail?.image;
+
 
                             if (foundedUser.role_id == 1) 
                             {
-                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName,email,imagePath)));
+                                var userDetail = _db.super_admin.FirstOrDefault(sa => sa.user_id == foundedUser.id);
+                                string fullName = userDetail?.fName + " " + userDetail?.lName;
+                                string email = foundedUser.email;
+                                string imagePath = userDetail?.image;
+                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName,email,imagePath,1)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
                             else if (foundedUser.role_id == 2)
                             {
-                                Thread th = new Thread(() => Application.Run(new AdminHomePage()));
+                                var userDetail = _db.admins.FirstOrDefault(sa => sa.user_id == foundedUser.id);
+                                string fullName = userDetail?.fName + " " + userDetail?.lName;
+                                string email = foundedUser.email;
+                                string imagePath = userDetail?.image;
+                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName, email, imagePath, 2)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
@@ -111,6 +116,11 @@ namespace Radiology_Center.Screens.Forms
         private void Cancle_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

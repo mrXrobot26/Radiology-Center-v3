@@ -219,6 +219,12 @@
     <Compile Include="Screens\Forms\Profile_W.Designer.cs">
       <DependentUpon>Profile_W.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\Ray\RayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Ray\RayForm.Designer.cs">
+      <DependentUpon>RayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\SuperAdmin\SuperAdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile_W.resx">
       <DependentUpon>Profile_W.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Ray\RayForm.resx">
+      <DependentUpon>RayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\SuperAdmin\SuperAdminHomePage.resx">
       <DependentUpon>SuperAdminHomePage.cs</DependentUpon>

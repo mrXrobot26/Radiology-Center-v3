@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuperAdminHomePage));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_generl = new ReaLTaiizor.Controls.BigLabel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
@@ -53,6 +53,8 @@
             this.btn_assistant = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btn_accountant = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btn_ray = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btn_admin = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -61,7 +63,7 @@
             this.btn_search = new Guna.UI2.WinForms.Guna2Button();
             this.btn_addDoctor = new Guna.UI2.WinForms.Guna2Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.grd_doctors_sAdmin = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.grd_sAdmin = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -73,10 +75,11 @@
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_doctors_sAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_sAdmin)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -148,6 +151,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel8);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
+            this.flowLayoutPanel1.Controls.Add(this.panel12);
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 43);
@@ -178,7 +182,6 @@
             this.pic_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_user.TabIndex = 7;
             this.pic_user.TabStop = false;
-            this.pic_user.Click += new System.EventHandler(this.pic_user_Click);
             // 
             // lbl_name
             // 
@@ -193,7 +196,6 @@
             this.lbl_name.TabIndex = 5;
             this.lbl_name.Text = "Layla Elbessa";
             this.lbl_name.UseCompatibleTextRendering = true;
-            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // lbl_email
             // 
@@ -264,7 +266,7 @@
             this.btn_doc_names.Text = "           Doctors";
             this.btn_doc_names.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_doc_names.UseVisualStyleBackColor = false;
-            this.btn_doc_names.Click += new System.EventHandler(this.btn_doc_names_Click);
+            this.btn_doc_names.Click += new System.EventHandler(this.btn_doc_names_Click_1);
             // 
             // panel5
             // 
@@ -293,7 +295,7 @@
             this.btn_departments.Text = "           Departments";
             this.btn_departments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_departments.UseVisualStyleBackColor = false;
-            this.btn_departments.Click += new System.EventHandler(this.btn_departments_Click);
+            this.btn_departments.Click += new System.EventHandler(this.btn_departments_Click_1);
             // 
             // panel6
             // 
@@ -382,10 +384,39 @@
             this.btn_accountant.UseVisualStyleBackColor = false;
             this.btn_accountant.Click += new System.EventHandler(this.btn_accountant_Click);
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.btn_ray);
+            this.panel12.Location = new System.Drawing.Point(1, 556);
+            this.panel12.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(364, 67);
+            this.panel12.TabIndex = 11;
+            // 
+            // btn_ray
+            // 
+            this.btn_ray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
+            this.btn_ray.FlatAppearance.BorderSize = 0;
+            this.btn_ray.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ray.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ray.ForeColor = System.Drawing.Color.White;
+            this.btn_ray.Image = ((System.Drawing.Image)(resources.GetObject("btn_ray.Image")));
+            this.btn_ray.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ray.Location = new System.Drawing.Point(4, 0);
+            this.btn_ray.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ray.Name = "btn_ray";
+            this.btn_ray.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.btn_ray.Size = new System.Drawing.Size(360, 67);
+            this.btn_ray.TabIndex = 2;
+            this.btn_ray.Text = "           Rays";
+            this.btn_ray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ray.UseVisualStyleBackColor = false;
+            this.btn_ray.Click += new System.EventHandler(this.btn_ray_Click);
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.btn_admin);
-            this.panel9.Location = new System.Drawing.Point(1, 556);
+            this.panel9.Location = new System.Drawing.Point(1, 627);
             this.panel9.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(364, 67);
@@ -400,7 +431,7 @@
             this.btn_admin.ForeColor = System.Drawing.Color.White;
             this.btn_admin.Image = ((System.Drawing.Image)(resources.GetObject("btn_admin.Image")));
             this.btn_admin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_admin.Location = new System.Drawing.Point(4, 0);
+            this.btn_admin.Location = new System.Drawing.Point(-1, -2);
             this.btn_admin.Margin = new System.Windows.Forms.Padding(2);
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
@@ -456,7 +487,6 @@
             this.txt_search.SelectedText = "";
             this.txt_search.Size = new System.Drawing.Size(332, 39);
             this.txt_search.TabIndex = 12;
-            this.txt_search.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // btn_search
             // 
@@ -472,7 +502,7 @@
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(61, 39);
             this.btn_search.TabIndex = 13;
-            this.btn_search.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_addDoctor
             // 
@@ -493,70 +523,69 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.grd_doctors_sAdmin);
+            this.panel11.Controls.Add(this.grd_sAdmin);
             this.panel11.Location = new System.Drawing.Point(401, 139);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1438, 537);
             this.panel11.TabIndex = 16;
             // 
-            // grd_doctors_sAdmin
+            // grd_sAdmin
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.grd_doctors_sAdmin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_doctors_sAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grd_doctors_sAdmin.ColumnHeadersHeight = 39;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_doctors_sAdmin.DefaultCellStyle = dataGridViewCellStyle3;
-            this.grd_doctors_sAdmin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.grd_doctors_sAdmin.Location = new System.Drawing.Point(0, 0);
-            this.grd_doctors_sAdmin.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.grd_doctors_sAdmin.MultiSelect = false;
-            this.grd_doctors_sAdmin.Name = "grd_doctors_sAdmin";
-            this.grd_doctors_sAdmin.ReadOnly = true;
-            this.grd_doctors_sAdmin.RowHeadersVisible = false;
-            this.grd_doctors_sAdmin.RowHeadersWidth = 20;
-            this.grd_doctors_sAdmin.RowTemplate.Height = 50;
-            this.grd_doctors_sAdmin.RowTemplate.ReadOnly = true;
-            this.grd_doctors_sAdmin.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_doctors_sAdmin.ShowEditingIcon = false;
-            this.grd_doctors_sAdmin.Size = new System.Drawing.Size(1438, 537);
-            this.grd_doctors_sAdmin.TabIndex = 101;
-            this.grd_doctors_sAdmin.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
-            this.grd_doctors_sAdmin.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.grd_doctors_sAdmin.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.grd_doctors_sAdmin.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.grd_doctors_sAdmin.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.grd_doctors_sAdmin.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.grd_doctors_sAdmin.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.grd_doctors_sAdmin.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.grd_doctors_sAdmin.ThemeStyle.HeaderStyle.Height = 39;
-            this.grd_doctors_sAdmin.ThemeStyle.ReadOnly = true;
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.Height = 50;
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.grd_doctors_sAdmin.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.grd_doctors_sAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_doctors_sAdmin_CellContentClick_2);
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.grd_sAdmin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_sAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.grd_sAdmin.ColumnHeadersHeight = 39;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_sAdmin.DefaultCellStyle = dataGridViewCellStyle6;
+            this.grd_sAdmin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.grd_sAdmin.Location = new System.Drawing.Point(0, 0);
+            this.grd_sAdmin.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.grd_sAdmin.MultiSelect = false;
+            this.grd_sAdmin.Name = "grd_sAdmin";
+            this.grd_sAdmin.ReadOnly = true;
+            this.grd_sAdmin.RowHeadersVisible = false;
+            this.grd_sAdmin.RowHeadersWidth = 20;
+            this.grd_sAdmin.RowTemplate.Height = 50;
+            this.grd_sAdmin.RowTemplate.ReadOnly = true;
+            this.grd_sAdmin.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_sAdmin.ShowEditingIcon = false;
+            this.grd_sAdmin.Size = new System.Drawing.Size(1438, 537);
+            this.grd_sAdmin.TabIndex = 101;
+            this.grd_sAdmin.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.grd_sAdmin.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.grd_sAdmin.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.grd_sAdmin.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.grd_sAdmin.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.grd_sAdmin.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.grd_sAdmin.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.grd_sAdmin.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.grd_sAdmin.ThemeStyle.HeaderStyle.Height = 39;
+            this.grd_sAdmin.ThemeStyle.ReadOnly = true;
+            this.grd_sAdmin.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.grd_sAdmin.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.grd_sAdmin.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_sAdmin.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.grd_sAdmin.ThemeStyle.RowsStyle.Height = 50;
+            this.grd_sAdmin.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            this.grd_sAdmin.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // SuperAdminHomePage
             // 
@@ -575,7 +604,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            this.Load += new System.EventHandler(this.HomePage_Load);
+            this.Load += new System.EventHandler(this.SuperAdminHomePage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -589,10 +618,11 @@
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grd_doctors_sAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_sAdmin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -631,8 +661,10 @@
         private ReaLTaiizor.Controls.BigLabel lbl_generl;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_user;
         private System.Windows.Forms.Panel panel11;
-        private Guna.UI2.WinForms.Guna2DataGridView grd_doctors_sAdmin;
+        private Guna.UI2.WinForms.Guna2DataGridView grd_sAdmin;
         private ReaLTaiizor.Controls.AloneButton brn_refresh;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button btn_ray;
     }
 }
 

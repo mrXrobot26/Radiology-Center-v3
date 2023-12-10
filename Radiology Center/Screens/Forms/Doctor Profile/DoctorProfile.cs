@@ -62,5 +62,10 @@ namespace Radiology_Center.Screens.Forms.Department.Doctor_Profile
 
             }
         }
+
+        private void lbl_id_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

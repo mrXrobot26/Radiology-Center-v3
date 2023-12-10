@@ -254,7 +254,6 @@
             // 
             // pic_profileUser
             // 
-            this.pic_profileUser.Image = ((System.Drawing.Image)(resources.GetObject("pic_profileUser.Image")));
             this.pic_profileUser.Location = new System.Drawing.Point(94, 66);
             this.pic_profileUser.Margin = new System.Windows.Forms.Padding(2);
             this.pic_profileUser.Name = "pic_profileUser";
@@ -329,6 +328,7 @@
             this.lbl_id.Size = new System.Drawing.Size(34, 13);
             this.lbl_id.TabIndex = 60;
             this.lbl_id.Text = "sassa";
+            this.lbl_id.Click += new System.EventHandler(this.lbl_id_Click);
             // 
             // guna2Button1
             // 
