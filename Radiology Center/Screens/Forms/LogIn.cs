@@ -46,7 +46,7 @@ namespace Radiology_Center.Screens.Forms
 
 
 
-                            if (foundedUser.role_id == 1) 
+                            if (foundedUser.role_id == 5) 
                             {
                                 var userDetail = _db.super_admin.FirstOrDefault(sa => sa.user_id == foundedUser.id);
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
@@ -81,9 +81,14 @@ namespace Radiology_Center.Screens.Forms
                                 th.Start();
                             }
                             
-                            else if (foundedUser.role_id == 5)
+                            else if (foundedUser.role_id == 1)
                             {
-                                Thread th = new Thread(() => Application.Run(new AcountantHomePage()));
+                                var userDetail = _db.accountants.FirstOrDefault(sa => sa.user_id == foundedUser.id);
+                                string AccName = userDetail?.fName + " " + userDetail?.lName;
+                                string Accemail = foundedUser.email;
+                                string AccimagePath = userDetail?.image;
+
+                                Thread th = new Thread(() => Application.Run(new Accountant(AccName, Accemail, AccimagePath)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
