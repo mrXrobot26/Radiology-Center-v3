@@ -278,6 +278,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile_Patient.resx">
       <DependentUpon>Profile_Patient.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile_W.resx">
       <DependentUpon>Profile_W.cs</DependentUpon>

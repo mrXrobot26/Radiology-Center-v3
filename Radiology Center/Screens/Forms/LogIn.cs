@@ -28,7 +28,7 @@ namespace Radiology_Center.Screens.Forms
 
         private void Log_btn_Click(object sender, EventArgs e)
         {
-
+                  
             {
                 try
                 {

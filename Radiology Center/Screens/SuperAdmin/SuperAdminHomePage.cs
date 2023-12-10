@@ -97,7 +97,7 @@ namespace Radiology_Center
         private void DataGridViewForPatiant()
         {
             var res = from pd in _db.patient_data
-                      join pi in _db.patient_info on pd.id equals pi.id
+                      join pi in _db.patient_info on pd.patient_id equals pi.id
                       join d in _db.doctors on pd.doctor_id equals d.id
                       join dep in _db.departments on d.dep_id equals dep.id
                       join r in _db.rays on pd.ray_id equals r.id
