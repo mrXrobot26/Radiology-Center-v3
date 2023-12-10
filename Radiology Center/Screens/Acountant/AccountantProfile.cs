@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Acountant
 {
-    public partial class AcountantHomePage : Form
+    public partial class AccountantProfile : Form
     {
-        public AcountantHomePage()
+        public AccountantProfile()
         {
             InitializeComponent();
         }

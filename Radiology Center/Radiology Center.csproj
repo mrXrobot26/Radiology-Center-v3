@@ -135,11 +135,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Acountant\AcountantHomePage.cs">
+    <Compile Include="Screens\Acountant\Accountant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Acountant\AcountantHomePage.Designer.cs">
-      <DependentUpon>AcountantHomePage.cs</DependentUpon>
+    <Compile Include="Screens\Acountant\Accountant.Designer.cs">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Acountant\AcountantProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Acountant\AcountantProfile.Designer.cs">
+      <DependentUpon>AcountantProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Admin\AdminHomePage.cs">
       <SubType>Form</SubType>
@@ -207,6 +213,12 @@
     <Compile Include="Screens\Forms\LogIn.designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\Profile_Patient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,8 +243,11 @@
     <Compile Include="Screens\SuperAdmin\SuperAdminHomePage.Designer.cs">
       <DependentUpon>SuperAdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AnalysisVM.cs" />
     <Compile Include="ViewModels\DoctorVM.cs" />
     <Compile Include="ViewModels\PatientVM.cs" />
+    <Compile Include="ViewModels\PaymentVM.cs" />
+    <Compile Include="ViewModels\ReportVM.cs" />
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +255,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Acountant\AcountantHomePage.resx">
-      <DependentUpon>AcountantHomePage.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Acountant\Accountant.resx">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Acountant\AcountantProfile.resx">
+      <DependentUpon>AcountantProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Admin\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
@@ -275,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Profile_Patient.resx">
       <DependentUpon>Profile_Patient.cs</DependentUpon>
