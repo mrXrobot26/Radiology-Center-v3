@@ -76,9 +76,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_reports);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 1157);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 1061);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // panel2
@@ -96,7 +96,7 @@
             // 
             this.picBX_Profile.Image = ((System.Drawing.Image)(resources.GetObject("picBX_Profile.Image")));
             this.picBX_Profile.Location = new System.Drawing.Point(2, 8);
-            this.picBX_Profile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBX_Profile.Margin = new System.Windows.Forms.Padding(2);
             this.picBX_Profile.Name = "picBX_Profile";
             this.picBX_Profile.Size = new System.Drawing.Size(96, 93);
             this.picBX_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +149,7 @@
             this.btn_profile.Image = ((System.Drawing.Image)(resources.GetObject("btn_profile.Image")));
             this.btn_profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_profile.Location = new System.Drawing.Point(4, 0);
-            this.btn_profile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_profile.Margin = new System.Windows.Forms.Padding(2);
             this.btn_profile.Name = "btn_profile";
             this.btn_profile.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btn_profile.Size = new System.Drawing.Size(360, 67);
@@ -177,7 +177,7 @@
             this.btn_payment.ForeColor = System.Drawing.Color.White;
             this.btn_payment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_payment.Location = new System.Drawing.Point(4, 0);
-            this.btn_payment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_payment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_payment.Name = "btn_payment";
             this.btn_payment.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btn_payment.Size = new System.Drawing.Size(360, 67);
@@ -196,7 +196,7 @@
             this.btn_reports.ForeColor = System.Drawing.Color.White;
             this.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_reports.Location = new System.Drawing.Point(2, 272);
-            this.btn_reports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reports.Margin = new System.Windows.Forms.Padding(2);
             this.btn_reports.Name = "btn_reports";
             this.btn_reports.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btn_reports.Size = new System.Drawing.Size(360, 67);
@@ -214,7 +214,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(243, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1791, 77);
+            this.panel7.Size = new System.Drawing.Size(1681, 77);
             this.panel7.TabIndex = 15;
             // 
             // guna2TextBox1
@@ -262,7 +262,6 @@
             this.btn_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
             this.btn_add.Location = new System.Drawing.Point(1381, 19);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(139, 36);
@@ -430,7 +429,7 @@
             this.Grid_payment.DefaultCellStyle = dataGridViewCellStyle9;
             this.Grid_payment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Grid_payment.Location = new System.Drawing.Point(386, 139);
-            this.Grid_payment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Grid_payment.Margin = new System.Windows.Forms.Padding(2);
             this.Grid_payment.Name = "Grid_payment";
             this.Grid_payment.RowHeadersVisible = false;
             this.Grid_payment.RowHeadersWidth = 62;
@@ -461,19 +460,19 @@
             this.Grid_payment.Visible = false;
             this.Grid_payment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewpayment_CellContentClick);
             // 
-            // Acountant
+            // Accountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(2034, 1157);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.Grid_payment);
             this.Controls.Add(this.Comb_days);
             this.Controls.Add(this.Grid_rays);
             this.Controls.Add(this.Grid_reports);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Acountant";
+            this.Name = "Accountant";
             this.Text = "Acountant";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

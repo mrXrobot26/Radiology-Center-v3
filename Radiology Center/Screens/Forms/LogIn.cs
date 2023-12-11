@@ -69,7 +69,11 @@ namespace Radiology_Center.Screens.Forms
                             
                             else if (foundedUser.role_id == 3)
                             {
-                                Thread th = new Thread(() => Application.Run(new DoctorHomePage()));
+                                var userDetail = _db.doctors.FirstOrDefault(sa => sa.user_id == foundedUser.id);
+                                string fullName = userDetail?.fName + " " + userDetail?.lName;
+                                string email = foundedUser.email;
+                                string imagePath = userDetail?.image;
+                                Thread th = new Thread(() => Application.Run(new DoctorHomePage(fullName, email, imagePath)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
