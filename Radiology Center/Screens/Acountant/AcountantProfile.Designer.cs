@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcountantProfile));
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.btrn_close = new System.Windows.Forms.Button();
             this.lbl_profileSalary = new ReaLTaiizor.Controls.FoxBigLabel();
@@ -45,16 +46,15 @@
             this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.pic_profileUser = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.foxLabel8 = new ReaLTaiizor.Controls.FoxLabel();
             this.lbl_profileDepartment = new ReaLTaiizor.Controls.FoxBigLabel();
             this.lbl_id = new System.Windows.Forms.Label();
-            this.btn_dalete = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profileUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // foxLabel1
@@ -80,6 +80,7 @@
             this.btrn_close.TabIndex = 2;
             this.btrn_close.Text = "X";
             this.btrn_close.UseVisualStyleBackColor = false;
+            this.btrn_close.Click += new System.EventHandler(this.btrn_close_Click);
             // 
             // lbl_profileSalary
             // 
@@ -240,7 +241,7 @@
             // 
             // foxLabel2
             // 
-            this.foxLabel2.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic)
+            this.foxLabel2.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
             this.foxLabel2.Location = new System.Drawing.Point(647, 66);
@@ -252,6 +253,7 @@
             // 
             // pic_profileUser
             // 
+            this.pic_profileUser.Image = global::Radiology_Center.Properties.Resources.assistant_croped;
             this.pic_profileUser.Location = new System.Drawing.Point(94, 66);
             this.pic_profileUser.Margin = new System.Windows.Forms.Padding(2);
             this.pic_profileUser.Name = "pic_profileUser";
@@ -259,16 +261,6 @@
             this.pic_profileUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_profileUser.TabIndex = 41;
             this.pic_profileUser.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(9, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // foxLabel3
             // 
@@ -283,8 +275,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btrn_close);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btrn_close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -326,29 +318,22 @@
             this.lbl_id.TabIndex = 60;
             this.lbl_id.Text = "sassa";
             // 
-            // btn_dalete
+            // pictureBox1
             // 
-            this.btn_dalete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_dalete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_dalete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_dalete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_dalete.FillColor = System.Drawing.Color.Red;
-            this.btn_dalete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_dalete.ForeColor = System.Drawing.Color.White;
-            this.btn_dalete.Location = new System.Drawing.Point(1256, 66);
-            this.btn_dalete.Name = "btn_dalete";
-            this.btn_dalete.Size = new System.Drawing.Size(105, 42);
-            this.btn_dalete.TabIndex = 61;
-            this.btn_dalete.Text = "Delete";
-            this.btn_dalete.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixel;
-            this.btn_dalete.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // AccountantProfile
+            // AcountantProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1423, 742);
-            this.Controls.Add(this.btn_dalete);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.foxLabel8);
             this.Controls.Add(this.lbl_profileDepartment);
@@ -371,13 +356,13 @@
             this.Controls.Add(this.foxLabel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AccountantProfile";
+            this.Name = "AcountantProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoctorProfile";
             this.Load += new System.EventHandler(this.AccountantProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_profileUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,12 +387,11 @@
         private ReaLTaiizor.Controls.FoxLabel foxLabel4;
         private ReaLTaiizor.Controls.FoxLabel foxLabel2;
         private System.Windows.Forms.PictureBox pic_profileUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.FoxLabel foxLabel3;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.FoxLabel foxLabel8;
         private ReaLTaiizor.Controls.FoxBigLabel lbl_profileDepartment;
         private System.Windows.Forms.Label lbl_id;
-        private Guna.UI2.WinForms.Guna2Button btn_dalete;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

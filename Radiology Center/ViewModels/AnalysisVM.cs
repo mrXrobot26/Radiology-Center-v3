@@ -13,6 +13,8 @@ namespace Radiology_Center.ViewModels
         public decimal Count { get; set; }
 
 
+        public decimal TotalCost { get; set; }
+        public DateTime? FirstDate { get; set; }
 
     }
 }

@@ -136,5 +136,10 @@ namespace Radiology_Center.Screens.Forms
         {
 
         }
+
+        private void LogIn_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

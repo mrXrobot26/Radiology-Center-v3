@@ -55,5 +55,25 @@ namespace Radiology_Center.Screens.Forms
                 this.Close();
             }
         }
+
+        private void lbl_Doc_Name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Patient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_PatientName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Ray_Name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

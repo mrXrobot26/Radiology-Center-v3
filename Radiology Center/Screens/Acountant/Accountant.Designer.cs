@@ -28,58 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accountant));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accountant));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.picBX_Profile = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_profile = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Comb_days = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Grid_Acc = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.chart1 = new LiveCharts.WinForms.CartesianChart();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txt_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
+            this.btn_search = new Guna.UI2.WinForms.Guna2Button();
+            this.picBX_Profile = new System.Windows.Forms.PictureBox();
+            this.btn_profile = new System.Windows.Forms.Button();
             this.btn_payment = new System.Windows.Forms.Button();
             this.btn_reports = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
-            this.Grid_reports = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Grid_rays = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Comb_days = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Grid_payment = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.analysisVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_reports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_rays)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_payment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Acc)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analysisVMBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.btn_reports);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 1061);
-            this.flowLayoutPanel1.TabIndex = 10;
             // 
             // panel2
             // 
@@ -91,17 +76,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(363, 104);
             this.panel2.TabIndex = 3;
-            // 
-            // picBX_Profile
-            // 
-            this.picBX_Profile.Image = ((System.Drawing.Image)(resources.GetObject("picBX_Profile.Image")));
-            this.picBX_Profile.Location = new System.Drawing.Point(2, 8);
-            this.picBX_Profile.Margin = new System.Windows.Forms.Padding(2);
-            this.picBX_Profile.Name = "picBX_Profile";
-            this.picBX_Profile.Size = new System.Drawing.Size(96, 93);
-            this.picBX_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBX_Profile.TabIndex = 5;
-            this.picBX_Profile.TabStop = false;
             // 
             // lbl_name
             // 
@@ -139,6 +113,223 @@
             this.panel3.Size = new System.Drawing.Size(364, 67);
             this.panel3.TabIndex = 5;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_payment);
+            this.panel4.Location = new System.Drawing.Point(1, 201);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(364, 67);
+            this.panel4.TabIndex = 6;
+            // 
+            // Comb_days
+            // 
+            this.Comb_days.BackColor = System.Drawing.Color.Transparent;
+            this.Comb_days.BorderRadius = 5;
+            this.Comb_days.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.Comb_days.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Comb_days.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Comb_days.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_days.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_days.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Comb_days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Comb_days.ItemHeight = 30;
+            this.Comb_days.Location = new System.Drawing.Point(1316, 16);
+            this.Comb_days.Name = "Comb_days";
+            this.Comb_days.Size = new System.Drawing.Size(167, 36);
+            this.Comb_days.TabIndex = 109;
+            this.Comb_days.Visible = false;
+            this.Comb_days.SelectedIndexChanged += new System.EventHandler(this.Comb_days_SelectedIndexChanged_1);
+            // 
+            // Grid_Acc
+            // 
+            this.Grid_Acc.AllowUserToAddRows = false;
+            this.Grid_Acc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.Grid_Acc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Acc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.Grid_Acc.ColumnHeadersHeight = 39;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Acc.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Grid_Acc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.Grid_Acc.Location = new System.Drawing.Point(421, 173);
+            this.Grid_Acc.Margin = new System.Windows.Forms.Padding(2);
+            this.Grid_Acc.MultiSelect = false;
+            this.Grid_Acc.Name = "Grid_Acc";
+            this.Grid_Acc.ReadOnly = true;
+            this.Grid_Acc.RowHeadersVisible = false;
+            this.Grid_Acc.RowHeadersWidth = 50;
+            this.Grid_Acc.RowTemplate.Height = 40;
+            this.Grid_Acc.ShowEditingIcon = false;
+            this.Grid_Acc.Size = new System.Drawing.Size(1438, 537);
+            this.Grid_Acc.TabIndex = 101;
+            this.Grid_Acc.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
+            this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.Grid_Acc.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Grid_Acc.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.Grid_Acc.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            this.Grid_Acc.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Grid_Acc.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grid_Acc.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Grid_Acc.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Grid_Acc.ThemeStyle.HeaderStyle.Height = 39;
+            this.Grid_Acc.ThemeStyle.ReadOnly = true;
+            this.Grid_Acc.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.Grid_Acc.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Grid_Acc.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grid_Acc.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.Grid_Acc.ThemeStyle.RowsStyle.Height = 40;
+            this.Grid_Acc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            this.Grid_Acc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.Grid_Acc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewpayment_CellContentClick);
+            // 
+            // chart1
+            // 
+            this.chart1.Location = new System.Drawing.Point(673, 681);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(866, 359);
+            this.chart1.TabIndex = 113;
+            this.chart1.Text = "cartesianChart1";
+            this.chart1.Visible = false;
+            this.chart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.chart1_ChildChanged);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txt_search);
+            this.panel10.Controls.Add(this.btn_search);
+            this.panel10.Controls.Add(this.Comb_days);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(365, 43);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1505, 70);
+            this.panel10.TabIndex = 116;
+            // 
+            // txt_search
+            // 
+            this.txt_search.BorderRadius = 5;
+            this.txt_search.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search.DefaultText = "";
+            this.txt_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search.Location = new System.Drawing.Point(36, 16);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PasswordChar = '\0';
+            this.txt_search.PlaceholderText = "Search";
+            this.txt_search.SelectedText = "";
+            this.txt_search.Size = new System.Drawing.Size(332, 39);
+            this.txt_search.TabIndex = 12;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.flowLayoutPanel2.Controls.Add(this.panel2);
+            this.flowLayoutPanel2.Controls.Add(this.panel3);
+            this.flowLayoutPanel2.Controls.Add(this.panel4);
+            this.flowLayoutPanel2.Controls.Add(this.btn_reports);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 43);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(365, 864);
+            this.flowLayoutPanel2.TabIndex = 115;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.bigLabel1);
+            this.panel15.Controls.Add(this.nightControlBox2);
+            this.panel15.Controls.Add(this.pictureBox2);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(1870, 43);
+            this.panel15.TabIndex = 114;
+            // 
+            // bigLabel1
+            // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.bigLabel1.Location = new System.Drawing.Point(368, -3);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(199, 45);
+            this.bigLabel1.TabIndex = 3;
+            this.bigLabel1.Text = "Accountant";
+            // 
+            // nightControlBox2
+            // 
+            this.nightControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.nightControlBox2.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox2.CloseHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nightControlBox2.DefaultLocation = true;
+            this.nightControlBox2.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox2.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.nightControlBox2.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox2.EnableMaximizeButton = true;
+            this.nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox2.EnableMinimizeButton = true;
+            this.nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.nightControlBox2.Location = new System.Drawing.Point(1731, 0);
+            this.nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nightControlBox2.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.nightControlBox2.Name = "nightControlBox2";
+            this.nightControlBox2.Size = new System.Drawing.Size(139, 31);
+            this.nightControlBox2.TabIndex = 2;
+            // 
+            // btn_search
+            // 
+            this.btn_search.BorderRadius = 5;
+            this.btn_search.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
+            this.btn_search.Location = new System.Drawing.Point(374, 16);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(61, 39);
+            this.btn_search.TabIndex = 13;
+            // 
+            // picBX_Profile
+            // 
+            this.picBX_Profile.Image = ((System.Drawing.Image)(resources.GetObject("picBX_Profile.Image")));
+            this.picBX_Profile.Location = new System.Drawing.Point(2, 8);
+            this.picBX_Profile.Margin = new System.Windows.Forms.Padding(2);
+            this.picBX_Profile.Name = "picBX_Profile";
+            this.picBX_Profile.Size = new System.Drawing.Size(96, 93);
+            this.picBX_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBX_Profile.TabIndex = 5;
+            this.picBX_Profile.TabStop = false;
+            // 
             // btn_profile
             // 
             this.btn_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
@@ -159,15 +350,6 @@
             this.btn_profile.UseVisualStyleBackColor = false;
             this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btn_payment);
-            this.panel4.Location = new System.Drawing.Point(1, 201);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(364, 67);
-            this.panel4.TabIndex = 6;
-            // 
             // btn_payment
             // 
             this.btn_payment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
@@ -175,6 +357,7 @@
             this.btn_payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_payment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_payment.ForeColor = System.Drawing.Color.White;
+            this.btn_payment.Image = global::Radiology_Center.Properties.Resources.icons8_bill_24;
             this.btn_payment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_payment.Location = new System.Drawing.Point(4, 0);
             this.btn_payment.Margin = new System.Windows.Forms.Padding(2);
@@ -194,6 +377,7 @@
             this.btn_reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reports.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reports.ForeColor = System.Drawing.Color.White;
+            this.btn_reports.Image = global::Radiology_Center.Properties.Resources.icons8_report_24;
             this.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_reports.Location = new System.Drawing.Point(2, 272);
             this.btn_reports.Margin = new System.Windows.Forms.Padding(2);
@@ -206,291 +390,55 @@
             this.btn_reports.UseVisualStyleBackColor = false;
             this.btn_reports.Click += new System.EventHandler(this.btn_reports_Click);
             // 
-            // panel7
+            // pictureBox2
             // 
-            this.panel7.Controls.Add(this.guna2TextBox1);
-            this.panel7.Controls.Add(this.guna2Button2);
-            this.panel7.Controls.Add(this.btn_add);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(243, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1681, 77);
-            this.panel7.TabIndex = 15;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(9, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // guna2TextBox1
+            // analysisVMBindingSource
             // 
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(17, 16);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(332, 39);
-            this.guna2TextBox1.TabIndex = 12;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(355, 16);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(61, 39);
-            this.guna2Button2.TabIndex = 13;
-            // 
-            // btn_add
-            // 
-            this.btn_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(1381, 19);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(139, 36);
-            this.btn_add.TabIndex = 11;
-            this.btn_add.Text = "Add";
-            this.btn_add.Visible = false;
-            // 
-            // Grid_reports
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.Grid_reports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_reports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Grid_reports.ColumnHeadersHeight = 39;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_reports.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Grid_reports.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.Grid_reports.Location = new System.Drawing.Point(386, 139);
-            this.Grid_reports.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.Grid_reports.Name = "Grid_reports";
-            this.Grid_reports.RowHeadersVisible = false;
-            this.Grid_reports.RowHeadersWidth = 20;
-            this.Grid_reports.RowTemplate.Height = 50;
-            this.Grid_reports.RowTemplate.ReadOnly = true;
-            this.Grid_reports.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_reports.ShowEditingIcon = false;
-            this.Grid_reports.Size = new System.Drawing.Size(730, 537);
-            this.Grid_reports.TabIndex = 106;
-            this.Grid_reports.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
-            this.Grid_reports.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.Grid_reports.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.Grid_reports.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.Grid_reports.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.Grid_reports.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.Grid_reports.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.Grid_reports.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.Grid_reports.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            this.Grid_reports.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grid_reports.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_reports.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.Grid_reports.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Grid_reports.ThemeStyle.HeaderStyle.Height = 39;
-            this.Grid_reports.ThemeStyle.ReadOnly = false;
-            this.Grid_reports.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.Grid_reports.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Grid_reports.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_reports.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.Grid_reports.ThemeStyle.RowsStyle.Height = 50;
-            this.Grid_reports.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.Grid_reports.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.Grid_reports.Visible = false;
-            // 
-            // Grid_rays
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.Grid_rays.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_rays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.Grid_rays.ColumnHeadersHeight = 39;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_rays.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Grid_rays.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.Grid_rays.Location = new System.Drawing.Point(1258, 139);
-            this.Grid_rays.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.Grid_rays.Name = "Grid_rays";
-            this.Grid_rays.RowHeadersVisible = false;
-            this.Grid_rays.RowHeadersWidth = 20;
-            this.Grid_rays.RowTemplate.Height = 50;
-            this.Grid_rays.RowTemplate.ReadOnly = true;
-            this.Grid_rays.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_rays.ShowEditingIcon = false;
-            this.Grid_rays.Size = new System.Drawing.Size(627, 537);
-            this.Grid_rays.TabIndex = 107;
-            this.Grid_rays.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
-            this.Grid_rays.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.Grid_rays.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.Grid_rays.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.Grid_rays.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.Grid_rays.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.Grid_rays.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.Grid_rays.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.Grid_rays.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            this.Grid_rays.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grid_rays.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_rays.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.Grid_rays.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Grid_rays.ThemeStyle.HeaderStyle.Height = 39;
-            this.Grid_rays.ThemeStyle.ReadOnly = false;
-            this.Grid_rays.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.Grid_rays.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Grid_rays.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_rays.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.Grid_rays.ThemeStyle.RowsStyle.Height = 50;
-            this.Grid_rays.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            this.Grid_rays.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.Grid_rays.Visible = false;
-            // 
-            // Comb_days
-            // 
-            this.Comb_days.BackColor = System.Drawing.Color.Transparent;
-            this.Comb_days.BorderRadius = 5;
-            this.Comb_days.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.Comb_days.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Comb_days.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Comb_days.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Comb_days.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Comb_days.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Comb_days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Comb_days.ItemHeight = 30;
-            this.Comb_days.Location = new System.Drawing.Point(1718, 95);
-            this.Comb_days.Name = "Comb_days";
-            this.Comb_days.Size = new System.Drawing.Size(167, 36);
-            this.Comb_days.TabIndex = 109;
-            this.Comb_days.Visible = false;
-            // 
-            // Grid_payment
-            // 
-            this.Grid_payment.AllowUserToAddRows = false;
-            this.Grid_payment.AllowUserToDeleteRows = false;
-            this.Grid_payment.AllowUserToResizeColumns = false;
-            this.Grid_payment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.Grid_payment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.Grid_payment.BackgroundColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_payment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.Grid_payment.ColumnHeadersHeight = 39;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_payment.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Grid_payment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Grid_payment.Location = new System.Drawing.Point(386, 139);
-            this.Grid_payment.Margin = new System.Windows.Forms.Padding(2);
-            this.Grid_payment.Name = "Grid_payment";
-            this.Grid_payment.RowHeadersVisible = false;
-            this.Grid_payment.RowHeadersWidth = 62;
-            this.Grid_payment.RowTemplate.Height = 24;
-            this.Grid_payment.Size = new System.Drawing.Size(1498, 164);
-            this.Grid_payment.TabIndex = 110;
-            this.Grid_payment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.Grid_payment.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.Grid_payment.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.Grid_payment.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.Grid_payment.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.Grid_payment.ThemeStyle.BackColor = System.Drawing.Color.Silver;
-            this.Grid_payment.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Grid_payment.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Grid_payment.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.Grid_payment.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_payment.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.Grid_payment.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Grid_payment.ThemeStyle.HeaderStyle.Height = 39;
-            this.Grid_payment.ThemeStyle.ReadOnly = false;
-            this.Grid_payment.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.Grid_payment.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.Grid_payment.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grid_payment.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.Grid_payment.ThemeStyle.RowsStyle.Height = 24;
-            this.Grid_payment.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Grid_payment.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.Grid_payment.Visible = false;
-            this.Grid_payment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewpayment_CellContentClick);
+            this.analysisVMBindingSource.DataSource = typeof(Radiology_Center.ViewModels.AnalysisVM);
             // 
             // Accountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.Grid_payment);
-            this.Controls.Add(this.Comb_days);
-            this.Controls.Add(this.Grid_rays);
-            this.Controls.Add(this.Grid_reports);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1870, 907);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.panel15);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.Grid_Acc);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(2288, 1614);
             this.Name = "Accountant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acountant";
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_reports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_rays)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_payment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Acc)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBX_Profile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analysisVMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox picBX_Profile;
         private System.Windows.Forms.Label lbl_name;
@@ -499,14 +447,18 @@
         private System.Windows.Forms.Button btn_profile;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_payment;
-        private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button btn_add;
-        private Guna.UI2.WinForms.Guna2DataGridView Grid_reports;
-        private Guna.UI2.WinForms.Guna2DataGridView Grid_rays;
         private Guna.UI2.WinForms.Guna2ComboBox Comb_days;
         private System.Windows.Forms.Button btn_reports;
-        private Guna.UI2.WinForms.Guna2DataGridView Grid_payment;
+        private Guna.UI2.WinForms.Guna2DataGridView Grid_Acc;
+        private System.Windows.Forms.BindingSource analysisVMBindingSource;
+        private LiveCharts.WinForms.CartesianChart chart1;
+        private System.Windows.Forms.Panel panel10;
+        private Guna.UI2.WinForms.Guna2TextBox txt_search;
+        private Guna.UI2.WinForms.Guna2Button btn_search;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel15;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

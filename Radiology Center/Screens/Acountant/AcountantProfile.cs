@@ -37,7 +37,8 @@ namespace Radiology_Center.Screens.Acountant
             lbl_birthDate.Text = birthDate.ToShortDateString();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+     
+        private void btrn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
