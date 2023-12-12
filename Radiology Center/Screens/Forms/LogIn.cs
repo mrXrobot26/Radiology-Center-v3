@@ -1,8 +1,9 @@
 ﻿using Radiology_Center.Models;
 using Radiology_Center.Screens.Acountant;
 using Radiology_Center.Screens.Admin;
-using Radiology_Center.Screens.Assistant;
+using Radiology_Center.Screens.Forms.Assistant;
 using Radiology_Center.Screens.Doctor;
+using Radiology_Center.Screens.Forms.Assistant;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace Radiology_Center.Screens.Forms
 
 
 
-                            if (foundedUser.role_id == 5) 
+                            if (foundedUser.role_id == 1) 
                             {
                                 var userDetail = _db.super_admin.FirstOrDefault(sa => sa.user_id == foundedUser.id);
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
@@ -80,12 +81,16 @@ namespace Radiology_Center.Screens.Forms
                             
                             else if (foundedUser.role_id == 4)
                             {
-                                Thread th = new Thread(() => Application.Run(new AssistantHomePage()));
+                                var userDetail = _db.assisatants.FirstOrDefault(sa => sa.user_id == foundedUser.id);
+                                string fullName = userDetail?.fName + " " + userDetail?.lName;
+                                string email = foundedUser.email;
+                                string imagePath = userDetail?.image;
+                                Thread th = new Thread(() => Application.Run(new AssistantHomePage(fullName, email, imagePath)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
                             
-                            else if (foundedUser.role_id == 1)
+                            else if (foundedUser.role_id == 5)
                             {
                                 var userDetail = _db.accountants.FirstOrDefault(sa => sa.user_id == foundedUser.id);
                                 string AccName = userDetail?.fName + " " + userDetail?.lName;

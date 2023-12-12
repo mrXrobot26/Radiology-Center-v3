@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -22,15 +23,8 @@ namespace Radiology_Center.Screens.Doctor
         private int _id;
         private string _fullName;
         private string _email;
-
         private string _imagePath;
-        private string _nationalId;
-        private string _gender;
-        private string _phone;
-        private string _salary;
-        private string _department;
-        private string _role;
-        private Image _profileImage;
+
         public DoctorHomePage(string fullName, string email, string imagePath)
         {
             InitializeComponent();
@@ -41,6 +35,13 @@ namespace Radiology_Center.Screens.Doctor
             _email = email;
             _imagePath = imagePath;
 
+            lbl_name.Text = fullName;
+            lbl_email.Text = email;
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                pic_user.ImageLocation = imagePath;
+            }
+            lbl_generl.Text = "Patient";
             DataGridViewForPatiant_doc();
             grd_Patient_Doc.CellClick += grd_Patient_Doc_CellClick;
 
@@ -128,10 +129,13 @@ namespace Radiology_Center.Screens.Doctor
 
         }
 
-        private void btn_profile_Click(object sender, EventArgs e)
+
+
+
+
+        private void btn_profile_Click_1(object sender, EventArgs e)
         {
             ResetButtonColors();
-            btn_profile.BackColor = ColorTranslator.FromHtml("#182E42");
 
 
             var userForProfile = _db.user_.FirstOrDefault(u => u.email == _email);
@@ -139,23 +143,22 @@ namespace Radiology_Center.Screens.Doctor
             if (userForProfile != null)
             {
                 var docForProfile = _db.doctors.FirstOrDefault(a => a.user_id == userForProfile.id);
-                // var roleForDocProfile = _db.roles.FirstOrDefault(r => r.id == userForProfile.role_id);
                 var depForDoctorProfile = _db.departments.FirstOrDefault(x => x.id == docForProfile.dep_id);
 
 
                 DoctorProfile docprofile = new DoctorProfile();
                 docprofile.SetDoctorProfileData(
-                   docForProfile.id,
+                    docForProfile.id,
                     docForProfile.fName + " " + docForProfile.lName,
                     docForProfile.nationalID,
-                   docForProfile.gender,
-                   docForProfile.phone_number,
+                    docForProfile.gender,
+                    docForProfile.phone_number,
                     userForProfile.email,
                     (decimal)docForProfile.salary,
                     docForProfile.image,
                     (DateTime)docForProfile.birthdate,
-                   depForDoctorProfile.name
-
+                    depForDoctorProfile.name,
+                    "myProfile"
                 );
 
 
@@ -164,13 +167,46 @@ namespace Radiology_Center.Screens.Doctor
             }
         }
 
-        //doctor doctorInstance = new doctor();
-
-
-        private void lbl_name_Click(object sender, EventArgs e)
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
+            switch (lbl_generl.Text)
+            {
+                case "Patient":
+                    FilterPatients(txt_search.Text);
+                    break;
 
-            //  lbl_name.Text = $" {doctorInstance.fName} {doctorInstance.lName}";
+                default:
+                    break;
+            }
+        }
+        private void FilterPatients(string searchText)
+        {
+            var filteredList = (from pd in _db.patient_data
+                                join pi in _db.patient_info on pd.id equals pi.id
+                                join d in _db.doctors on pd.doctor_id equals d.id
+                                join dep in _db.departments on d.dep_id equals dep.id
+                                join r in _db.rays on pd.ray_id equals r.id
+                                where (pi.fName + " " + pi.lName).ToLower().Contains(searchText)
+                                select new
+                                {
+                                    Id = pi.id,
+                                    Name = pi.fName + " " + pi.lName,
+                                    Date = pd.daydate,
+                                    Report = pd.doctor_report,
+                                    Doctor = d.fName + " " + d.lName,
+                                    department = dep.name,
+                                    Ray = r.name,
+                                }).ToList();
+
+            grd_Patient_Doc.DataSource = filteredList;
+        }
+
+        private void btn_logOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(() => Application.Run(new LogIn()));
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
     }
 }

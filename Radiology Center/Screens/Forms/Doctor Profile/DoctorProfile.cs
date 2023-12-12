@@ -18,12 +18,13 @@ namespace Radiology_Center.Screens.Forms.Department.Doctor_Profile
         public DoctorProfile()
         {
             InitializeComponent();
+
         }
         public void SetDoctorProfileData(
             int id,
         string name, string nationalId, string gender,
         string phone, string email, decimal salary
-       , string profileImage, DateTime birthDate, string department)
+       , string profileImage, DateTime birthDate, string department,string profile)
         {
             lbl_id.Text = id.ToString();
             lbl_profileName.Text = name;
@@ -35,8 +36,16 @@ namespace Radiology_Center.Screens.Forms.Department.Doctor_Profile
             pic_profileUser.ImageLocation = profileImage;
             lbl_birthDate.Text = birthDate.ToShortDateString();
             lbl_profileDepartment.Text = department;
+            DoctorProfile_Load(profile);
         }
+        private void DoctorProfile_Load(string _profile)
+        {
+            if (_profile =="myProfile")
+            {
+                btn_delete.Visible = false;
+            }
 
+        }
         private void DoctorProfile_Load(object sender, EventArgs e)
         {
 

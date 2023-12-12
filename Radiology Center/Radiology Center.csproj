@@ -153,12 +153,6 @@
     <Compile Include="Screens\Admin\AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Assistant\AssistantHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Assistant\AssistantHomePage.Designer.cs">
-      <DependentUpon>AssistantHomePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Doctor\DoctorHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +165,12 @@
     <Compile Include="Screens\Forms\Acountant\AcountantForm.Designer.cs">
       <DependentUpon>AcountantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Forms\Add Patient\AddPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Add Patient\AddPatientForm.Designer.cs">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Forms\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +182,12 @@
     </Compile>
     <Compile Include="Screens\Forms\Assistant\Assistant.Designer.cs">
       <DependentUpon>Assistant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Forms\Assistant\AssistantHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Forms\Assistant\AssistantHomePage.Designer.cs">
+      <DependentUpon>AssistantHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Forms\Department\DepartmentForm.cs">
       <SubType>Form</SubType>
@@ -264,20 +270,23 @@
     <EmbeddedResource Include="Screens\Admin\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Assistant\AssistantHomePage.resx">
-      <DependentUpon>AssistantHomePage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Doctor\DoctorHomePage.resx">
       <DependentUpon>DoctorHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Acountant\AcountantForm.resx">
       <DependentUpon>AcountantForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Add Patient\AddPatientForm.resx">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Assistant\Assistant.resx">
       <DependentUpon>Assistant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Forms\Assistant\AssistantHomePage.resx">
+      <DependentUpon>AssistantHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Forms\Department\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>

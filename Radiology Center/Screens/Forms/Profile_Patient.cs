@@ -14,13 +14,15 @@ namespace Radiology_Center.Screens.Forms
     public partial class Profile_Patient : Form
     {
         RadiologyEntities _db = new RadiologyEntities();
+        int _id;
+
         public Profile_Patient()
 
         {
 
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+          
 
         }
 
@@ -32,6 +34,7 @@ namespace Radiology_Center.Screens.Forms
       string phone, DateTime birthDate, string DocName, string RayName, DateTime daydate, DateTime deliverdate, string History)
         {
             Patient_Id.Text = id.ToString();
+            _id = id;
             Patient_Name.Text = name;
             Patient_Gender.Text = gender;
             Patient_Phone.Text = phone;
@@ -48,23 +51,22 @@ namespace Radiology_Center.Screens.Forms
              InitializeComponent();
          }*/
 
-        private void Profile_Patient_Load(object sender, EventArgs e)
-        {
 
+
+        private void btrn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void foxBigLabel6_Click(object sender, EventArgs e)
+        private void btn_addReport_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void foxLabel10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void foxBigLabel1_Click(object sender, EventArgs e)
-        {
+            var patiant = _db.patient_data.FirstOrDefault(x=>x.id  == _id);
+            if (patiant != null)
+            {
+                patiant.doctor_report = "Added";
+                _db.SaveChanges();
+                MessageBox.Show("Report status updated successfully.");
+            }
 
         }
     }

@@ -18,6 +18,7 @@ using Radiology_Center.Screens.Forms.Acountant;
 using Radiology_Center.Screens.Forms.Admin;
 using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 using Radiology_Center.Screens.Forms.Ray;
+using System.Threading;
 
 namespace Radiology_Center
 {
@@ -67,7 +68,6 @@ namespace Radiology_Center
 
         }
 
-
         private void DataGridViewForDoctor()
         {
             var res = from Doc in _db.doctors
@@ -101,6 +101,7 @@ namespace Radiology_Center
                       join d in _db.doctors on pd.doctor_id equals d.id
                       join dep in _db.departments on d.dep_id equals dep.id
                       join r in _db.rays on pd.ray_id equals r.id
+                      join a in _db.assisatants on pd.assistant_id equals a.id
                       select new
                       {
                           Id = pd.id,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -111,6 +112,7 @@ namespace Radiology_Center
                           Doctor = d.fName + " " + d.lName,
                           department = dep.name,
                           Ray = r.name,
+                          Assistant = a.fName + " " + a.lName,
                       };
             var patiantDataList = res.ToList();
             grd_sAdmin.DataSource = patiantDataList;
@@ -337,9 +339,7 @@ namespace Radiology_Center
             btn_departments.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Department";
             CheckLabelAndSetButtonVisibility();
-
             DataGridViewForDepartment();
-
 
         }
 
@@ -433,9 +433,11 @@ namespace Radiology_Center
             btn_assistant.BackColor = Color.FromArgb(20, 39, 55);
             btn_accountant.BackColor = Color.FromArgb(20, 39, 55);
             btn_admin.BackColor = Color.FromArgb(20, 39, 55);
+            btn_ray.BackColor = Color.FromArgb(20, 39, 55);
+
         }
 
-        
+
 
         private void grd_doctors_sAdmin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -462,8 +464,8 @@ namespace Radiology_Center
                                 (decimal)doctorForProfile.salary,
                                 doctorForProfile.image,
                                 (DateTime)doctorForProfile.birthdate,
-                                depForDoctorProfile.name
-                                
+                                depForDoctorProfile.name,
+                                "!myProfile"
                             );
                         doctorProfile.Show();
                     }
@@ -632,7 +634,6 @@ namespace Radiology_Center
            
         }
 
-
         //============================================filter============================
         private void FilterDoctors(string searchText)
         {
@@ -661,7 +662,6 @@ namespace Radiology_Center
 
             grd_sAdmin.DataSource = filteredList;
         }
-
         private void FilterPatients(string searchText)
         {
             var filteredList = (from pd in _db.patient_data
@@ -684,7 +684,6 @@ namespace Radiology_Center
 
             grd_sAdmin.DataSource = filteredList;
         }
-
         private void FilterAssistants(string searchText)
         {
             var filteredList = _db.assisatants
@@ -703,7 +702,6 @@ namespace Radiology_Center
 
             grd_sAdmin.DataSource = filteredList;
         }
-
         private void FilterAccountants(string searchText)
         {
             var filteredList = _db.accountants
@@ -722,7 +720,6 @@ namespace Radiology_Center
 
             grd_sAdmin.DataSource = filteredList;
         }
-
         private void FilterAdmins(string searchText)
         {
             var filteredList = _db.admins
@@ -758,5 +755,12 @@ namespace Radiology_Center
             grd_sAdmin.DataSource = filteredList;
         }
 
+        private void btn_logOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(() => Application.Run(new LogIn()));
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
     }
 }
