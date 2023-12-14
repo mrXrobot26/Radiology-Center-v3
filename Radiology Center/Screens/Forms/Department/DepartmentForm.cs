@@ -25,17 +25,36 @@ namespace Radiology_Center.Screens.Forms.Department
 
         private void btn_addDoc_Click(object sender, EventArgs e)
         {
-            var department = new department
+            try
             {
-                name = txt_department.Text
-            };
-            _db.departments.Add(department);
-            _db.SaveChanges();
-            MessageBox.Show($" {department.name} add Successfully");
+                var department = new department
+                {
+                    name = txt_department.Text
+                };
+                _db.departments.Add(department);
+                _db.SaveChanges();
+                MessageBox.Show($" {department.name} add Successfully");
 
-            DepartmentAdded?.Invoke();
+                DepartmentAdded?.Invoke();
 
-            this.Close();
+                this.Close();
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                var errorMessages = dbEx.EntityValidationErrors
+                    .SelectMany(x => x.ValidationErrors)
+                    .Select(x => x.ErrorMessage);
+
+                var fullErrorMessage = string.Join("; ", errorMessages);
+                var exceptionMessage = string.Concat("Validation errors: ", fullErrorMessage);
+
+                MessageBox.Show(exceptionMessage);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

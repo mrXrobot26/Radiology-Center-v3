@@ -150,11 +150,12 @@ namespace Radiology_Center.Screens.Acountant
             lbl_email.Text = email;
             if (!string.IsNullOrEmpty(imagePath))
             {
-                //  pic_user.ImageLocation = imagePath;
+                pic_user.ImageLocation = imagePath;
             }
             string[] arr = { " The Last 3 Days ", " The Last 7 Days ", " The Last 14 Days", " The Last 24 " };
             Comb_days.Items.AddRange(arr);
             Grid_Acc.CellClick += GridViewpayment_CellContentClick;
+            DataGridViewpayment();
 
 
         }
@@ -181,6 +182,7 @@ namespace Radiology_Center.Screens.Acountant
 
         private void btn_reports_Click(object sender, EventArgs e)
         {
+            lbl_generl.Text = "Report";
             chart1.Visible = true;
            // Grid_reports.Visible = true;
          //   Grid_rays.Visible = true;
@@ -193,6 +195,8 @@ namespace Radiology_Center.Screens.Acountant
 
         private void btn_payment_Click(object sender, EventArgs e)
         {
+
+            lbl_generl.Text = "Payment";
             DataGridViewpayment();
             chart1.Visible = false;
            // Grid_reports.Visible = false;
@@ -205,8 +209,8 @@ namespace Radiology_Center.Screens.Acountant
 
         private void btn_profile_Click(object sender, EventArgs e)
         {
-            chart1.Visible = false;
-            Grid_Acc.Visible = false;
+            //lbl_generl.Text = "Accountant";
+
             var userForProfile = _db.user_.FirstOrDefault(x => x.email == _email);
 
             if (userForProfile != null)
@@ -215,11 +219,7 @@ namespace Radiology_Center.Screens.Acountant
                 var accountantForProfile = _db.accountants.FirstOrDefault(a => a.user_id == userForProfile.id);
                 var roleForProfile = _db.roles.FirstOrDefault(r => r.id == userForProfile.role_id);
 
-              //  Grid_reports.Visible = false;
-                //Grid_rays.Visible = false;
-                Comb_days.Visible = false;
-                Grid_Acc.Visible = false;
-              //  btn_add.Visible = false;
+
                 AcountantProfile accountantProfile = new AcountantProfile();
                 accountantProfile.SetAccountantProfileData(
 
@@ -240,29 +240,34 @@ namespace Radiology_Center.Screens.Acountant
 
         private void GridViewpayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            Payment pay = new Payment();
-
-
-
-
-            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            if (lbl_generl.Text =="Payment")
             {
-                int patientId = int.Parse(Grid_Acc.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-                //  int unquId = _db.patient_info.Select
-                var patientdata = _db.patient_data.FirstOrDefault(x => x.id == patientId);
-                int unqId = (int)patientdata.patient_id;
-                int docId = (int)patientdata.doctor_id;
-                int rayId = (int)patientdata.ray_id;
-                var patientinfo = _db.patient_info.FirstOrDefault(x => x.id == unqId);
-                var doctor = _db.doctors.FirstOrDefault(x => x.id == docId);
-                var ray = _db.rays.FirstOrDefault(x => x.id.Equals(rayId));
+                Payment pay = new Payment();
 
 
-                pay.setpaydata(patientId, patientinfo.fName, patientinfo.lName, doctor.fName, doctor.lName, ray.name, (decimal)ray.cost, patientdata.pay_status);
 
-                pay.Show();
+
+                if (e.RowIndex >= 0)
+                {
+                    int patientId = int.Parse(Grid_Acc.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    //  int unquId = _db.patient_info.Select
+                    var patientdata = _db.patient_data.FirstOrDefault(x => x.id == patientId);
+                    int unqId = (int)patientdata.patient_id;
+                    int docId = (int)patientdata.doctor_id;
+                    int rayId = (int)patientdata.ray_id;
+                    var patientinfo = _db.patient_info.FirstOrDefault(x => x.id == unqId);
+                    var doctor = _db.doctors.FirstOrDefault(x => x.id == docId);
+                    var ray = _db.rays.FirstOrDefault(x => x.id.Equals(rayId));
+
+
+                    pay.setpaydata(patientId, patientinfo.fName, patientinfo.lName, doctor.fName, doctor.lName, ray.name, (decimal)ray.cost, patientdata.pay_status);
+                    pay.paymentAdd += DataGridViewpayment;
+                    pay.Show();
+                }
+
             }
+
+           
         }
 
         private void Accountant_Load(object sender, EventArgs e)
@@ -316,6 +321,14 @@ namespace Radiology_Center.Screens.Acountant
                 x = -24;
                 DataGridViewAnalaysis();
             }
+        }
+
+        private void btn_logOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(() => Application.Run(new LogIn()));
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
     }
 }

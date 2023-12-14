@@ -76,9 +76,10 @@ namespace Radiology_Center.Screens.Forms.Acountant
                     pass = txt_password.Text,
                     role_id = comb_role.SelectedIndex + 1
                 };
-                accountant.user_id = user.id;
                 _db.accountants.Add(accountant);
                 _db.user_.Add(user);
+                _db.SaveChanges();
+                accountant.user_id = user.id;
                 _db.SaveChanges();
                 MessageBox.Show($"{accountant.fName} {accountant.lName} add Successfully");
 

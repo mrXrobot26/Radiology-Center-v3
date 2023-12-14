@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssistantHomePage));
             this.grd_assistant = new Guna.UI2.WinForms.Guna2DataGridView();
             this.brn_refresh = new ReaLTaiizor.Controls.AloneButton();
@@ -53,12 +53,12 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_logOut = new System.Windows.Forms.Button();
             this.lbl_generl = new ReaLTaiizor.Controls.BigLabel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_logOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_assistant)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
@@ -76,25 +76,25 @@
             // 
             // grd_assistant
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.grd_assistant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_assistant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.grd_assistant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_assistant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grd_assistant.ColumnHeadersHeight = 39;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_assistant.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_assistant.DefaultCellStyle = dataGridViewCellStyle3;
             this.grd_assistant.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.grd_assistant.Location = new System.Drawing.Point(3, 0);
             this.grd_assistant.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
@@ -107,7 +107,7 @@
             this.grd_assistant.RowTemplate.ReadOnly = true;
             this.grd_assistant.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.grd_assistant.ShowEditingIcon = false;
-            this.grd_assistant.Size = new System.Drawing.Size(1435, 693);
+            this.grd_assistant.Size = new System.Drawing.Size(1435, 828);
             this.grd_assistant.TabIndex = 101;
             this.grd_assistant.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.grd_assistant.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -422,6 +422,26 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(365, 804);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
+            // btn_logOut
+            // 
+            this.btn_logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
+            this.btn_logOut.FlatAppearance.BorderSize = 0;
+            this.btn_logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logOut.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logOut.ForeColor = System.Drawing.Color.White;
+            this.btn_logOut.Image = ((System.Drawing.Image)(resources.GetObject("btn_logOut.Image")));
+            this.btn_logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logOut.Location = new System.Drawing.Point(2, 485);
+            this.btn_logOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_logOut.Name = "btn_logOut";
+            this.btn_logOut.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.btn_logOut.Size = new System.Drawing.Size(360, 67);
+            this.btn_logOut.TabIndex = 12;
+            this.btn_logOut.Text = "           Log out";
+            this.btn_logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logOut.UseVisualStyleBackColor = false;
+            this.btn_logOut.Click += new System.EventHandler(this.btn_logOut_Click);
+            // 
             // lbl_generl
             // 
             this.lbl_generl.AutoSize = true;
@@ -474,7 +494,7 @@
             this.panel11.Controls.Add(this.grd_assistant);
             this.panel11.Location = new System.Drawing.Point(401, 139);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1425, 708);
+            this.panel11.Size = new System.Drawing.Size(1425, 831);
             this.panel11.TabIndex = 20;
             // 
             // panel1
@@ -488,26 +508,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1812, 43);
             this.panel1.TabIndex = 17;
-            // 
-            // btn_logOut
-            // 
-            this.btn_logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
-            this.btn_logOut.FlatAppearance.BorderSize = 0;
-            this.btn_logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logOut.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logOut.ForeColor = System.Drawing.Color.White;
-            this.btn_logOut.Image = ((System.Drawing.Image)(resources.GetObject("btn_logOut.Image")));
-            this.btn_logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logOut.Location = new System.Drawing.Point(2, 485);
-            this.btn_logOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_logOut.Name = "btn_logOut";
-            this.btn_logOut.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.btn_logOut.Size = new System.Drawing.Size(360, 67);
-            this.btn_logOut.TabIndex = 12;
-            this.btn_logOut.Text = "           Log out";
-            this.btn_logOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logOut.UseVisualStyleBackColor = false;
-            this.btn_logOut.Click += new System.EventHandler(this.btn_logOut_Click);
             // 
             // AssistantHomePage
             // 

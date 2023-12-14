@@ -67,9 +67,20 @@ namespace Radiology_Center.Screens.Forms.Admin
                 this.Close();
 
             }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                var errorMessages = dbEx.EntityValidationErrors
+                    .SelectMany(x => x.ValidationErrors)
+                    .Select(x => x.ErrorMessage);
+
+                var fullErrorMessage = string.Join("; ", errorMessages);
+                var exceptionMessage = string.Concat("Validation errors: ", fullErrorMessage);
+
+                MessageBox.Show(exceptionMessage);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
 

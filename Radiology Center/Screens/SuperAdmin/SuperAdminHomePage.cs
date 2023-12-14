@@ -762,5 +762,10 @@ namespace Radiology_Center
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

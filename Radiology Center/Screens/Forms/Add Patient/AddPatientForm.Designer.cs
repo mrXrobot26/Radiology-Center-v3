@@ -246,6 +246,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(97, 41);
             this.btn_cancel.TabIndex = 131;
             this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // lbl_password
             // 
@@ -630,7 +631,6 @@
             this.Name = "AddPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPatientForm";
-            this.Load += new System.EventHandler(this.AddPatientForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

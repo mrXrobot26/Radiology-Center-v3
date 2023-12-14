@@ -118,7 +118,18 @@ namespace Radiology_Center.Screens.Forms
                         this.Close();
                     }
                 }
-
+                else if (lbl_profileRole.Text == "Doctor")
+                {
+                    var doctor = _db.doctors.FirstOrDefault(x => x.id == IdOfUser);
+                    if (doctor != null)
+                    {
+                        _db.doctors.Remove(doctor);
+                        _db.SaveChanges();
+                        MessageBox.Show($"{doctor.fName} deleted successfully");
+                        DeleteEventHandler?.Invoke();
+                        this.Close();
+                    }
+                }
             }
         }
     }

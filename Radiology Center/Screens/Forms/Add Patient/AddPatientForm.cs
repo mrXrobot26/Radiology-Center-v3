@@ -18,48 +18,54 @@ namespace Radiology_Center.Screens.Forms.Add_Patient
         public event PatiantAddEventHandler patiantAdd;
         RadiologyEntities _db = new RadiologyEntities();
         string _email;
+
         public AddPatientForm(string email)
         {
             InitializeComponent();
             _email = email;
 
-            comb_department.SelectedIndexChanged += comb_department_SelectedIndexChanged;
 
-            comb_department.Items.AddRange(_db.departments.Select(x => x.name).ToArray());
+            LoadDepartments();
+        }
+
+        private void LoadDepartments()
+        {
+            comb_department.DisplayMember = "name";
+            comb_department.ValueMember = "id";
+            comb_department.DataSource = _db.departments
+                .Select(d => new { id = d.id, name = d.name })
+                .ToList();
+
+            comb_department.SelectedIndexChanged += comb_department_SelectedIndexChanged;
         }
 
         private void comb_department_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comb_department.SelectedItem != null)
+            if (comb_department.SelectedValue is int departmentId)
             {
-                string selectedDepartment = comb_department.SelectedItem.ToString();
-
-                var doctorsInDepartment = _db.doctors
-                    .Where(d => d.department.name == selectedDepartment)
-                    .Select(d => d.fName + " " + d.lName)
-                    .ToArray();
-
-      
-
-
-                comb_doctor.Items.Clear();
-
-                comb_doctor.Items.AddRange(doctorsInDepartment);
-
-                var raysInDepartment = _db.rays
-           .Where(r => r.department.name == selectedDepartment)
-           .Select(r => r.name)
-           .ToArray();
-
-                comb_ray.Items.Clear();
-
-                comb_ray.Items.AddRange(raysInDepartment);
+                LoadDoctors(departmentId);
+                LoadRays(departmentId);
             }
         }
-   
-    private void AddPatientForm_Load(object sender, EventArgs e)
-        {
 
+        private void LoadDoctors(int departmentId)
+        {
+            comb_doctor.DisplayMember = "name";
+            comb_doctor.ValueMember = "id";
+            comb_doctor.DataSource = _db.doctors
+                .Where(d => d.dep_id == departmentId)
+                .Select(d => new { id = d.id, name = d.fName + " " + d.lName })
+                .ToList();
+        }
+
+        private void LoadRays(int departmentId)
+        {
+            comb_ray.DisplayMember = "name";
+            comb_ray.ValueMember = "id";
+            comb_ray.DataSource = _db.rays
+                .Where(r => r.dep_id == departmentId)
+                .Select(r => new { id = r.id, name = r.name })
+                .ToList();
         }
 
         private void btn_addAssistant_Click(object sender, EventArgs e)
@@ -69,20 +75,23 @@ namespace Radiology_Center.Screens.Forms.Add_Patient
                 var user = _db.user_.FirstOrDefault(x => x.email == _email);
                 var assistant = _db.assisatants.FirstOrDefault(x => x.user_id == user.id);
 
-                var patiant = new patient_info
+                var patient = new patient_info
                 {
                     lName = txt_Lname.Text,
                     fName = txt_Fname.Text,
                     birthdate = dataTime_birthDate.Value,
                     Phone_number = txt_phoneNumber.Text,
                     gender = (Male_CheckBox.Checked ? "Male" : (Female_CheckBox.Checked) ? "Female" : null),
-
                 };
-                var patiantData = new patient_data
+
+                _db.patient_info.Add(patient);
+                _db.SaveChanges(); 
+                var patientData = new patient_data
                 {
-                    ray_id = comb_ray.SelectedIndex + 1,
-                    dep_id = comb_department.SelectedIndex + 1,
-                    doctor_id = comb_doctor.SelectedIndex + 1,
+                    patient_id = patient.id, 
+                    ray_id = (int)comb_ray.SelectedValue,
+                    dep_id = (int)comb_department.SelectedValue,
+                    doctor_id = (int)comb_doctor.SelectedValue,
                     pay_status = txt_paymentStatus.Text,
                     doctor_report = txt_docReport.Text,
                     history = txt_history.Text,
@@ -91,22 +100,37 @@ namespace Radiology_Center.Screens.Forms.Add_Patient
                     assistant_id = assistant.id,
                 };
 
-                patiantData.patient_id = patiant.id;
-                _db.patient_info.Add(patiant);
-                _db.patient_data.Add(patiantData);
+                _db.patient_data.Add(patientData);
                 _db.SaveChanges();
 
-                MessageBox.Show($"{patiant.fName} {patiant.lName} add Successfully");
+                MessageBox.Show($"{patient.fName} {patient.lName} added Successfully");
 
                 patiantAdd?.Invoke();
 
                 this.Close();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                var errorMessages = dbEx.EntityValidationErrors
+                   .SelectMany(x => x.ValidationErrors)
+                   .Select(x => x.ErrorMessage);
 
+                var fullErrorMessage = string.Join("; ", errorMessages);
+                var exceptionMessage = string.Concat("Validation errors: ", fullErrorMessage);
+
+                MessageBox.Show(exceptionMessage);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
+        }
+
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

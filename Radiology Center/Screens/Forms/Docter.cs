@@ -74,9 +74,10 @@ namespace Radiology_Center.Screens.Forms
                     pass = txt_password.Text,
                     role_id = comb_role.SelectedIndex + 1
                 };
-                doctor.user_id = user.id;
                 _db.doctors.Add(doctor);
                 _db.user_.Add(user);
+                _db.SaveChanges();
+                doctor.user_id = user.id;
                 _db.SaveChanges();
                 MessageBox.Show($"{doctor.fName} {doctor.lName} add Successfully");
 
@@ -85,12 +86,24 @@ namespace Radiology_Center.Screens.Forms
                 this.Close();
 
             }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                var errorMessages = dbEx.EntityValidationErrors
+                    .SelectMany(x => x.ValidationErrors)
+                    .Select(x => x.ErrorMessage);
+
+                var fullErrorMessage = string.Join("; ", errorMessages);
+                var exceptionMessage = string.Concat("Validation errors: ", fullErrorMessage);
+
+                MessageBox.Show(exceptionMessage);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
-          
         }
+
+    
 
         private void comb_role_SelectedIndexChanged(object sender, EventArgs e)
         {

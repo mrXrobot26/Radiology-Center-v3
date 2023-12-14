@@ -11,8 +11,14 @@ using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
 {
+
+
+
     public partial class Payment : Form
     {
+        public delegate void paymentAddEventHandler();
+
+        public event paymentAddEventHandler paymentAdd;
         RadiologyEntities _db = new RadiologyEntities();
         public Payment()
         {
@@ -52,6 +58,7 @@ namespace Radiology_Center.Screens.Forms
                 var makepay = _db.patient_data.FirstOrDefault(x => x.id == Id);
                 makepay.pay_status = "Done ✓";
                 _db.SaveChanges();
+                paymentAdd?.Invoke();
                 this.Close();
             }
         }
