@@ -23,15 +23,16 @@ namespace Radiology_Center.Screens.Forms.Assistant
         private string _fullName;
         private string _email;
         private string _imagePath;
+        private int _brach_id;
 
-
-        public AssistantHomePage(string fullName, string email, string imagePath)
+        public AssistantHomePage(string fullName, string email, string imagePath, int branch_id)
         {
             InitializeComponent();
 
             _fullName = fullName;
             _email = email;
             _imagePath = imagePath;
+            _brach_id = branch_id;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 
@@ -51,6 +52,7 @@ namespace Radiology_Center.Screens.Forms.Assistant
                       join d in _db.doctors on pd.doctor_id equals d.id
                       join dep in _db.departments on d.dep_id equals dep.id
                       join r in _db.rays on pd.ray_id equals r.id
+                      where pd.branch_id == _brach_id
                       select new
                       {
                           Id = pd.id,
@@ -96,6 +98,8 @@ namespace Radiology_Center.Screens.Forms.Assistant
         {
             var res = from Doc in _db.doctors
                       join Dep in _db.departments on Doc.dep_id equals Dep.id
+                      join usr in _db.user_ on Doc.user_id equals usr.id
+                      where usr.branch_id == _brach_id
                       select new 
                       {
                           Id = Doc.id,

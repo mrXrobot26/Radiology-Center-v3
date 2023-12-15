@@ -42,43 +42,71 @@ namespace Radiology_Center.Screens.Acountant
         private string _salary;
         private string _department;
         private string _role;
+        private int    _brach_id;
         private Image _profileImage;
+        public Accountant(string fullName, string email, string imagePath, int branch_id)
+        {
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+            _fullName = fullName;
+            _email = email;
+            _imagePath = imagePath;
+            _brach_id = branch_id;
+            lbl_name.Text = fullName;
+            lbl_email.Text = email;
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                pic_user.ImageLocation = imagePath;
+            }
+            string[] arr = { " The Last 3 Days ", " The Last 7 Days ", " The Last 14 Days", " The Last 24 " };
+            Comb_days.Items.AddRange(arr);
+            Grid_Acc.CellClick += GridViewpayment_CellContentClick;
+            DataGridViewpayment();
+
+
+        }
         private void DataGridViewpayment()
         {
             var pay = from PD in _db.patient_data
                       join PI in _db.patient_info on PD.patient_id equals PI.id
+                      where PD.branch_id == _brach_id
                       select new PaymentVM
                       {
                           Id = PD.id,
                           Name = PI.fName + " " + PI.lName,
                           Status = PD.pay_status,
                           Phone_Number = PI.Phone_number
+
                       };
             var PaymentList = pay.ToList();
             Grid_Acc.DataSource = PaymentList;
             Grid_Acc.AutoGenerateColumns = true;
 
         }
-     /*   private void DataGridViewReport()
+        /*   private void DataGridViewReport()
 
-        {
-            var rep = from Ac in _db.reports
-                      select new ReportVM
-                      {
-                          Title = Ac.title,
-                          Date = Ac.date,
-                          Note = Ac.note
-                      };
-            var ReportsList = rep.ToList();
-            Grid_reports.DataSource = ReportsList;
-            Grid_reports.AutoGenerateColumns = true;
+           {
+               var rep = from Ac in _db.reports
+                         select new ReportVM
+                         {
+                             Title = Ac.title,
+                             Date = Ac.date,
+                             Note = Ac.note
+                         };
+               var ReportsList = rep.ToList();
+               Grid_reports.DataSource = ReportsList;
+               Grid_reports.AutoGenerateColumns = true;
 
-        }*/
+           }*/
         private void DataGridViewAnalaysis()
-        {    DateTime DaysAmount = DateTime.Now.AddDays(x);
+        {
+            DateTime DaysAmount = DateTime.Now.AddDays(x);
             var res = from R in _db.rays
                       join PD in _db.patient_data on R.id equals PD.ray_id
-                      where PD.daydate >= DaysAmount
+                      //  join branch in _db.branches on PD.branch_id equals branch.id
+                      where PD.daydate >= DaysAmount && PD.branch_id == _brach_id
                       group new { R, PD } by R.name into grouped
                       select new AnalysisVM
                       {
@@ -134,32 +162,6 @@ namespace Radiology_Center.Screens.Acountant
         }
 
 
-
-
-        public Accountant(string fullName, string email, string imagePath)
-        {
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
-
-            _fullName = fullName;
-            _email = email;
-            _imagePath = imagePath;
-
-            lbl_name.Text = fullName;
-            lbl_email.Text = email;
-            if (!string.IsNullOrEmpty(imagePath))
-            {
-                pic_user.ImageLocation = imagePath;
-            }
-            string[] arr = { " The Last 3 Days ", " The Last 7 Days ", " The Last 14 Days", " The Last 24 " };
-            Comb_days.Items.AddRange(arr);
-            Grid_Acc.CellClick += GridViewpayment_CellContentClick;
-            DataGridViewpayment();
-
-
-        }
-
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -184,12 +186,12 @@ namespace Radiology_Center.Screens.Acountant
         {
             lbl_generl.Text = "Report";
             chart1.Visible = true;
-           // Grid_reports.Visible = true;
-         //   Grid_rays.Visible = true;
+            // Grid_reports.Visible = true;
+            //   Grid_rays.Visible = true;
             Comb_days.Visible = true;
             Grid_Acc.Visible = true;
-         //   btn_add.Visible = true;
-           // DataGridViewReport();
+            //   btn_add.Visible = true;
+            // DataGridViewReport();
             DataGridViewAnalaysis();
         }
 
@@ -199,11 +201,11 @@ namespace Radiology_Center.Screens.Acountant
             lbl_generl.Text = "Payment";
             DataGridViewpayment();
             chart1.Visible = false;
-           // Grid_reports.Visible = false;
-          //  Grid_rays.Visible = false;
+            // Grid_reports.Visible = false;
+            //  Grid_rays.Visible = false;
             Comb_days.Visible = false;
             Grid_Acc.Visible = true;
-        //    btn_add.Visible = false;
+            //    btn_add.Visible = false;
 
         }
 
@@ -240,7 +242,7 @@ namespace Radiology_Center.Screens.Acountant
 
         private void GridViewpayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (lbl_generl.Text =="Payment")
+            if (lbl_generl.Text == "Payment")
             {
                 Payment pay = new Payment();
 
@@ -267,7 +269,7 @@ namespace Radiology_Center.Screens.Acountant
 
             }
 
-           
+
         }
 
         private void Accountant_Load(object sender, EventArgs e)

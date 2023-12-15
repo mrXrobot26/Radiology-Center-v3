@@ -77,7 +77,7 @@ namespace Radiology_Center.Screens.Forms
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
                                 string email = foundedUser.email;
                                 string imagePath = userDetail?.image;
-                                Thread th = new Thread(() => Application.Run(new DoctorHomePage(fullName, email, imagePath)));
+                                Thread th = new Thread(() => Application.Run(new DoctorHomePage(fullName, email, imagePath, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
@@ -88,7 +88,7 @@ namespace Radiology_Center.Screens.Forms
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
                                 string email = foundedUser.email;
                                 string imagePath = userDetail?.image;
-                                Thread th = new Thread(() => Application.Run(new AssistantHomePage(fullName, email, imagePath)));
+                                Thread th = new Thread(() => Application.Run(new AssistantHomePage(fullName, email, imagePath, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
@@ -100,7 +100,7 @@ namespace Radiology_Center.Screens.Forms
                                 string Accemail = foundedUser.email;
                                 string AccimagePath = userDetail?.image;
 
-                                Thread th = new Thread(() => Application.Run(new Accountant(AccName, Accemail, AccimagePath)));
+                                Thread th = new Thread(() => Application.Run(new Accountant(AccName, Accemail, AccimagePath, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }

@@ -24,8 +24,8 @@ namespace Radiology_Center.Screens.Doctor
         private string _fullName;
         private string _email;
         private string _imagePath;
-
-        public DoctorHomePage(string fullName, string email, string imagePath)
+        private int _brach_id;
+        public DoctorHomePage(string fullName, string email, string imagePath, int branch_id)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -34,7 +34,7 @@ namespace Radiology_Center.Screens.Doctor
             _fullName = fullName;
             _email = email;
             _imagePath = imagePath;
-
+            _brach_id= branch_id;
             lbl_name.Text = fullName;
             lbl_email.Text = email;
             if (!string.IsNullOrEmpty(imagePath))
@@ -66,6 +66,7 @@ namespace Radiology_Center.Screens.Doctor
                          join d in _db.doctors on pd.doctor_id equals d.id
                          join dep in _db.departments on d.dep_id equals dep.id
                          join r in _db.rays on pd.ray_id equals r.id
+                         where pd.branch_id == _brach_id
                          select new
                          {
                              Id = pi.id,
@@ -185,7 +186,7 @@ namespace Radiology_Center.Screens.Doctor
                                 join d in _db.doctors on pd.doctor_id equals d.id
                                 join dep in _db.departments on d.dep_id equals dep.id
                                 join r in _db.rays on pd.ray_id equals r.id
-                                where (pi.fName + " " + pi.lName).ToLower().Contains(searchText)
+                                where (pi.fName + " " + pi.lName).ToLower().Contains(searchText) && pd.branch_id == _brach_id
                                 select new
                                 {
                                     Id = pi.id,
