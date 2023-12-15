@@ -20,18 +20,18 @@ namespace Radiology_Center.Models
         public Nullable<System.DateTime> deliverdate { get; set; }
         public string history { get; set; }
         public string doctor_report { get; set; }
-        public Nullable<int> user_id { get; set; }
         public Nullable<int> ray_id { get; set; }
         public Nullable<int> patient_id { get; set; }
         public Nullable<int> assistant_id { get; set; }
         public Nullable<int> doctor_id { get; set; }
         public Nullable<int> dep_id { get; set; }
+        public Nullable<int> branch_id { get; set; }
     
         public virtual assisatant assisatant { get; set; }
+        public virtual branch branch { get; set; }
         public virtual department department { get; set; }
         public virtual doctor doctor { get; set; }
         public virtual patient_info patient_info { get; set; }
         public virtual ray ray { get; set; }
-        public virtual user_ user_ { get; set; }
     }
 }

@@ -37,6 +37,7 @@ namespace Radiology_Center.Models
         public virtual DbSet<report> reports { get; set; }
         public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<super_admin> super_admin { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user_> user_ { get; set; }
     }
 }

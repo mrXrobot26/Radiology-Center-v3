@@ -18,6 +18,8 @@ namespace Radiology_Center.Models
         public branch()
         {
             this.admins = new HashSet<admin>();
+            this.patient_data = new HashSet<patient_data>();
+            this.user_ = new HashSet<user_>();
         }
     
         public int id { get; set; }
@@ -25,5 +27,9 @@ namespace Radiology_Center.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<admin> admins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<patient_data> patient_data { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_> user_ { get; set; }
     }
 }

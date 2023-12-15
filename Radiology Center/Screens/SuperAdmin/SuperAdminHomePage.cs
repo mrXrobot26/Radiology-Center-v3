@@ -19,6 +19,7 @@ using Radiology_Center.Screens.Forms.Admin;
 using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 using Radiology_Center.Screens.Forms.Ray;
 using System.Threading;
+using System.Windows.Controls;
 
 namespace Radiology_Center
 {
@@ -29,16 +30,11 @@ namespace Radiology_Center
         private string _fullName;
         private string _email;
         private string _imagePath;
-        private string _nationalId;
-        private string _gender;
-        private string _phone;
-        private string _salary;
-        private string _department;
-        private string _role;
-        private Image _profileImage;
+        private int _brach_id;
 
 
-        public SuperAdminHomePage(string fullName, string email, string imagePath,int role_id)
+
+        public SuperAdminHomePage(string fullName, string email, string imagePath,int role_id,int branch_id)
         {
 
             InitializeComponent();
@@ -48,6 +44,15 @@ namespace Radiology_Center
             _fullName = fullName;
             _email = email;
             _imagePath = imagePath;
+            _brach_id = branch_id;
+            if (role_id == 1)
+            {
+                Comb_branch.Items.Add("All Branches");
+                Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
+                Comb_branch.SelectedIndex = 0;
+                Comb_branch.SelectedIndexChanged += new EventHandler(Comb_branch_SelectedIndexChanged);
+
+            }
 
             lbl_name.Text = fullName;
             lbl_email.Text = email;
@@ -68,11 +73,41 @@ namespace Radiology_Center
 
         }
 
+
+        private void Comb_branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbl_generl.Text == "Doctor")
+            {
+                DataGridViewForDoctor();
+            }
+            else if (lbl_generl.Text == "Assistant")
+            {
+                DataGridViewForAssistant();
+            }
+            else if (lbl_generl.Text == "Accountant")
+            {
+                DataGridViewForAcountant();
+            }
+            else if (lbl_generl.Text == "Admin")
+            {
+                DataGridViewForAdmin();
+            }
+
+        }
+
         private void DataGridViewForDoctor()
         {
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
+
             var res = from Doc in _db.doctors
                       join Dep in _db.departments on Doc.dep_id equals Dep.id
-                      select new DoctorVM
+                      join usr in _db.user_ on Doc.user_id equals usr.id
+                      join branch in _db.branches on usr.branch_id equals branch.id
+                      where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                      orderby usr.branch_id
+                      select new
                       {
                           Id = Doc.id,
                           DoctorFullName = Doc.fName + " " + Doc.lName,
@@ -81,13 +116,20 @@ namespace Radiology_Center
                           PhoneNumber = Doc.phone_number,
                           Gender = Doc.gender,
                           depNeme = Dep.name,
+                          Branch = branch.name
                       };
+
             var DoctorDataList = res.ToList();
             grd_sAdmin.DataSource = DoctorDataList;
             grd_sAdmin.AutoGenerateColumns = true;
         }
+
+
+
+
         private void DataGridViewForDepartment()
         {
+
             var res = _db.departments.Select(x => new { x.id, x.name });
             var depDataList = res.ToList();
             grd_sAdmin.DataSource = depDataList;
@@ -96,12 +138,17 @@ namespace Radiology_Center
 
         private void DataGridViewForPatiant()
         {
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
             var res = from pd in _db.patient_data
                       join pi in _db.patient_info on pd.patient_id equals pi.id
                       join d in _db.doctors on pd.doctor_id equals d.id
                       join dep in _db.departments on d.dep_id equals dep.id
                       join r in _db.rays on pd.ray_id equals r.id
                       join a in _db.assisatants on pd.assistant_id equals a.id
+                      join branch in _db.branches on pd.branch_id equals branch.id
+                      where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                      orderby pd.branch_id
                       select new
                       {
                           Id = pd.id,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -113,7 +160,10 @@ namespace Radiology_Center
                           department = dep.name,
                           Ray = r.name,
                           Assistant = a.fName + " " + a.lName,
+                          Branch = branch.name,
+                          
                       };
+            
             var patiantDataList = res.ToList();
             grd_sAdmin.DataSource = patiantDataList;
             grd_sAdmin.AutoGenerateColumns = true;
@@ -122,16 +172,24 @@ namespace Radiology_Center
 
         private void DataGridViewForAssistant()
         {
-            var res = _db.assisatants.Select(x => new
-            {
-                Id =x.id,
-                Name = x.fName + " " + x.lName,
-                Salary = (decimal)x.salary,
-                Birthdate = x.birthdate,
-                PhoneNumber = x.phone_number,
-                Gender = x.gender,
-                NationalID = x.nationalID,
-            });
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
+            var res = from assis in _db.assisatants
+                      join usr in _db.user_ on assis.user_id equals usr.id
+                      join branch in _db.branches on usr.branch_id equals branch.id
+                      where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                      orderby usr.branch_id
+                      select new
+                      {
+                          Id = assis.id,
+                          Name = assis.fName + " " + assis.lName,
+                          Salary = (decimal)assis.salary,
+                          Birthdate = assis.birthdate,
+                          PhoneNumber = assis.phone_number,
+                          Gender = assis.gender,
+                          NationalID = assis.nationalID,
+                          Branch = branch.name
+                      };
             var assistantDataList = res.ToList();
             grd_sAdmin.DataSource = assistantDataList;
             grd_sAdmin.AutoGenerateColumns = true;
@@ -141,16 +199,24 @@ namespace Radiology_Center
 
         private void DataGridViewForAcountant()
         {
-            var res = _db.accountants.Select(x => new
-            {
-                Id = x.id,
-                Name = x.fName + " " + x.lName,
-                Salary = (decimal)x.salary,
-                Birthdate = x.birthdate,
-                PhoneNumber = x.phone_number,
-                Gender = x.gender,
-                NationalID = x.nationalID,
-            });
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
+            var res = from acc in _db.accountants
+                      join usr in _db.user_ on acc.user_id equals usr.id
+                      join branch in _db.branches on usr.branch_id equals branch.id
+                      where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                      orderby usr.branch_id
+                      select new
+                      {
+                          Id = acc.id,
+                          Name = acc.fName + " " + acc.lName,
+                          Salary = (decimal)acc.salary,
+                          Birthdate = acc.birthdate,
+                          PhoneNumber = acc.phone_number,
+                          Gender = acc.gender,
+                          NationalID = acc.nationalID,
+                          Branch = branch.name
+                      };
             var AccountantDataList = res.ToList();
             grd_sAdmin.DataSource = AccountantDataList;
             grd_sAdmin.AutoGenerateColumns = true;
@@ -158,16 +224,24 @@ namespace Radiology_Center
 
         private void DataGridViewForAdmin()
         {
-            var res = _db.admins.Select(x => new
-            {
-                Id = x.id,
-                Name = x.fName + " " + x.lName,
-                Salary = (decimal)x.Salary,
-                Birthdate = x.birthdate,
-                PhoneNumber = x.phone_number,
-                Gender = x.gender,
-                NationalID = x.nationalID,
-            });
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
+            var res = from admin in _db.admins
+                      join usr in _db.user_ on admin.user_id equals usr.id
+                      join branch in _db.branches on usr.branch_id equals branch.id
+                      where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                      orderby usr.branch_id
+                      select new
+                      {
+                          Id = admin.id,
+                          Name = admin.fName + " " + admin.lName,
+                          Salary = (decimal)admin.Salary,
+                          Birthdate = admin.birthdate,
+                          PhoneNumber = admin.phone_number,
+                          Gender = admin.gender,
+                          NationalID = admin.nationalID,
+                          Branch = branch.name
+                      };
             var AdminDataList = res.ToList();
             grd_sAdmin.DataSource = AdminDataList;
             grd_sAdmin.AutoGenerateColumns = true;
@@ -339,6 +413,7 @@ namespace Radiology_Center
             btn_departments.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Department";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = false;
             DataGridViewForDepartment();
 
         }
@@ -349,6 +424,7 @@ namespace Radiology_Center
             btn_doc_names.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Doctor";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = true;
 
             DataGridViewForDoctor();
 
@@ -363,6 +439,7 @@ namespace Radiology_Center
             lbl_generl.Text = "Patient";
 
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = true;
 
             DataGridViewForPatiant();
 
@@ -389,6 +466,8 @@ namespace Radiology_Center
             btn_assistant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Assistant";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = true;
+
             DataGridViewForAssistant();
         }
 
@@ -398,6 +477,8 @@ namespace Radiology_Center
             btn_accountant.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Accountant";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = true;
+
             DataGridViewForAcountant();
 
 
@@ -409,6 +490,8 @@ namespace Radiology_Center
             btn_admin.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Admin";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = true;
+
             DataGridViewForAdmin();
 
 
@@ -419,6 +502,8 @@ namespace Radiology_Center
             btn_ray.BackColor = ColorTranslator.FromHtml("#182E42");
             lbl_generl.Text = "Ray";
             CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = false;
+
             DataGridViewForRay();
         }
 
@@ -637,18 +722,27 @@ namespace Radiology_Center
         //============================================filter============================
         private void FilterDoctors(string searchText)
         {
-            var filteredList = (from d in _db.doctors
-                                join dep in _db.departments on d.dep_id equals dep.id
-                                where (d.fName + " " + d.lName).ToLower().Contains(searchText)
-                                select new DoctorVM
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
+
+            var filteredList = (from Doc in _db.doctors
+                                join Dep in _db.departments on Doc.dep_id equals Dep.id
+                                join usr in _db.user_ on Doc.user_id equals usr.id
+                                join branch in _db.branches on usr.branch_id equals branch.id
+                                where selectedBranchIndex == 0 || branch.name == selectedBranchName
+                                where (Doc.fName + " " + Doc.lName).ToLower().Contains(searchText)
+                                orderby usr.branch_id
+                                select new
                                 {
-                                    Id = d.id,
-                                    DoctorFullName = d.fName + " " + d.lName,
-                                    Salary = (decimal)d.salary,
-                                    BirthDate = d.birthdate,
-                                    PhoneNumber = d.phone_number,
-                                    Gender = d.gender,
-                                    depNeme = dep.name,
+                                    Id = Doc.id,
+                                    DoctorFullName = Doc.fName + " " + Doc.lName,
+                                    Salary = (decimal)Doc.salary,
+                                    BirthDate = Doc.birthdate,
+                                    PhoneNumber = Doc.phone_number,
+                                    Gender = Doc.gender,
+                                    depNeme = Dep.name,
+                                    Branch = branch.name
                                 }).ToList();
 
             grd_sAdmin.DataSource = filteredList;
@@ -664,11 +758,16 @@ namespace Radiology_Center
         }
         private void FilterPatients(string searchText)
         {
+            var selectedBranchIndex = Comb_branch.SelectedIndex;
+            var selectedBranchName = selectedBranchIndex == 0 ? null : Comb_branch.Items[selectedBranchIndex].ToString();
             var filteredList = (from pd in _db.patient_data
-                                join pi in _db.patient_info on pd.id equals pi.id
+                                join pi in _db.patient_info on pd.patient_id equals pi.id
                                 join d in _db.doctors on pd.doctor_id equals d.id
                                 join dep in _db.departments on d.dep_id equals dep.id
                                 join r in _db.rays on pd.ray_id equals r.id
+                                join a in _db.assisatants on pd.assistant_id equals a.id
+                                join branch in _db.branches on pd.branch_id equals branch.id
+                                where selectedBranchIndex == 0 || branch.name == selectedBranchName
                                 where (pi.fName + " " + pi.lName).ToLower().Contains(searchText)
                                 select new
                                 {
@@ -680,6 +779,9 @@ namespace Radiology_Center
                                     Doctor = d.fName + " " + d.lName,
                                     department = dep.name,
                                     Ray = r.name,
+                                    Assistant = a.fName + " " + a.lName,
+                                    Branch = branch.name,
+
                                 }).ToList();
 
             grd_sAdmin.DataSource = filteredList;

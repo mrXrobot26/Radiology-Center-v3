@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlTypes;
 
 namespace Radiology_Center.Screens.Forms
 {
@@ -45,6 +46,7 @@ namespace Radiology_Center.Screens.Forms
                         {
                             this.Close();
 
+                            int branch_id = (int)foundedUser.branch_id;
 
 
                             if (foundedUser.role_id == 1) 
@@ -53,7 +55,8 @@ namespace Radiology_Center.Screens.Forms
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
                                 string email = foundedUser.email;
                                 string imagePath = userDetail?.image;
-                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName,email,imagePath,1)));
+                                int role_id = 1;
+                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName,email,imagePath, role_id, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
@@ -63,11 +66,11 @@ namespace Radiology_Center.Screens.Forms
                                 string fullName = userDetail?.fName + " " + userDetail?.lName;
                                 string email = foundedUser.email;
                                 string imagePath = userDetail?.image;
-                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName, email, imagePath, 2)));
+                                int role_id = 2;
+                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName, email, imagePath, role_id, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }
-                            
                             else if (foundedUser.role_id == 3)
                             {
                                 var userDetail = _db.doctors.FirstOrDefault(sa => sa.user_id == foundedUser.id);

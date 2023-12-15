@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Radiology_centerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Radiology_centerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="accountant">
           <Key>
             <PropertyRef Name="id" />
@@ -15,7 +15,7 @@
           <Property Name="salary" Type="money" />
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
           <Property Name="user_id" Type="int" />
@@ -31,7 +31,7 @@
           <Property Name="Salary" Type="money" />
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
           <Property Name="user_id" Type="int" />
@@ -47,7 +47,7 @@
           <Property Name="salary" Type="money" />
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
           <Property Name="user_id" Type="int" />
@@ -76,7 +76,7 @@
           <Property Name="salary" Type="money" />
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
           <Property Name="user_id" Type="int" />
@@ -92,12 +92,12 @@
           <Property Name="deliverdate" Type="date" />
           <Property Name="history" Type="nvarchar(max)" />
           <Property Name="doctor_report" Type="nvarchar(max)" />
-          <Property Name="user_id" Type="int" />
           <Property Name="ray_id" Type="int" />
           <Property Name="patient_id" Type="int" />
           <Property Name="assistant_id" Type="int" />
           <Property Name="doctor_id" Type="int" />
           <Property Name="dep_id" Type="int" />
+          <Property Name="branch_id" Type="int" />
         </EntityType>
         <EntityType Name="patient_info">
           <Key>
@@ -109,7 +109,7 @@
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="birthdate" Type="date" />
           <Property Name="Phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ray">
           <Key>
@@ -147,10 +147,20 @@
           <Property Name="salary" Type="money" />
           <Property Name="birthdate" Type="date" />
           <Property Name="phone_number" Type="nvarchar(max)" />
-          <Property Name="gender" Type="nvarchar" MaxLength="6" />
+          <Property Name="gender" Type="nvarchar(max)" />
           <Property Name="nationalID" Type="nvarchar(max)" />
           <Property Name="image" Type="nvarchar(max)" />
           <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="user_">
           <Key>
@@ -160,6 +170,7 @@
           <Property Name="email" Type="nvarchar" MaxLength="100" />
           <Property Name="pass" Type="nvarchar" MaxLength="100" />
           <Property Name="role_id" Type="int" />
+          <Property Name="branch_id" Type="int" />
         </EntityType>
         <Association Name="FK__accountan__patie__656C112C">
           <End Role="patient_info" Type="Self.patient_info" Multiplicity="0..1" />
@@ -257,6 +268,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__patient_d__branc__282DF8C2">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__patient_d__dep_i__6D0D32F4">
           <End Role="department" Type="Self.department" Multiplicity="0..1" />
           <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
@@ -305,18 +328,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__patient_d__user___68487DD7">
-          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
-          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user_">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="patient_data">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__ray__dep_id__59063A47">
           <End Role="department" Type="Self.department" Multiplicity="0..1" />
           <End Role="ray" Type="Self.ray" Multiplicity="*" />
@@ -353,6 +364,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__user___branch_id__14270015">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="user_" Type="Self.user_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__user___role_id__4BAC3F29">
           <End Role="role" Type="Self.role" Multiplicity="0..1" />
           <End Role="user_" Type="Self.user_" Multiplicity="*" />
@@ -378,6 +401,7 @@
           <EntitySet Name="reports" EntityType="Self.reports" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="super_admin" EntityType="Self.super_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_" EntityType="Self.user_" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__accountan__patie__656C112C" Association="Self.FK__accountan__patie__656C112C">
             <End Role="patient_info" EntitySet="patient_info" />
@@ -411,6 +435,10 @@
             <End Role="assisatant" EntitySet="assisatant" />
             <End Role="patient_data" EntitySet="patient_data" />
           </AssociationSet>
+          <AssociationSet Name="FK__patient_d__branc__282DF8C2" Association="Self.FK__patient_d__branc__282DF8C2">
+            <End Role="branch" EntitySet="branch" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
           <AssociationSet Name="FK__patient_d__dep_i__6D0D32F4" Association="Self.FK__patient_d__dep_i__6D0D32F4">
             <End Role="department" EntitySet="department" />
             <End Role="patient_data" EntitySet="patient_data" />
@@ -427,10 +455,6 @@
             <End Role="ray" EntitySet="ray" />
             <End Role="patient_data" EntitySet="patient_data" />
           </AssociationSet>
-          <AssociationSet Name="FK__patient_d__user___68487DD7" Association="Self.FK__patient_d__user___68487DD7">
-            <End Role="user_" EntitySet="user_" />
-            <End Role="patient_data" EntitySet="patient_data" />
-          </AssociationSet>
           <AssociationSet Name="FK__ray__dep_id__59063A47" Association="Self.FK__ray__dep_id__59063A47">
             <End Role="department" EntitySet="department" />
             <End Role="ray" EntitySet="ray" />
@@ -443,12 +467,17 @@
             <End Role="user_" EntitySet="user_" />
             <End Role="super_admin" EntitySet="super_admin" />
           </AssociationSet>
+          <AssociationSet Name="FK__user___branch_id__14270015" Association="Self.FK__user___branch_id__14270015">
+            <End Role="branch" EntitySet="branch" />
+            <End Role="user_" EntitySet="user_" />
+          </AssociationSet>
           <AssociationSet Name="FK__user___role_id__4BAC3F29" Association="Self.FK__user___role_id__4BAC3F29">
             <End Role="role" EntitySet="role" />
             <End Role="user_" EntitySet="user_" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Radiology_centerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -462,7 +491,7 @@
           <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="user_id" Type="Int32" />
@@ -481,7 +510,7 @@
           <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="user_id" Type="Int32" />
@@ -499,7 +528,7 @@
           <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="user_id" Type="Int32" />
@@ -513,6 +542,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admins" Relationship="Self.FK__admin__branch_id__5441852A" FromRole="branch" ToRole="admin" />
+          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__branc__282DF8C2" FromRole="branch" ToRole="patient_data" />
+          <NavigationProperty Name="user_" Relationship="Self.FK__user___branch_id__14270015" FromRole="branch" ToRole="user_" />
         </EntityType>
         <EntityType Name="department">
           <Key>
@@ -534,7 +565,7 @@
           <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="user_id" Type="Int32" />
@@ -553,18 +584,18 @@
           <Property Name="deliverdate" Type="DateTime" Precision="0" />
           <Property Name="history" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="doctor_report" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="user_id" Type="Int32" />
           <Property Name="ray_id" Type="Int32" />
           <Property Name="patient_id" Type="Int32" />
           <Property Name="assistant_id" Type="Int32" />
           <Property Name="doctor_id" Type="Int32" />
           <Property Name="dep_id" Type="Int32" />
+          <Property Name="branch_id" Type="Int32" />
           <NavigationProperty Name="assisatant" Relationship="Self.FK__patient_d__assis__6B24EA82" FromRole="patient_data" ToRole="assisatant" />
+          <NavigationProperty Name="branch" Relationship="Self.FK__patient_d__branc__282DF8C2" FromRole="patient_data" ToRole="branch" />
           <NavigationProperty Name="department" Relationship="Self.FK__patient_d__dep_i__6D0D32F4" FromRole="patient_data" ToRole="department" />
           <NavigationProperty Name="doctor" Relationship="Self.FK__patient_d__docto__6C190EBB" FromRole="patient_data" ToRole="doctor" />
           <NavigationProperty Name="patient_info" Relationship="Self.FK__patient_d__patie__6A30C649" FromRole="patient_data" ToRole="patient_info" />
           <NavigationProperty Name="ray" Relationship="Self.FK__patient_d__ray_i__693CA210" FromRole="patient_data" ToRole="ray" />
-          <NavigationProperty Name="user_" Relationship="Self.FK__patient_d__user___68487DD7" FromRole="patient_data" ToRole="user_" />
         </EntityType>
         <EntityType Name="patient_info">
           <Key>
@@ -576,7 +607,7 @@
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="Phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="accountants" Relationship="Self.FK__accountan__patie__656C112C" FromRole="patient_info" ToRole="accountant" />
           <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__patie__6A30C649" FromRole="patient_info" ToRole="patient_data" />
         </EntityType>
@@ -620,11 +651,21 @@
           <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="nationalID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="user_id" Type="Int32" />
           <NavigationProperty Name="user_" Relationship="Self.FK__super_adm__user___4E88ABD4" FromRole="super_admin" ToRole="user_" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="user_">
           <Key>
@@ -634,11 +675,12 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="role_id" Type="Int32" />
+          <Property Name="branch_id" Type="Int32" />
           <NavigationProperty Name="accountants" Relationship="Self.FK__accountan__user___6477ECF3" FromRole="user_" ToRole="accountant" />
           <NavigationProperty Name="admins" Relationship="Self.FK__admin__user_id__534D60F1" FromRole="user_" ToRole="admin" />
           <NavigationProperty Name="assisatants" Relationship="Self.FK__assisatan__user___5BE2A6F2" FromRole="user_" ToRole="assisatant" />
+          <NavigationProperty Name="branch" Relationship="Self.FK__user___branch_id__14270015" FromRole="user_" ToRole="branch" />
           <NavigationProperty Name="doctors" Relationship="Self.FK__doctor__user_id__5EBF139D" FromRole="user_" ToRole="doctor" />
-          <NavigationProperty Name="patient_data" Relationship="Self.FK__patient_d__user___68487DD7" FromRole="user_" ToRole="patient_data" />
           <NavigationProperty Name="role" Relationship="Self.FK__user___role_id__4BAC3F29" FromRole="user_" ToRole="role" />
           <NavigationProperty Name="super_admin" Relationship="Self.FK__super_adm__user___4E88ABD4" FromRole="user_" ToRole="super_admin" />
         </EntityType>
@@ -726,6 +768,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__patient_d__branc__282DF8C2">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="patient_data">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__user___branch_id__14270015">
+          <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="user_" Type="Self.user_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__doctor__dep_id__5FB337D6">
           <End Role="department" Type="Self.department" Multiplicity="0..1" />
           <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
@@ -810,18 +876,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__patient_d__user___68487DD7">
-          <End Role="user_" Type="Self.user_" Multiplicity="0..1" />
-          <End Role="patient_data" Type="Self.patient_data" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user_">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="patient_data">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__user___role_id__4BAC3F29">
           <End Role="role" Type="Self.role" Multiplicity="0..1" />
           <End Role="user_" Type="Self.user_" Multiplicity="*" />
@@ -859,6 +913,7 @@
           <EntitySet Name="reports" EntityType="Self.report" />
           <EntitySet Name="roles" EntityType="Self.role" />
           <EntitySet Name="super_admin" EntityType="Self.super_admin" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="user_" EntityType="Self.user_" />
           <AssociationSet Name="FK__accountan__patie__656C112C" Association="Self.FK__accountan__patie__656C112C">
             <End Role="patient_info" EntitySet="patient_info" />
@@ -888,6 +943,14 @@
             <End Role="assisatant" EntitySet="assisatants" />
             <End Role="patient_data" EntitySet="patient_data" />
           </AssociationSet>
+          <AssociationSet Name="FK__patient_d__branc__282DF8C2" Association="Self.FK__patient_d__branc__282DF8C2">
+            <End Role="branch" EntitySet="branches" />
+            <End Role="patient_data" EntitySet="patient_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK__user___branch_id__14270015" Association="Self.FK__user___branch_id__14270015">
+            <End Role="branch" EntitySet="branches" />
+            <End Role="user_" EntitySet="user_" />
+          </AssociationSet>
           <AssociationSet Name="FK__doctor__dep_id__5FB337D6" Association="Self.FK__doctor__dep_id__5FB337D6">
             <End Role="department" EntitySet="departments" />
             <End Role="doctor" EntitySet="doctors" />
@@ -914,10 +977,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__patient_d__ray_i__693CA210" Association="Self.FK__patient_d__ray_i__693CA210">
             <End Role="ray" EntitySet="rays" />
-            <End Role="patient_data" EntitySet="patient_data" />
-          </AssociationSet>
-          <AssociationSet Name="FK__patient_d__user___68487DD7" Association="Self.FK__patient_d__user___68487DD7">
-            <End Role="user_" EntitySet="user_" />
             <End Role="patient_data" EntitySet="patient_data" />
           </AssociationSet>
           <AssociationSet Name="FK__user___role_id__4BAC3F29" Association="Self.FK__user___role_id__4BAC3F29">
@@ -1027,12 +1086,12 @@
                 <ScalarProperty Name="deliverdate" ColumnName="deliverdate" />
                 <ScalarProperty Name="history" ColumnName="history" />
                 <ScalarProperty Name="doctor_report" ColumnName="doctor_report" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="ray_id" ColumnName="ray_id" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="assistant_id" ColumnName="assistant_id" />
                 <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
                 <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1094,6 +1153,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Radiology_centerModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="user_">
             <EntityTypeMapping TypeName="Radiology_centerModel.user_">
               <MappingFragment StoreEntitySet="user_">
@@ -1101,6 +1171,7 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

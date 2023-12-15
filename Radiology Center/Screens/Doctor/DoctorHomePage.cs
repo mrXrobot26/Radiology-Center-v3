@@ -88,7 +88,6 @@ namespace Radiology_Center.Screens.Doctor
             var PatientForProfile = _db.patient_data.FirstOrDefault(x => x.patient_id == PatientId);
             if (PatientForProfile != null)
             {
-                var userForDoctorProfile = _db.user_.FirstOrDefault(x => x.id == PatientForProfile.user_id);
 
                 var infoForPatientProfile = _db.patient_info.FirstOrDefault(x => x.id == PatientForProfile.patient_id);
                 var DocForPatientProfile = _db.doctors.FirstOrDefault(x => x.id == PatientForProfile.doctor_id);

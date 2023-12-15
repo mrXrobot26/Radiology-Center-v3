@@ -21,7 +21,6 @@ namespace Radiology_Center.Models
             this.admins = new HashSet<admin>();
             this.assisatants = new HashSet<assisatant>();
             this.doctors = new HashSet<doctor>();
-            this.patient_data = new HashSet<patient_data>();
             this.super_admin = new HashSet<super_admin>();
         }
     
@@ -29,6 +28,7 @@ namespace Radiology_Center.Models
         public string email { get; set; }
         public string pass { get; set; }
         public Nullable<int> role_id { get; set; }
+        public Nullable<int> branch_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<accountant> accountants { get; set; }
@@ -36,10 +36,9 @@ namespace Radiology_Center.Models
         public virtual ICollection<admin> admins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<assisatant> assisatants { get; set; }
+        public virtual branch branch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doctor> doctors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<patient_data> patient_data { get; set; }
         public virtual role role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<super_admin> super_admin { get; set; }
