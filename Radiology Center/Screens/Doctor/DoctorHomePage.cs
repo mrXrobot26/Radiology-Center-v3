@@ -45,6 +45,23 @@ namespace Radiology_Center.Screens.Doctor
             DataGridViewForPatiant_doc();
             grd_Patient_Doc.CellClick += grd_Patient_Doc_CellClick;
 
+            if (branch_id == 2)
+            {
+                lbl_branch.Text = "Radiology-Center Elmansoura";
+            }
+            else if (branch_id == 3)
+            {
+                lbl_branch.Text = "Radiology-Center Kafrelsheikh";
+            }
+            else if (branch_id == 4)
+            {
+                lbl_branch.Text = "Radiology-Center Alexandria";
+            }
+            else if (branch_id == 5)
+            {
+                lbl_branch.Text = "Radiology-Center Elmahalla";
+            }
+
         }
 
         private void DoctorPage_Load(object sender, EventArgs e)
@@ -121,7 +138,7 @@ namespace Radiology_Center.Screens.Doctor
 
         }
 
-        private void btn_patient_Click(object sender, EventArgs e)
+        private void btn_patient_Click_1(object sender, EventArgs e)
         {
             ResetButtonColors();
             btn_patient.BackColor = ColorTranslator.FromHtml("#182E42");
@@ -133,7 +150,7 @@ namespace Radiology_Center.Screens.Doctor
 
 
 
-        private void btn_profile_Click_1(object sender, EventArgs e)
+        private void btn_profile_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
 
@@ -167,18 +184,7 @@ namespace Radiology_Center.Screens.Doctor
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            switch (lbl_generl.Text)
-            {
-                case "Patient":
-                    FilterPatients(txt_search.Text);
-                    break;
 
-                default:
-                    break;
-            }
-        }
         private void FilterPatients(string searchText)
         {
             var filteredList = (from pd in _db.patient_data
@@ -201,13 +207,28 @@ namespace Radiology_Center.Screens.Doctor
             grd_Patient_Doc.DataSource = filteredList;
         }
 
-        private void btn_logOut_Click(object sender, EventArgs e)
+        private void btn_logOut_Click_1(object sender, EventArgs e)
         {
             this.Close();
             Thread th = new Thread(() => Application.Run(new LogIn()));
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            switch (lbl_generl.Text)
+            {
+                case "Patient":
+                    FilterPatients(txt_search.Text);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+  
     }
 }
 
