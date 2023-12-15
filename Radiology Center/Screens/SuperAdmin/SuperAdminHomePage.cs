@@ -353,14 +353,14 @@ namespace Radiology_Center
             }
             else if (lbl_generl.Text == "Assistant")
             {
-                Assistant assis = new Assistant();
+                Assistant assis = new Assistant(_role_id, _brach_id);
 
                 assis.AssistantAdd += OnAssistantAdded;
                 assis.Show();
             }
             else if (lbl_generl.Text == "Accountant")
             {
-                AcountantForm acc = new AcountantForm();
+                AcountantForm acc = new AcountantForm(_role_id, _brach_id);
 
                 acc.AccountantAdd += OnAcountantAdded;
 

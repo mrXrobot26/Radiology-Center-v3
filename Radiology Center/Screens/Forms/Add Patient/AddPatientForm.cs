@@ -18,12 +18,12 @@ namespace Radiology_Center.Screens.Forms.Add_Patient
         public event PatiantAddEventHandler patiantAdd;
         RadiologyEntities _db = new RadiologyEntities();
         string _email;
-
-        public AddPatientForm(string email)
+        private int _branch_id;
+        public AddPatientForm(string email, int brach_id)
         {
             InitializeComponent();
             _email = email;
-
+            _branch_id = brach_id;
 
             LoadDepartments();
         }
@@ -98,7 +98,8 @@ namespace Radiology_Center.Screens.Forms.Add_Patient
                     deliverdate = dateTime_deliverDate.Value,
                     daydate = DateTime.Now,
                     assistant_id = assistant.id,
-                };
+                    branch_id = _branch_id 
+            };
 
                 _db.patient_data.Add(patientData);
                 _db.SaveChanges();

@@ -237,7 +237,8 @@ namespace Radiology_Center.Screens.Forms.Assistant
         {
             var filteredList = (from d in _db.doctors
                                 join dep in _db.departments on d.dep_id equals dep.id
-                                where (d.fName + " " + d.lName).ToLower().Contains(searchText)
+                                join urs in _db.user_ on d.user_id equals urs.id
+                                where (d.fName + " " + d.lName).ToLower().Contains(searchText) && urs.branch_id == _brach_id
                                 select new 
                                 {
                                     Id = d.id,
@@ -266,7 +267,7 @@ namespace Radiology_Center.Screens.Forms.Assistant
                                 join d in _db.doctors on pd.doctor_id equals d.id
                                 join dep in _db.departments on d.dep_id equals dep.id
                                 join r in _db.rays on pd.ray_id equals r.id
-                                where (pi.fName + " " + pi.lName).ToLower().Contains(searchText)
+                                where (pi.fName + " " + pi.lName).ToLower().Contains(searchText) && pd.branch_id == _brach_id
                                 select new
                                 {
                                     Id = pd.id,
@@ -301,7 +302,7 @@ namespace Radiology_Center.Screens.Forms.Assistant
 
         private void btn_addDoctor_Click(object sender, EventArgs e)
         {
-            AddPatientForm patiant = new AddPatientForm(_email);
+            AddPatientForm patiant = new AddPatientForm(_email, _brach_id);
             patiant.patiantAdd += DataGridViewForPatiant;
             patiant.Show();
 
