@@ -67,7 +67,7 @@ namespace Radiology_Center.Screens.Forms
                                 string email = foundedUser.email;
                                 string imagePath = userDetail?.image;
                                 int role_id = 2;
-                                Thread th = new Thread(() => Application.Run(new SuperAdminHomePage(fullName, email, imagePath, role_id, branch_id)));
+                                Thread th = new Thread(() => Application.Run(new AdminHomePage(fullName, email, imagePath, role_id, branch_id)));
                                 th.SetApartmentState(ApartmentState.STA);
                                 th.Start();
                             }

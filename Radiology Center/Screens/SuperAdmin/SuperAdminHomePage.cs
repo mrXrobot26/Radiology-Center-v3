@@ -31,6 +31,7 @@ namespace Radiology_Center
         private string _email;
         private string _imagePath;
         private int _brach_id;
+        private int _role_id;
 
 
 
@@ -40,7 +41,7 @@ namespace Radiology_Center
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-
+            _role_id = role_id;
             _fullName = fullName;
             _email = email;
             _imagePath = imagePath;
@@ -51,6 +52,7 @@ namespace Radiology_Center
                 Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
                 Comb_branch.SelectedIndex = 0;
                 Comb_branch.SelectedIndexChanged += new EventHandler(Comb_branch_SelectedIndexChanged);
+
 
             }
 
@@ -64,6 +66,7 @@ namespace Radiology_Center
             if (role_id == 2)
             {
                 btn_admin.Visible = false;
+                Comb_branch.Visible = false;
             }
 
             lbl_generl.Text = "Doctor";
@@ -94,6 +97,7 @@ namespace Radiology_Center
             }
 
         }
+
 
         private void DataGridViewForDoctor()
         {
@@ -334,7 +338,7 @@ namespace Radiology_Center
         {
             if (lbl_generl.Text == "Doctor")
             {
-                Docter docter = new Docter();
+                Docter docter = new Docter(_role_id, _brach_id);
                 docter.DoctorAdd += OnDoctorAdded;
 
                 docter.ShowDialog();

@@ -22,14 +22,21 @@ namespace Radiology_Center.Screens.Forms
         
         RadiologyEntities _db = new RadiologyEntities();
         string oldPath = "";
-
-        public Docter()
+        private int _branch_id;
+        public Docter(int role_id,int branch_id)
         {
             InitializeComponent();
             comb_role.Items.AddRange(_db.roles.Select(x => x.role_name).ToArray());
             comb_role.SelectedIndex = 2;
-
             comb_Dep.Items.AddRange(_db.departments.Select(x => x.name).ToArray());
+            _branch_id = branch_id;
+            Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
+            Comb_branch.SelectedIndex = branch_id-2;
+            if (role_id==2)
+            {
+                Comb_branch.Enabled = false;
+            }
+
 
         }
 
@@ -62,7 +69,7 @@ namespace Radiology_Center.Screens.Forms
                     gender = (Male_CheckBox.Checked ? "Male" : (Female_CheckBox.Checked) ? "Female" : null),
                     dep_id = comb_Dep.SelectedIndex + 1,
                     nationalID = txt_NationalId.Text,
-
+                    
                 };
 
                 string newPath = $@"{Environment.CurrentDirectory}\DoctorImage\{Guid.NewGuid()}.jpg";
@@ -72,7 +79,8 @@ namespace Radiology_Center.Screens.Forms
                 {
                     email = txt_email.Text,
                     pass = txt_password.Text,
-                    role_id = comb_role.SelectedIndex + 1
+                    role_id = comb_role.SelectedIndex + 1,
+                    branch_id = _branch_id
                 };
                 _db.doctors.Add(doctor);
                 _db.user_.Add(user);

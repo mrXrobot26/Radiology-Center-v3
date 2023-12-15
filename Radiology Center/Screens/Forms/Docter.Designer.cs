@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Docter));
             this.panel1 = new ReaLTaiizor.Controls.Panel();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_lname = new System.Windows.Forms.Label();
             this.Phone_lbl = new System.Windows.Forms.Label();
@@ -56,12 +58,12 @@
             this.lbl_salary = new System.Windows.Forms.Label();
             this.txt_salary = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.Comb_branch = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbl_Branch = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +81,28 @@
             this.panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
+            // 
+            // bigLabel1
+            // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.White;
+            this.bigLabel1.Location = new System.Drawing.Point(80, 9);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(212, 32);
+            this.bigLabel1.TabIndex = 53;
+            this.bigLabel1.Text = "Radiology Center";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 57);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lbl_name
             // 
@@ -126,7 +150,7 @@
             this.Bdate_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Bdate_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bdate_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Bdate_lbl.Location = new System.Drawing.Point(343, 610);
+            this.Bdate_lbl.Location = new System.Drawing.Point(345, 628);
             this.Bdate_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Bdate_lbl.Name = "Bdate_lbl";
             this.Bdate_lbl.Size = new System.Drawing.Size(87, 21);
@@ -275,7 +299,7 @@
             this.btn_addDoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
             this.btn_addDoc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_addDoc.ForeColor = System.Drawing.Color.White;
-            this.btn_addDoc.Location = new System.Drawing.Point(170, 728);
+            this.btn_addDoc.Location = new System.Drawing.Point(166, 786);
             this.btn_addDoc.Name = "btn_addDoc";
             this.btn_addDoc.Size = new System.Drawing.Size(97, 41);
             this.btn_addDoc.TabIndex = 44;
@@ -425,7 +449,7 @@
             this.dataTime_birthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dataTime_birthDate.ForeColor = System.Drawing.Color.Black;
             this.dataTime_birthDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dataTime_birthDate.Location = new System.Drawing.Point(341, 643);
+            this.dataTime_birthDate.Location = new System.Drawing.Point(343, 661);
             this.dataTime_birthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dataTime_birthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dataTime_birthDate.Name = "dataTime_birthDate";
@@ -463,7 +487,7 @@
             this.btn_cancel.FillColor = System.Drawing.Color.White;
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_cancel.ForeColor = System.Drawing.Color.Black;
-            this.btn_cancel.Location = new System.Drawing.Point(343, 728);
+            this.btn_cancel.Location = new System.Drawing.Point(343, 786);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(97, 41);
             this.btn_cancel.TabIndex = 44;
@@ -474,7 +498,7 @@
             // 
             this.groupBox1.Controls.Add(this.Male_CheckBox);
             this.groupBox1.Controls.Add(this.Female_CheckBox);
-            this.groupBox1.Location = new System.Drawing.Point(80, 572);
+            this.groupBox1.Location = new System.Drawing.Point(76, 610);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(183, 98);
             this.groupBox1.TabIndex = 48;
@@ -566,34 +590,45 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
-            // pictureBox1
+            // Comb_branch
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Comb_branch.BackColor = System.Drawing.Color.Transparent;
+            this.Comb_branch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Comb_branch.BorderRadius = 5;
+            this.Comb_branch.BorderThickness = 2;
+            this.Comb_branch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Comb_branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Comb_branch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_branch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_branch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Comb_branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Comb_branch.ItemHeight = 30;
+            this.Comb_branch.Location = new System.Drawing.Point(82, 560);
+            this.Comb_branch.Name = "Comb_branch";
+            this.Comb_branch.Size = new System.Drawing.Size(181, 36);
+            this.Comb_branch.TabIndex = 51;
             // 
-            // bigLabel1
+            // lbl_Branch
             // 
-            this.bigLabel1.AutoSize = true;
-            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel1.ForeColor = System.Drawing.Color.White;
-            this.bigLabel1.Location = new System.Drawing.Point(80, 9);
-            this.bigLabel1.Name = "bigLabel1";
-            this.bigLabel1.Size = new System.Drawing.Size(212, 32);
-            this.bigLabel1.TabIndex = 53;
-            this.bigLabel1.Text = "Radiology Center";
+            this.lbl_Branch.AutoSize = true;
+            this.lbl_Branch.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Branch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.lbl_Branch.Location = new System.Drawing.Point(82, 528);
+            this.lbl_Branch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Branch.Name = "lbl_Branch";
+            this.lbl_Branch.Size = new System.Drawing.Size(63, 21);
+            this.lbl_Branch.TabIndex = 50;
+            this.lbl_Branch.Text = "Branch";
             // 
             // Docter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(603, 800);
+            this.ClientSize = new System.Drawing.Size(603, 859);
+            this.Controls.Add(this.Comb_branch);
+            this.Controls.Add(this.lbl_Branch);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.dataTime_birthDate);
             this.Controls.Add(this.comb_Dep);
@@ -626,9 +661,9 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,5 +700,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private Guna.UI2.WinForms.Guna2ComboBox Comb_branch;
+        private System.Windows.Forms.Label lbl_Branch;
     }
 }
