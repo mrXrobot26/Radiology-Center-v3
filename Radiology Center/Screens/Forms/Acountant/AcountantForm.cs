@@ -72,8 +72,17 @@ namespace Radiology_Center.Screens.Forms.Acountant
                     nationalID = txt_NationalId.Text,
 
                 };
+                string folderPath = Path.Combine(Environment.CurrentDirectory, "accountantImage");
 
-                string newPath = $@"{Environment.CurrentDirectory}\accountanttImage\{Guid.NewGuid()}.jpg";
+                // Check if the folder exists, and create it if it doesn't
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
+                //  string newPath = $@"{Environment.CurrentDirectory}\accountanttImage\{Guid.NewGuid()}.jpg";
                 File.Copy(oldPath, newPath);
                 accountant.image = newPath;
                 user_ user = new user_
@@ -81,7 +90,7 @@ namespace Radiology_Center.Screens.Forms.Acountant
                     email = txt_email.Text,
                     pass = txt_password.Text,
                     role_id = comb_role.SelectedIndex + 1,
-                    branch_id = _branch_id
+                    branch_id = Comb_branch.SelectedIndex + 2
                 };
                 _db.accountants.Add(accountant);
                 _db.user_.Add(user);

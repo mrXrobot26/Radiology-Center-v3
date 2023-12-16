@@ -54,8 +54,17 @@ namespace Radiology_Center.Screens.Forms.Assistant
                     nationalID = txt_NationalId.Text,
 
                 };
+                string folderPath = Path.Combine(Environment.CurrentDirectory, "AssistantImage");
 
-                string newPath = $@"{Environment.CurrentDirectory}\AssistantImage\{Guid.NewGuid()}.jpg";
+                // Check if the folder exists, and create it if it doesn't
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
+                //  string newPath = $@"{Environment.CurrentDirectory}\AssistantImage\{Guid.NewGuid()}.jpg";
                 File.Copy(oldPath, newPath);
                 assitant.image = newPath;
                 user_ user = new user_
@@ -63,7 +72,7 @@ namespace Radiology_Center.Screens.Forms.Assistant
                     email = txt_email.Text,
                     pass = txt_password.Text,
                     role_id = comb_role.SelectedIndex + 1,
-                    branch_id = _branch_id
+                    branch_id = Comb_branch.SelectedIndex + 2
                 };
                 assitant.user_id = user.id;
                 _db.assisatants.Add(assitant);
