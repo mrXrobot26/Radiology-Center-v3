@@ -56,7 +56,16 @@ namespace Radiology_Center.Screens.Forms.Admin
 
                 };
 
-                string newPath = $@"{Environment.CurrentDirectory}\adminImage\{Guid.NewGuid()}.jpg";
+                string folderPath = Path.Combine(Environment.CurrentDirectory, "adminImage");
+
+                // Check if the folder exists, and create it if it doesn't
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
                 File.Copy(oldPath, newPath);
                 admin.image = newPath;
                 user_ user = new user_
@@ -64,7 +73,7 @@ namespace Radiology_Center.Screens.Forms.Admin
                     email = txt_email.Text,
                     pass = txt_password.Text,
                     role_id = comb_role.SelectedIndex + 1,
-                    branch_id = _branch_id
+                    branch_id = Comb_branch.SelectedIndex + 2
 
                 };
                 admin.user_id = user.id;
@@ -109,6 +118,11 @@ namespace Radiology_Center.Screens.Forms.Admin
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Comb_branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
