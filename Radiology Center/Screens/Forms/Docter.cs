@@ -72,15 +72,7 @@ namespace Radiology_Center.Screens.Forms
                 };
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "DoctorImage");
 
-                // Check if the folder exists, and create it if it doesn't
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-
-                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
-
-               // string newPath = $@"{Environment.CurrentDirectory}\DoctorImage\{Guid.NewGuid()}.jpg";
+               string newPath = $@"{Environment.CurrentDirectory}\DoctorImage\{Guid.NewGuid()}.jpg";
                 File.Copy(oldPath, newPath);
                 doctor.image = newPath;
                 user_ user = new user_

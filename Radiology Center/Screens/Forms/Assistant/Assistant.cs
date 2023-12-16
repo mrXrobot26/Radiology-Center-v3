@@ -55,15 +55,8 @@ namespace Radiology_Center.Screens.Forms.Assistant
                 };
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "AssistantImage");
 
-                // Check if the folder exists, and create it if it doesn't
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
 
-                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
-
-                //  string newPath = $@"{Environment.CurrentDirectory}\AssistantImage\{Guid.NewGuid()}.jpg";
+                  string newPath = $@"{Environment.CurrentDirectory}\AssistantImage\{Guid.NewGuid()}.jpg";
                 File.Copy(oldPath, newPath);
                 assitant.image = newPath;
                 user_ user = new user_
