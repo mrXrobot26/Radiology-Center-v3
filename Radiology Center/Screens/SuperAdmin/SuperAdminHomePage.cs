@@ -1,25 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using Radiology_Center.Models;
-using Radiology_Center.ViewModels;
 using Radiology_Center.Screens.Forms;
 using Radiology_Center.Screens.Forms.Department;
-using System.Runtime.Remoting.Contexts;
 using Radiology_Center.Screens.Forms.Assistant;
 using Radiology_Center.Screens.Forms.Acountant;
 using Radiology_Center.Screens.Forms.Admin;
 using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 using Radiology_Center.Screens.Forms.Ray;
 using System.Threading;
-using System.Windows.Controls;
 using Radiology_Center.Screens.Forms.Add_Branch;
 
 namespace Radiology_Center
@@ -690,11 +682,7 @@ namespace Radiology_Center
             }
         }
 
-        private void SuperAdminHomePage_Load(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void brn_refresh_Click(object sender, EventArgs e)
         {
             if (lbl_generl.Text == "Doctor")

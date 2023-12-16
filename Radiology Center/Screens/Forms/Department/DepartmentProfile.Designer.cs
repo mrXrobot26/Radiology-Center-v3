@@ -175,7 +175,6 @@
             this.Name = "DepartmentProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepartmentProfile";
-            this.Load += new System.EventHandler(this.DepartmentProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

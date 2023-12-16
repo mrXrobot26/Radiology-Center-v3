@@ -1,18 +1,13 @@
 ﻿using Radiology_Center.Models;
 using Radiology_Center.Screens.Forms;
 using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
-using Radiology_Center.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 
 namespace Radiology_Center.Screens.Doctor
 {
@@ -45,25 +40,21 @@ namespace Radiology_Center.Screens.Doctor
             DataGridViewForPatiant_doc();
             grd_Patient_Doc.CellClick += grd_Patient_Doc_CellClick;
 
-            if (branch_id == 2)
-            {
-                lbl_branch.Text = "Radiology-Center Elmansoura";
-            }
-            else if (branch_id == 3)
-            {
-                lbl_branch.Text = "Radiology-Center Kafrelsheikh";
-            }
-            else if (branch_id == 4)
-            {
-                lbl_branch.Text = "Radiology-Center Alexandria";
-            }
-            else if (branch_id == 5)
-            {
-                lbl_branch.Text = "Radiology-Center Elmahalla";
-            }
 
+            SetBranchLabel(branch_id);
         }
-
+        private void SetBranchLabel(int branchId)
+        {
+            var branchName = _db.branches.FirstOrDefault(b => b.id == branchId)?.name;
+            if (branchName != null)
+            {
+                lbl_branch.Text = "Radiology-Center " + branchName;
+            }
+            else
+            {
+                lbl_branch.Text = "Unknown Branch";
+            }
+        }
         private void DoctorPage_Load(object sender, EventArgs e)
         {
             this.Bounds = Screen.PrimaryScreen.Bounds;
@@ -130,13 +121,7 @@ namespace Radiology_Center.Screens.Doctor
 
             }
         }
-        private void grd_Patient_Doc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-
-        }
+        
 
         private void btn_patient_Click_1(object sender, EventArgs e)
         {

@@ -1,12 +1,6 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
@@ -46,12 +40,6 @@ namespace Radiology_Center.Screens.Forms
             Patient_History.Text = History;
 
         }
-        /* public Profile_Patient()
-         {
-             InitializeComponent();
-         }*/
-
-
 
         private void btrn_close_Click(object sender, EventArgs e)
         {

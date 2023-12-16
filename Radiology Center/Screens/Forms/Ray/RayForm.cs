@@ -1,12 +1,7 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms.Ray
@@ -21,16 +16,6 @@ namespace Radiology_Center.Screens.Forms.Ray
             InitializeComponent();
             comb_dep.Items.AddRange(_db.departments.Select(x => x.name).ToArray());
             comb_dep.SelectedIndex = 0;
-        }
-
-        private void RayForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

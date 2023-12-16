@@ -1,29 +1,13 @@
-﻿using LiveCharts.Wpf;
-using LiveCharts;
-using Radiology_Center;
+﻿using LiveCharts;
+using LiveCharts.Defaults;
 using Radiology_Center.Models;
 using Radiology_Center.Screens.Forms;
 using Radiology_Center.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
-using LiveCharts.WinForms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using LiveCharts.Defaults;
-using LiveCharts.Wpf;
-
-using LiveCharts;
-using LiveCharts.Defaults;
-using LiveCharts.WinForms;
 
 
 namespace Radiology_Center.Screens.Acountant
@@ -36,20 +20,14 @@ namespace Radiology_Center.Screens.Acountant
         private string _fullName;
         private string _email;
         private string _imagePath;
-        private string _nationalId;
-        private string _gender;
-        private string _phone;
-        private string _salary;
-        private string _department;
-        private string _role;
-        private int    _brach_id;
-        private Image _profileImage;
+        private int _brach_id;
+        private int _role_id;
         public Accountant(string fullName, string email, string imagePath, int branch_id)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-
+            lbl_generl.Text = "Payment";
             _fullName = fullName;
             _email = email;
             _imagePath = imagePath;
@@ -65,25 +43,21 @@ namespace Radiology_Center.Screens.Acountant
             Grid_Acc.CellClick += GridViewpayment_CellContentClick;
             DataGridViewpayment();
 
-            if (branch_id == 2)
-            {
-                lbl_branch.Text = "Radiology-Center Elmansoura";
-            }
-            else if (branch_id == 3)
-            {
-                lbl_branch.Text = "Radiology-Center Kafrelsheikh";
-            }
-            else if (branch_id == 4)
-            {
-                lbl_branch.Text = "Radiology-Center Alexandria";
-            }
-            else if (branch_id == 5)
-            {
-                lbl_branch.Text = "Radiology-Center Elmahalla";
-            }
+            SetBranchLabel(branch_id);
 
 
-
+        }
+        private void SetBranchLabel(int branchId)
+        {
+            var branchName = _db.branches.FirstOrDefault(b => b.id == branchId)?.name;
+            if (branchName != null)
+            {
+                lbl_branch.Text = "Radiology-Center " + branchName;
+            }
+            else
+            {
+                lbl_branch.Text = "Unknown Branch";
+            }
         }
         private void DataGridViewpayment()
         {
@@ -103,27 +77,12 @@ namespace Radiology_Center.Screens.Acountant
             Grid_Acc.AutoGenerateColumns = true;
 
         }
-        /*   private void DataGridViewReport()
-
-           {
-               var rep = from Ac in _db.reports
-                         select new ReportVM
-                         {
-                             Title = Ac.title,
-                             Date = Ac.date,
-                             Note = Ac.note
-                         };
-               var ReportsList = rep.ToList();
-               Grid_reports.DataSource = ReportsList;
-               Grid_reports.AutoGenerateColumns = true;
-
-           }*/
+       
         private void DataGridViewAnalaysis()
         {
             DateTime DaysAmount = DateTime.Now.AddDays(x);
             var res = from R in _db.rays
                       join PD in _db.patient_data on R.id equals PD.ray_id
-                      //  join branch in _db.branches on PD.branch_id equals branch.id
                       where PD.daydate >= DaysAmount && PD.branch_id == _brach_id
                       group new { R, PD } by R.name into grouped
                       select new AnalysisVM
@@ -139,16 +98,7 @@ namespace Radiology_Center.Screens.Acountant
             Grid_Acc.DataSource = AnalaysisList;
             Grid_Acc.AutoGenerateColumns = true;
 
-
-            //List<AnalysisVM> RayList = res.ToList();
-
-            //// Set up the DataGridView
-            //Grid_rays.DataSource = RayList;
-            //Grid_rays.AutoGenerateColumns = true;
-
-
-
-            chart1.Series.Clear(); // Clear previous data in the chart
+            chart1.Series.Clear();
 
             foreach (var item in AnalaysisList)
             {
@@ -158,7 +108,7 @@ namespace Radiology_Center.Screens.Acountant
                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)item.Count) },
                 };
 
-                // Add the series to the chart
+            
                 chart1.Series.Add(series);
             }
             chart1.AxisX.Clear();
@@ -166,8 +116,7 @@ namespace Radiology_Center.Screens.Acountant
             {
                 Title = "Ray Name",
                 Labels = res.ToList().Select(item => item.RayName).OfType<string>().ToList()
-                // Title = "Time",
-                //Labels = AnalaysisList.Select(item => item.FirstDate.HasValue ? item.FirstDate.Value.ToString("yyyy-MM-dd") : "").ToArray()
+            
             });
             chart1.AxisY.Clear();
             chart1.AxisY.Add(new LiveCharts.Wpf.Axis
@@ -180,36 +129,17 @@ namespace Radiology_Center.Screens.Acountant
         }
 
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
 
-        }
+    
 
-        private void btn_report_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_reports_Click(object sender, EventArgs e)
         {
             lbl_generl.Text = "Report";
             chart1.Visible = true;
-            // Grid_reports.Visible = true;
-            //   Grid_rays.Visible = true;
             Comb_days.Visible = true;
             Grid_Acc.Visible = true;
-            //   btn_add.Visible = true;
-            // DataGridViewReport();
             DataGridViewAnalaysis();
         }
 
@@ -219,17 +149,16 @@ namespace Radiology_Center.Screens.Acountant
             lbl_generl.Text = "Payment";
             DataGridViewpayment();
             chart1.Visible = false;
-            // Grid_reports.Visible = false;
-            //  Grid_rays.Visible = false;
+        
             Comb_days.Visible = false;
             Grid_Acc.Visible = true;
-            //    btn_add.Visible = false;
+        
 
         }
 
         private void btn_profile_Click(object sender, EventArgs e)
         {
-            //lbl_generl.Text = "Accountant";
+         
 
             var userForProfile = _db.user_.FirstOrDefault(x => x.email == _email);
 
@@ -270,7 +199,7 @@ namespace Radiology_Center.Screens.Acountant
                 if (e.RowIndex >= 0)
                 {
                     int patientId = int.Parse(Grid_Acc.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-                    //  int unquId = _db.patient_info.Select
+                   
                     var patientdata = _db.patient_data.FirstOrDefault(x => x.id == patientId);
                     int unqId = (int)patientdata.patient_id;
                     int docId = (int)patientdata.doctor_id;
@@ -290,40 +219,15 @@ namespace Radiology_Center.Screens.Acountant
 
         }
 
-        private void Accountant_Load(object sender, EventArgs e)
-        {
-
-            // DataGridViewAnalaysis();
-            //analysisVMBindingSource.DataSource = new List<AnalysisVM>();
-            //cartesianChart1.AxisX.Add(new Axis
-            //{
-            //    Title = "Ray Name",
-            //    Labels = new[] { item.RayName }
-            //});
+        
 
 
-        }
-
-        private void Grid_rays_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-        {
-
-        }
 
         private void Comb_days_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (Comb_days.SelectedIndex == 0)
             {
-                x = -1;
+                x = -3;
                 DataGridViewAnalaysis();
             }
             else if (Comb_days.SelectedIndex == 1)

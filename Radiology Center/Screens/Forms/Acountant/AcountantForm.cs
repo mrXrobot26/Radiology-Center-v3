@@ -1,13 +1,8 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms.Acountant
@@ -28,7 +23,6 @@ namespace Radiology_Center.Screens.Forms.Acountant
             comb_role.SelectedIndex = 4;
             _branch_id = branch_id;
             Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
-            //  Comb_branch.SelectedIndex = branch_id-2;
             Comb_branch.SelectedIndex = _branch_id - 2;
             if (role_id == 2)
             {
@@ -74,7 +68,13 @@ namespace Radiology_Center.Screens.Forms.Acountant
                 };
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "accountantImage");
 
-               string newPath = $@"{Environment.CurrentDirectory}\accountanttImage\{Guid.NewGuid()}.jpg";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
                 File.Copy(oldPath, newPath);
                 accountant.image = newPath;
                 user_ user = new user_

@@ -1,12 +1,6 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
@@ -36,15 +30,6 @@ namespace Radiology_Center.Screens.Forms
             this.Id = Id;
         }
 
-        private void Payment_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void foxBigLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
@@ -63,24 +48,10 @@ namespace Radiology_Center.Screens.Forms
             }
         }
 
-        private void lbl_Doc_Name_Click(object sender, EventArgs e)
-        {
+       
 
-        }
 
-        private void lbl_Patient_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_PatientName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Ray_Name_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
+        
     }
 }

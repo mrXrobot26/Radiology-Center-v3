@@ -258,7 +258,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(365, 43);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1447, 70);
+            this.panel10.Size = new System.Drawing.Size(1362, 70);
             this.panel10.TabIndex = 19;
             // 
             // btn_ray
@@ -470,7 +470,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1673, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1588, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -508,7 +508,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1812, 43);
+            this.panel1.Size = new System.Drawing.Size(1727, 43);
             this.panel1.TabIndex = 17;
             // 
             // lbl_branch
@@ -528,7 +528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1812, 847);
+            this.ClientSize = new System.Drawing.Size(1727, 847);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel11);

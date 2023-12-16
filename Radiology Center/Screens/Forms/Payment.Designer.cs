@@ -96,7 +96,6 @@
             this.lbl_Patient.Size = new System.Drawing.Size(123, 21);
             this.lbl_Patient.TabIndex = 47;
             this.lbl_Patient.Text = "Patient Name :";
-            this.lbl_Patient.Click += new System.EventHandler(this.lbl_Patient_Click);
             // 
             // panel1
             // 
@@ -137,7 +136,6 @@
             this.lbl_PatientName.Name = "lbl_PatientName";
             this.lbl_PatientName.Size = new System.Drawing.Size(247, 22);
             this.lbl_PatientName.TabIndex = 50;
-            this.lbl_PatientName.Click += new System.EventHandler(this.lbl_PatientName_Click);
             // 
             // lbl_doc
             // 
@@ -176,7 +174,6 @@
             this.lbl_Doc_Name.Name = "lbl_Doc_Name";
             this.lbl_Doc_Name.Size = new System.Drawing.Size(247, 22);
             this.lbl_Doc_Name.TabIndex = 53;
-            this.lbl_Doc_Name.Click += new System.EventHandler(this.lbl_Doc_Name_Click);
             // 
             // lbl_salary
             // 
@@ -202,7 +199,6 @@
             this.lbl_Psalary.Name = "lbl_Psalary";
             this.lbl_Psalary.Size = new System.Drawing.Size(247, 22);
             this.lbl_Psalary.TabIndex = 55;
-            this.lbl_Psalary.Click += new System.EventHandler(this.foxBigLabel2_Click);
             // 
             // lbl_Ray_Name
             // 
@@ -215,7 +211,6 @@
             this.lbl_Ray_Name.Name = "lbl_Ray_Name";
             this.lbl_Ray_Name.Size = new System.Drawing.Size(247, 22);
             this.lbl_Ray_Name.TabIndex = 56;
-            this.lbl_Ray_Name.Click += new System.EventHandler(this.lbl_Ray_Name_Click);
             // 
             // pictureBox2
             // 

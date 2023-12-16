@@ -6,16 +6,11 @@ using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 using Radiology_Center.Screens.Forms.Department;
 using Radiology_Center.Screens.Forms.Ray;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Radiology_Center.Models;
 
 namespace Radiology_Center.Screens.Admin
@@ -42,23 +37,7 @@ namespace Radiology_Center.Screens.Admin
             _imagePath = imagePath;
             _brach_id = branch_id;
 
-            if (branch_id == 2)
-            {
-                lbl_branch.Text = "Radiology-Center Elmansoura";
-            }
-            else if (branch_id == 3)
-            {
-                lbl_branch.Text = "Radiology-Center Kafrelsheikh";
-            }
-            else if (branch_id == 4)
-            {
-                lbl_branch.Text = "Radiology-Center Alexandria";
-            }
-            else if (branch_id == 5)
-            {
-                lbl_branch.Text = "Radiology-Center Elmahalla";
-            }
-
+            SetBranchLabel(branch_id);
 
             lbl_name.Text = fullName;
             lbl_email.Text = email;
@@ -70,11 +49,19 @@ namespace Radiology_Center.Screens.Admin
             lbl_generl.Text = "Doctor";
             DataGridViewForDoctor();
             grd_sAdmin.CellClick += grd_doctors_sAdmin_CellClick;
-
-
         }
-
-
+        private void SetBranchLabel(int branchId)
+        {
+            var branchName = _db.branches.FirstOrDefault(b => b.id == branchId)?.name;
+            if (branchName != null)
+            {
+                lbl_branch.Text = "Radiology-Center " + branchName;
+            }
+            else
+            {
+                lbl_branch.Text = "Unknown Branch";
+            }
+        }
         private void Comb_branch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbl_generl.Text == "Doctor")

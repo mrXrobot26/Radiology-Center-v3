@@ -1,13 +1,8 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms.Assistant
@@ -53,10 +48,15 @@ namespace Radiology_Center.Screens.Forms.Assistant
                     nationalID = txt_NationalId.Text,
 
                 };
+
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "AssistantImage");
 
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
 
-                  string newPath = $@"{Environment.CurrentDirectory}\AssistantImage\{Guid.NewGuid()}.jpg";
                 File.Copy(oldPath, newPath);
                 assitant.image = newPath;
                 user_ user = new user_

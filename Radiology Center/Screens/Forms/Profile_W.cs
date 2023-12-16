@@ -1,12 +1,6 @@
 ﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
@@ -56,21 +50,10 @@ namespace Radiology_Center.Screens.Forms
             }
         }
 
-        private void nightControlBox1_Click(object sender, EventArgs e)
-        {
 
-        }
+    
 
-        private void foxLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Profile_W_Load(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btrn_close_Click(object sender, EventArgs e)
         {
             this.Close();

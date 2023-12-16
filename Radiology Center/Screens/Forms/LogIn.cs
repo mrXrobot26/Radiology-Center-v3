@@ -3,18 +3,11 @@ using Radiology_Center.Screens.Acountant;
 using Radiology_Center.Screens.Admin;
 using Radiology_Center.Screens.Forms.Assistant;
 using Radiology_Center.Screens.Doctor;
-using Radiology_Center.Screens.Forms.Assistant;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlTypes;
+
 
 namespace Radiology_Center.Screens.Forms
 {
@@ -135,14 +128,5 @@ namespace Radiology_Center.Screens.Forms
             this.Close();
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogIn_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -328,7 +328,7 @@
             this.lbl_id.Size = new System.Drawing.Size(34, 13);
             this.lbl_id.TabIndex = 60;
             this.lbl_id.Text = "sassa";
-            this.lbl_id.Click += new System.EventHandler(this.lbl_id_Click);
+   
             // 
             // btn_delete
             // 
@@ -378,7 +378,6 @@
             this.Name = "DoctorProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoctorProfile";
-            this.Load += new System.EventHandler(this.DoctorProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_profileUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

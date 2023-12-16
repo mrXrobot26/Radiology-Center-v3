@@ -262,7 +262,7 @@
             this.chart1.TabIndex = 113;
             this.chart1.Text = "cartesianChart1";
             this.chart1.Visible = false;
-            this.chart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.chart1_ChildChanged);
+          
             // 
             // panel10
             // 

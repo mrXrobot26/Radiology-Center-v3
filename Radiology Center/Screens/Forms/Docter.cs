@@ -1,15 +1,8 @@
 ﻿using Radiology_Center.Models;
-using Radiology_Center.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms
@@ -39,20 +32,9 @@ namespace Radiology_Center.Screens.Forms
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Fname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btn_addDoc_Click(object sender, EventArgs e)
         {
@@ -72,7 +54,14 @@ namespace Radiology_Center.Screens.Forms
                 };
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "DoctorImage");
 
-               string newPath = $@"{Environment.CurrentDirectory}\DoctorImage\{Guid.NewGuid()}.jpg";
+            
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
                 File.Copy(oldPath, newPath);
                 doctor.image = newPath;
                 user_ user = new user_
@@ -113,15 +102,6 @@ namespace Radiology_Center.Screens.Forms
 
     
 
-        private void comb_role_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Phone_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {

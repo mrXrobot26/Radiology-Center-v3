@@ -567,7 +567,7 @@
             this.Comb_branch.Name = "Comb_branch";
             this.Comb_branch.Size = new System.Drawing.Size(181, 36);
             this.Comb_branch.TabIndex = 122;
-            this.Comb_branch.SelectedIndexChanged += new System.EventHandler(this.Comb_branch_SelectedIndexChanged);
+    
             // 
             // lbl_Branch
             // 

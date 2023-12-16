@@ -204,7 +204,7 @@
             this.comb_dep.Name = "comb_dep";
             this.comb_dep.Size = new System.Drawing.Size(225, 36);
             this.comb_dep.TabIndex = 58;
-            this.comb_dep.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+          
             // 
             // label2
             // 
@@ -237,7 +237,6 @@
             this.Name = "RayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RayForm";
-            this.Load += new System.EventHandler(this.RayForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

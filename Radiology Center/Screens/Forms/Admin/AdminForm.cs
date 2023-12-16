@@ -1,14 +1,8 @@
-﻿using Guna.UI2.WinForms;
-using Radiology_Center.Models;
+﻿using Radiology_Center.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radiology_Center.Screens.Forms.Admin
@@ -58,13 +52,13 @@ namespace Radiology_Center.Screens.Forms.Admin
 
                 string folderPath = Path.Combine(Environment.CurrentDirectory, "adminImage");
 
-                // Check if the folder exists, and create it if it doesn't
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
                 string newPath = Path.Combine(folderPath, $"{Guid.NewGuid()}.jpg");
+
 
                 File.Copy(oldPath, newPath);
                 admin.image = newPath;
@@ -120,9 +114,6 @@ namespace Radiology_Center.Screens.Forms.Admin
             this.Close();
         }
 
-        private void Comb_branch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

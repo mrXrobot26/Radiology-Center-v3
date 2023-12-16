@@ -244,7 +244,6 @@
             this.lbl_profileName.Size = new System.Drawing.Size(658, 30);
             this.lbl_profileName.TabIndex = 35;
             this.lbl_profileName.Text = "Layla Mohammed Mahmmoud";
-            this.lbl_profileName.Click += new System.EventHandler(this.foxLabel1_Click);
             // 
             // lbl_profileSalary
             // 
@@ -352,7 +351,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Profile_W";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Profile_W_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_profileUser)).EndInit();

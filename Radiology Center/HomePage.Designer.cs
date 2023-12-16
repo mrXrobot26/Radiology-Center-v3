@@ -164,7 +164,6 @@
             this.lbl_name.TabIndex = 5;
             this.lbl_name.Text = "Layla Elbessa";
             this.lbl_name.UseCompatibleTextRendering = true;
-            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // lbl_email
             // 
@@ -206,7 +205,6 @@
             this.btn_profile.Text = "           Profile";
             this.btn_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_profile.UseVisualStyleBackColor = false;
-            this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
             // 
             // panel4
             // 

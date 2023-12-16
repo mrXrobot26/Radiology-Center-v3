@@ -142,7 +142,6 @@
             this.Phone_lbl.Size = new System.Drawing.Size(82, 21);
             this.Phone_lbl.TabIndex = 10;
             this.Phone_lbl.Text = "PhoneNo";
-            this.Phone_lbl.Click += new System.EventHandler(this.Phone_lbl_Click);
             // 
             // Bdate_lbl
             // 
@@ -368,8 +367,7 @@
             this.comb_role.Name = "comb_role";
             this.comb_role.Size = new System.Drawing.Size(181, 36);
             this.comb_role.TabIndex = 46;
-            this.comb_role.SelectedIndexChanged += new System.EventHandler(this.comb_role_SelectedIndexChanged);
-            // 
+             // 
             // txt_Fname
             // 
             this.txt_Fname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
@@ -391,8 +389,7 @@
             this.txt_Fname.SelectedText = "";
             this.txt_Fname.Size = new System.Drawing.Size(185, 44);
             this.txt_Fname.TabIndex = 45;
-            this.txt_Fname.TextChanged += new System.EventHandler(this.txt_Fname_TextChanged);
-            // 
+             //
             // txt_Lname
             // 
             this.txt_Lname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
@@ -414,8 +411,7 @@
             this.txt_Lname.SelectedText = "";
             this.txt_Lname.Size = new System.Drawing.Size(183, 45);
             this.txt_Lname.TabIndex = 45;
-            this.txt_Lname.TextChanged += new System.EventHandler(this.txt_Fname_TextChanged);
-            // 
+             // 
             // txt_email
             // 
             this.txt_email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
@@ -437,8 +433,7 @@
             this.txt_email.SelectedText = "";
             this.txt_email.Size = new System.Drawing.Size(183, 45);
             this.txt_email.TabIndex = 45;
-            this.txt_email.TextChanged += new System.EventHandler(this.txt_Fname_TextChanged);
-            // 
+             // 
             // dataTime_birthDate
             // 
             this.dataTime_birthDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
@@ -539,7 +534,6 @@
             this.txt_password.SelectedText = "";
             this.txt_password.Size = new System.Drawing.Size(183, 45);
             this.txt_password.TabIndex = 45;
-            this.txt_password.TextChanged += new System.EventHandler(this.txt_Fname_TextChanged);
             // 
             // lbl_salary
             // 
@@ -553,7 +547,6 @@
             this.lbl_salary.Size = new System.Drawing.Size(58, 21);
             this.lbl_salary.TabIndex = 10;
             this.lbl_salary.Text = "Salary";
-            this.lbl_salary.Click += new System.EventHandler(this.Phone_lbl_Click);
             // 
             // txt_salary
             // 

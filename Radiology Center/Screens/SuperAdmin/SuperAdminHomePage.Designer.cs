@@ -676,7 +676,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            this.Load += new System.EventHandler(this.SuperAdminHomePage_Load);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_sAdmin)).EndInit();
             this.panel10.ResumeLayout(false);
