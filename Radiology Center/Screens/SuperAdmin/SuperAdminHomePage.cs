@@ -381,7 +381,7 @@ namespace Radiology_Center
             }
             else if (lbl_generl.Text == "Admin")
             {
-                AdminForm admin = new AdminForm();
+                AdminForm admin = new AdminForm(_role_id, _brach_id);
 
                 admin.AdminAdd += OnAdminAdded;
 

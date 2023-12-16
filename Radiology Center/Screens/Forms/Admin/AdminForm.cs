@@ -23,11 +23,20 @@ namespace Radiology_Center.Screens.Forms.Admin
         RadiologyEntities _db = new RadiologyEntities();
 
         string oldPath = "";
-        public AdminForm()
+        private int _branch_id;
+
+        public AdminForm(int role_id, int branch_id)
         {
             InitializeComponent();
             comb_role.Items.AddRange(_db.roles.Select(x => x.role_name).ToArray());
             comb_role.SelectedIndex = 1;
+            _branch_id = branch_id;
+            Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
+            Comb_branch.SelectedIndex = _branch_id - 2;
+            if (role_id == 2)
+            {
+                Comb_branch.Enabled = false;
+            }
         }
 
         private void btn_addAssistant_Click(object sender, EventArgs e)
@@ -54,7 +63,9 @@ namespace Radiology_Center.Screens.Forms.Admin
                 {
                     email = txt_email.Text,
                     pass = txt_password.Text,
-                    role_id = comb_role.SelectedIndex + 1
+                    role_id = comb_role.SelectedIndex + 1,
+                    branch_id = _branch_id
+
                 };
                 admin.user_id = user.id;
                 _db.admins.Add(admin);
