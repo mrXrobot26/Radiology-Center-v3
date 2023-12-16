@@ -65,6 +65,24 @@ namespace Radiology_Center.Screens.Acountant
             Grid_Acc.CellClick += GridViewpayment_CellContentClick;
             DataGridViewpayment();
 
+            if (branch_id == 2)
+            {
+                lbl_branch.Text = "Radiology-Center Elmansoura";
+            }
+            else if (branch_id == 3)
+            {
+                lbl_branch.Text = "Radiology-Center Kafrelsheikh";
+            }
+            else if (branch_id == 4)
+            {
+                lbl_branch.Text = "Radiology-Center Alexandria";
+            }
+            else if (branch_id == 5)
+            {
+                lbl_branch.Text = "Radiology-Center Elmahalla";
+            }
+
+
 
         }
         private void DataGridViewpayment()

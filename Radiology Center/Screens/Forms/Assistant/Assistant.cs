@@ -28,7 +28,6 @@ namespace Radiology_Center.Screens.Forms.Assistant
             comb_role.SelectedIndex = 3;
             _branch_id = branch_id;
             Comb_branch.Items.AddRange(_db.branches.OrderBy(b => b.id).Skip(1).Select(x => x.name).ToArray());
-            //  Comb_branch.SelectedIndex = branch_id-2;
             Comb_branch.SelectedIndex = _branch_id - 2;
             if (role_id == 2)
             {

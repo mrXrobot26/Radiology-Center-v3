@@ -51,6 +51,7 @@
             this.btn_reports = new System.Windows.Forms.Button();
             this.btn_logOut = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.lbl_branch = new ReaLTaiizor.Controls.BigLabel();
             this.lbl_generl = new ReaLTaiizor.Controls.BigLabel();
             this.nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -218,7 +219,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Grid_Acc.DefaultCellStyle = dataGridViewCellStyle3;
             this.Grid_Acc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.Grid_Acc.Location = new System.Drawing.Point(421, 173);
+            this.Grid_Acc.Location = new System.Drawing.Point(421, 138);
             this.Grid_Acc.Margin = new System.Windows.Forms.Padding(2);
             this.Grid_Acc.MultiSelect = false;
             this.Grid_Acc.Name = "Grid_Acc";
@@ -227,7 +228,7 @@
             this.Grid_Acc.RowHeadersWidth = 50;
             this.Grid_Acc.RowTemplate.Height = 40;
             this.Grid_Acc.ShowEditingIcon = false;
-            this.Grid_Acc.Size = new System.Drawing.Size(1438, 519);
+            this.Grid_Acc.Size = new System.Drawing.Size(1449, 554);
             this.Grid_Acc.TabIndex = 101;
             this.Grid_Acc.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             this.Grid_Acc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
@@ -367,6 +368,7 @@
             // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.lbl_branch);
             this.panel15.Controls.Add(this.lbl_generl);
             this.panel15.Controls.Add(this.nightControlBox2);
             this.panel15.Controls.Add(this.pictureBox2);
@@ -376,6 +378,18 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1870, 43);
             this.panel15.TabIndex = 114;
+            // 
+            // lbl_branch
+            // 
+            this.lbl_branch.AutoSize = true;
+            this.lbl_branch.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_branch.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lbl_branch.Location = new System.Drawing.Point(49, 8);
+            this.lbl_branch.Name = "lbl_branch";
+            this.lbl_branch.Size = new System.Drawing.Size(191, 30);
+            this.lbl_branch.TabIndex = 6;
+            this.lbl_branch.Text = "Radiology-Center ";
             // 
             // lbl_generl
             // 
@@ -484,5 +498,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_user;
         private System.Windows.Forms.Button btn_logOut;
+        private ReaLTaiizor.Controls.BigLabel lbl_branch;
     }
 }

@@ -44,7 +44,23 @@ namespace Radiology_Center.Screens.Forms.Assistant
             }
             lbl_generl.Text = "Patient";
             DataGridViewForPatiant();
+
+            SetBranchLabel(branch_id);
         }
+
+        private void SetBranchLabel(int branchId)
+        {
+            var branchName = _db.branches.FirstOrDefault(b => b.id == branchId)?.name;
+            if (branchName != null)
+            {
+                lbl_branch.Text = "Radiology-Center " + branchName;
+            }
+            else
+            {
+                lbl_branch.Text = "Unknown Branch";
+            }
+        }
+
         private void DataGridViewForPatiant()
         {
             var res = from pd in _db.patient_data

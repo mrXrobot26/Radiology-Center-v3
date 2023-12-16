@@ -56,6 +56,8 @@
             this.dataTime_birthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.comb_role = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbl_lname = new System.Windows.Forms.Label();
+            this.Comb_branch = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbl_Branch = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -217,7 +219,7 @@
             this.lbl_salary.BackColor = System.Drawing.Color.Transparent;
             this.lbl_salary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_salary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.lbl_salary.Location = new System.Drawing.Point(347, 489);
+            this.lbl_salary.Location = new System.Drawing.Point(347, 481);
             this.lbl_salary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_salary.Name = "lbl_salary";
             this.lbl_salary.Size = new System.Drawing.Size(58, 21);
@@ -230,7 +232,7 @@
             this.Bdate_lbl.BackColor = System.Drawing.Color.Transparent;
             this.Bdate_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bdate_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
-            this.Bdate_lbl.Location = new System.Drawing.Point(346, 586);
+            this.Bdate_lbl.Location = new System.Drawing.Point(348, 559);
             this.Bdate_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Bdate_lbl.Name = "Bdate_lbl";
             this.Bdate_lbl.Size = new System.Drawing.Size(87, 21);
@@ -355,7 +357,7 @@
             this.txt_salary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_salary.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_salary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_salary.Location = new System.Drawing.Point(345, 513);
+            this.txt_salary.Location = new System.Drawing.Point(345, 504);
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.PasswordChar = '\0';
             this.txt_salary.PlaceholderText = "";
@@ -397,7 +399,7 @@
             this.btn_cancel.FillColor = System.Drawing.Color.White;
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_cancel.ForeColor = System.Drawing.Color.Black;
-            this.btn_cancel.Location = new System.Drawing.Point(330, 702);
+            this.btn_cancel.Location = new System.Drawing.Point(330, 775);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(97, 41);
             this.btn_cancel.TabIndex = 108;
@@ -429,7 +431,7 @@
             this.btn_addAssistant.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
             this.btn_addAssistant.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_addAssistant.ForeColor = System.Drawing.Color.White;
-            this.btn_addAssistant.Location = new System.Drawing.Point(157, 702);
+            this.btn_addAssistant.Location = new System.Drawing.Point(146, 775);
             this.btn_addAssistant.Name = "btn_addAssistant";
             this.btn_addAssistant.Size = new System.Drawing.Size(97, 41);
             this.btn_addAssistant.TabIndex = 109;
@@ -478,7 +480,7 @@
             // 
             this.groupBox1.Controls.Add(this.Male_CheckBox);
             this.groupBox1.Controls.Add(this.Female_CheckBox);
-            this.groupBox1.Location = new System.Drawing.Point(84, 572);
+            this.groupBox1.Location = new System.Drawing.Point(84, 632);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(183, 98);
             this.groupBox1.TabIndex = 119;
@@ -508,7 +510,7 @@
             this.dataTime_birthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dataTime_birthDate.ForeColor = System.Drawing.Color.Black;
             this.dataTime_birthDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dataTime_birthDate.Location = new System.Drawing.Point(343, 610);
+            this.dataTime_birthDate.Location = new System.Drawing.Point(345, 583);
             this.dataTime_birthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dataTime_birthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dataTime_birthDate.Name = "dataTime_birthDate";
@@ -548,11 +550,44 @@
             this.lbl_lname.TabIndex = 100;
             this.lbl_lname.Text = "Last name";
             // 
+            // Comb_branch
+            // 
+            this.Comb_branch.BackColor = System.Drawing.Color.Transparent;
+            this.Comb_branch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Comb_branch.BorderRadius = 5;
+            this.Comb_branch.BorderThickness = 2;
+            this.Comb_branch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Comb_branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Comb_branch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_branch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Comb_branch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Comb_branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Comb_branch.ItemHeight = 30;
+            this.Comb_branch.Location = new System.Drawing.Point(84, 583);
+            this.Comb_branch.Name = "Comb_branch";
+            this.Comb_branch.Size = new System.Drawing.Size(181, 36);
+            this.Comb_branch.TabIndex = 122;
+            // 
+            // lbl_Branch
+            // 
+            this.lbl_Branch.AutoSize = true;
+            this.lbl_Branch.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Branch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(37)))), ((int)(((byte)(53)))));
+            this.lbl_Branch.Location = new System.Drawing.Point(84, 551);
+            this.lbl_Branch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Branch.Name = "lbl_Branch";
+            this.lbl_Branch.Size = new System.Drawing.Size(63, 21);
+            this.lbl_Branch.TabIndex = 121;
+            this.lbl_Branch.Text = "Branch";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 777);
+            this.ClientSize = new System.Drawing.Size(617, 888);
+            this.Controls.Add(this.Comb_branch);
+            this.Controls.Add(this.lbl_Branch);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_Lname);
             this.Controls.Add(this.txt_Fname);
@@ -619,5 +654,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dataTime_birthDate;
         private Guna.UI2.WinForms.Guna2ComboBox comb_role;
         private System.Windows.Forms.Label lbl_lname;
+        private Guna.UI2.WinForms.Guna2ComboBox Comb_branch;
+        private System.Windows.Forms.Label lbl_Branch;
     }
 }

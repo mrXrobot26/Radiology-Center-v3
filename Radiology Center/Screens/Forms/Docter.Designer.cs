@@ -90,9 +90,9 @@
             this.bigLabel1.ForeColor = System.Drawing.Color.White;
             this.bigLabel1.Location = new System.Drawing.Point(80, 9);
             this.bigLabel1.Name = "bigLabel1";
-            this.bigLabel1.Size = new System.Drawing.Size(212, 32);
+            this.bigLabel1.Size = new System.Drawing.Size(369, 32);
             this.bigLabel1.TabIndex = 53;
-            this.bigLabel1.Text = "Radiology Center";
+            this.bigLabel1.Text = "Radiology Center - Add Doctor";
             // 
             // pictureBox1
             // 

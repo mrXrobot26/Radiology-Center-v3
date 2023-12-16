@@ -20,6 +20,7 @@ using Radiology_Center.Screens.Forms.Department.Doctor_Profile;
 using Radiology_Center.Screens.Forms.Ray;
 using System.Threading;
 using System.Windows.Controls;
+using Radiology_Center.Screens.Forms.Add_Branch;
 
 namespace Radiology_Center
 {
@@ -95,6 +96,11 @@ namespace Radiology_Center
             {
                 DataGridViewForAdmin();
             }
+            else if (lbl_generl.Text == "Branch")
+            {
+                DataGridViewForBranch();
+            }
+
 
         }
 
@@ -128,7 +134,14 @@ namespace Radiology_Center
             grd_sAdmin.AutoGenerateColumns = true;
         }
 
+        private void DataGridViewForBranch()
+        {
 
+            var res = _db.branches.Select(x => new { x.id, x.name });
+            var branchDataList = res.ToList();
+            grd_sAdmin.DataSource = branchDataList;
+            grd_sAdmin.AutoGenerateColumns = true;
+        }
 
 
         private void DataGridViewForDepartment()
@@ -152,7 +165,7 @@ namespace Radiology_Center
                       join a in _db.assisatants on pd.assistant_id equals a.id
                       join branch in _db.branches on pd.branch_id equals branch.id
                       where selectedBranchIndex == 0 || branch.name == selectedBranchName
-                      orderby pd.branch_id
+                      orderby branch.id
                       select new
                       {
                           Id = pd.id,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -368,7 +381,7 @@ namespace Radiology_Center
             }
             else if (lbl_generl.Text == "Admin")
             {
-                AdminForm admin = new AdminForm();
+                AdminForm admin = new AdminForm(_role_id, _brach_id);
 
                 admin.AdminAdd += OnAdminAdded;
 
@@ -381,6 +394,16 @@ namespace Radiology_Center
                 ray.RayEventHandler += OnRayAdded;
 
                 ray.Show();
+            }
+            else if (lbl_generl.Text == "Branch")
+            {
+                BranchForm branch = new BranchForm();
+
+                branch.BranchChanged += DataGridViewForBranch;
+
+                branch.Show();
+
+
             }
             
         }
@@ -421,7 +444,15 @@ namespace Radiology_Center
             DataGridViewForDepartment();
 
         }
-
+        private void btn_branch_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_branch.BackColor = ColorTranslator.FromHtml("#182E42");
+            lbl_generl.Text = "Branch";
+            CheckLabelAndSetButtonVisibility();
+            Comb_branch.Visible = false;
+            DataGridViewForBranch();
+        }
         private void btn_doc_names_Click_1(object sender, EventArgs e)
         {
             ResetButtonColors();
@@ -523,6 +554,7 @@ namespace Radiology_Center
             btn_accountant.BackColor = Color.FromArgb(20, 39, 55);
             btn_admin.BackColor = Color.FromArgb(20, 39, 55);
             btn_ray.BackColor = Color.FromArgb(20, 39, 55);
+            btn_branch.BackColor = Color.FromArgb(20, 39, 55);
 
         }
 
@@ -869,9 +901,6 @@ namespace Radiology_Center
             th.Start();
         }
 
-        private void lbl_name_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

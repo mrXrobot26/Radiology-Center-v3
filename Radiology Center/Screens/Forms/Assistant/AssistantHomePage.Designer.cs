@@ -59,6 +59,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_branch = new ReaLTaiizor.Controls.BigLabel();
             ((System.ComponentModel.ISupportInitialize)(this.grd_assistant)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
@@ -499,6 +500,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_branch);
             this.panel1.Controls.Add(this.lbl_generl);
             this.panel1.Controls.Add(this.nightControlBox1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -508,6 +510,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1812, 43);
             this.panel1.TabIndex = 17;
+            // 
+            // lbl_branch
+            // 
+            this.lbl_branch.AutoSize = true;
+            this.lbl_branch.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_branch.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_branch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lbl_branch.Location = new System.Drawing.Point(49, 8);
+            this.lbl_branch.Name = "lbl_branch";
+            this.lbl_branch.Size = new System.Drawing.Size(191, 30);
+            this.lbl_branch.TabIndex = 8;
+            this.lbl_branch.Text = "Radiology-Center ";
             // 
             // AssistantHomePage
             // 
@@ -570,5 +584,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_logOut;
+        private ReaLTaiizor.Controls.BigLabel lbl_branch;
     }
 }
